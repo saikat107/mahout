@@ -58,12 +58,6 @@
 		df.loc[:, dt.columns.tolist()] = dt
 		
 		----------------------------------------------------------------------
-		>>> df
-		    Col0                Col1                Col2 Col3 Col4
-		0  1.txt 2021-06-23 15:04:30                 NaT  NaT  NaT
-		1  2.txt 2021-06-23 14:25:30 2021-06-23 15:30:30  NaT  NaT
-		
-		----------------------------------------------------------------------
 	]
 ====================================================================================================
 
@@ -231,66 +225,6 @@
 ====================================================================================================
 
 
-"qid": 68200661
-"link": https://stackoverflow.com/questions/68200661/i-want-to-generate-a-new-column-in-a-pandas-dataframe-counting-edges-in-anoth
-"question": {
-	"title": I want to generate a new column in a pandas dataframe, counting &quot;edges&quot; in another column
-	"desc": i have a dataframe looking like this: that is, some "rising edges" occur from time to time in the column X (in this example the edge is x==B) What I need is, a new column Y which increments every time a value of B occurs in X: In SQL I would use some trick like . How can I do it in Pandas? 
-}
-"io": {
-	"Frame-1": 
-		A B....X
-		1 1    A
-		2 2    B
-		3 3    A
-		4 6    K
-		5 7    B
-		6 8    L
-		7 9    M
-		8 1    N
-		9 7    B
-		1 6    A
-		7 7    A
-		
-	"Frame-2":
-		A B....X  Y
-		1 1    A  0
-		2 2    B  1
-		3 3    A  1
-		4 6    K  1
-		5 7    B  2
-		6 8    L  2
-		7 9    M  2
-		8 1    N  2
-		9 7    B  3
-		1 6    A  3
-		7 7    A  3
-		
-}
-"answer": {
-	"desc": %s Use 
-	"code-snippets": [
-		df['Y'] = (df.X == 'B').cumsum()
-		
-		Out[8]:
-		    A  B  X  Y
-		0   1  1  A  0
-		1   2  2  B  1
-		2   3  3  A  1
-		3   4  6  K  1
-		4   5  7  B  2
-		5   6  8  L  2
-		6   7  9  M  2
-		7   8  1  N  2
-		8   9  7  B  3
-		9   1  6  A  3
-		10  7  7  A  3
-		
-		----------------------------------------------------------------------
-	]
-====================================================================================================
-
-
 "qid": 68193558
 "link": https://stackoverflow.com/questions/68193558/pandas-group-many-columns-to-one-column-where-every-cell-is-a-list-of-values
 "question": {
@@ -375,61 +309,6 @@
 		print(x)
 		
 		----------------------------------------------------------------------
-		x = x.sort_values(by="Value").reset_index(drop=True)
-		print(x)
-		
-		     Value Col 1
-		0   a_col1    aa
-		1   a_col2    ab
-		2   a_col3    ac
-		3   b_col1    ba
-		4   b_col2    bb
-		5   b_col3    bc
-		6   c_col1    ca
-		7   c_col2    cb
-		8   c_col3    cc
-		9   d_col1    da
-		10  d_col2    db
-		11  d_col3    dc
-		12  e_col1    ea
-		13  e_col2    eb
-		14  e_col3    ec
-		
-		----------------------------------------------------------------------
-	]
-====================================================================================================
-
-
-"qid": 68261366
-"link": https://stackoverflow.com/questions/68261366/right-way-to-reindex-a-dataframe
-"question": {
-	"title": Right way to reindex a dataframe?
-	"desc": I have a large dataset which I filtered by location. The end result is something like this: I guessed that the index values are skipping all over the place since the all the columns with the same locations aren't consecutive. To reset the indices, I did , and it worked... but broke everything else. The output is this: I don't have any idea why this is happening, and how I can fix this. Thanks for any help provided! 
-}
-"io": {
-	"Frame-1": 
-		   column 1  column 2
-		 0        a         1
-		 106      b         2
-		 178      c         3
-		
-	"Frame-2":
-		   column 1  column 2
-		 0        a         1
-		 1      NAN       NAN
-		 12     NAN       NAN
-		
-}
-"answer": {
-	"desc": %s Use : 
-	"code-snippets": [
-		>>> df.reset_index(drop=True)
-		  column 1  column 2
-		0        a         1
-		1        b         2
-		2        c         3
-		
-		----------------------------------------------------------------------
 	]
 ====================================================================================================
 
@@ -456,14 +335,6 @@
 "answer": {
 	"desc": %s The problem here is, when you call apply on , pandas creates a Series out of it and upcasts the values because it is a single Series. For example consider following Series: As you can see, the entire series is converted to float because integer type can not hold all the values for the above series, similar is the case when you call apply on axis=1, it is same to : There's already an issue DataFrame.apply unintuitively changes int to float because of another column on github for this upcasting behavior of pandas . So, one possible option for you is as I have mentioned in the comment, to call on the entire dataframe as: A working solution for you may be using python's module alongwith , but remember, it does the same thing twice so it may be a bit slow for a large dataframes, however, you will get the data in the rquired format: OUTPUT: 
 	"code-snippets": [
-		>>> s = pd.Series([1, 2, 3.2])
-		s
-		0    1.0
-		1    2.0
-		2    3.2
-		dtype: float64
-		
-		----------------------------------------------------------------------
 		df.iloc[0]
 		A    2.0
 		B    6.0
@@ -499,66 +370,6 @@
 		    return pd.cut(group, bins, labels=ids)
 		    
 		df['id'] = df.groupby('polyid')['value'].apply(lambda x: reclass(x, x.name))
-		
-		----------------------------------------------------------------------
-		    polyid  value  id
-		0        1   0.56   1
-		1        1   0.59   1
-		2        1   0.62   2
-		3        1   0.83   3
-		4        2   0.85   2
-		5        2   0.01   1
-		6        2   0.79   2
-		7        3   0.37   1
-		8        3   0.99   3
-		9        3   0.48   1
-		10       3   0.55   2
-		11       3   0.06   1
-		
-		----------------------------------------------------------------------
-	]
-====================================================================================================
-
-
-"qid": 68166733
-"link": https://stackoverflow.com/questions/68166733/how-to-sort-dataframe-by-some-columns-with-nans-as-if-they-were-one-column
-"question": {
-	"title": How to sort dataframe by some columns with nans, as if they were one column?
-	"desc": Please consider out: Guaranteed each row has a single non-nan value, I want to sort all rows by valid values on . Required: Please notice I am looking for a solution extendible for more than just 2 columns, and that values in each columns don't have to be followed or preceded by s, meaning there may be consecutive s or s in any column, as long as each row has only a single . 
-}
-"io": {
-	"Frame-1": 
-		     a    b   c
-		0  3.0  NaN  v1
-		1  NaN  2.0  v2
-		2  5.0  NaN  v3
-		3  NaN  6.0  v4
-		4  1.0  NaN  v5
-		5  NaN  4.0  v6
-		
-	"Frame-2":
-		     a    b   c
-		0  1.0  NaN   v5
-		1  NaN  2.0   v2
-		2  3.0  NaN   v1
-		3  NaN  4.0   v6
-		4  5.0  NaN   v3
-		5  NaN  6.0   v4
-		
-		
-}
-"answer": {
-	"desc": %s So maybe try with 
-	"code-snippets": [
-		out = df.reindex(df[['a','b']].sum(1).sort_values().index).reset_index(drop=True)
-		Out[70]: 
-		     a    b   c
-		0  1.0  NaN  v5
-		1  NaN  2.0  v2
-		2  3.0  NaN  v1
-		3  NaN  4.0  v6
-		4  5.0  NaN  v3
-		5  NaN  6.0  v4
 		
 		----------------------------------------------------------------------
 	]
@@ -644,80 +455,6 @@
 		                     .nth(offset).reindex(df.index)
 		
 		----------------------------------------------------------------------
-		>>> first_valid(df, 0)
-		Date
-		1     25.0
-		2     29.0
-		3     33.0
-		4     31.0
-		5     30.0
-		6     35.0
-		7     31.0
-		8     33.0
-		9     26.0
-		10    27.0
-		11    35.0
-		12    33.0
-		13    28.0
-		14    25.0
-		15    25.0
-		16    26.0
-		17    34.0
-		18    28.0
-		19    34.0
-		20    28.0
-		dtype: float64
-		
-		
-		>>> first_valid(df, 1)
-		Date
-		1      NaN
-		2      NaN
-		3      NaN
-		4     35.0
-		5     34.0
-		6     34.0
-		7     26.0
-		8     25.0
-		9     31.0
-		10    26.0
-		11    25.0
-		12    35.0
-		13    25.0
-		14    25.0
-		15    26.0
-		16    31.0
-		17    29.0
-		18    29.0
-		19    26.0
-		20    30.0
-		dtype: float64
-		
-		>>> first_valid(df, 2)
-		Date
-		1      NaN
-		2      NaN
-		3      NaN
-		4      NaN
-		5      NaN
-		6      NaN
-		7      NaN
-		8     31.0
-		9      NaN
-		10    28.0
-		11    29.0
-		12    28.0
-		13    35.0
-		14    28.0
-		15    31.0
-		16    27.0
-		17    25.0
-		18    31.0
-		19     NaN
-		20     NaN
-		dtype: float64
-		
-		----------------------------------------------------------------------
 		# Sample dataframe for testing purpose
 		df_test = pd.concat([df] * 10000, ignore_index=True)
 		
@@ -778,117 +515,6 @@
 		
 		print(df['Mon_Year'])
 		
-		
-		----------------------------------------------------------------------
-	]
-====================================================================================================
-
-
-"qid": 68134383
-"link": https://stackoverflow.com/questions/68134383/python-dataframe-logical-operations-with-two-if-statements
-"question": {
-	"title": Python Dataframe logical operations with two If statements
-	"desc": I have a big data frame with float values. I want to perform two if logical operations. My code: Present output Expected output 
-}
-"io": {
-	"Frame-1": 
-		df = 
-		    A     A_op
-		0  78.5   2
-		1  54     2
-		2  48     2
-		3  21.1   3
-		
-	"Frame-2":
-		df = 
-		    A     A_op
-		0  78.5   1
-		1  54     2
-		2  48     2
-		3  21.1   3
-		
-}
-"answer": {
-	"desc": %s Try via : Finally: Note: Since you don't specify the condition for and but if you wish for Then the above solution becomes: Output of : 
-	"code-snippets": [
-		conditions=[
-		    df['A'].gt(70),
-		    df['A'].lt(70) & df['A'].gt(40),
-		    df['A'].lt(40)
-		]
-		
-		labels=[1,2,3]
-		
-		----------------------------------------------------------------------
-		conditions=[
-		    df['A'].gt(70),
-		    df['A'].le(70) & df['A'].gt(40),
-		    df['A'].le(40)
-		]
-		
-		labels=[1,2,3]
-		
-		df['A_op']=np.select(conditions,labels)
-		
-		----------------------------------------------------------------------
-	]
-====================================================================================================
-
-
-"qid": 43855474
-"link": https://stackoverflow.com/questions/43855474/changing-sort-in-value-counts
-"question": {
-	"title": changing sort in value_counts
-	"desc": If I do I get If I do I get What I am trying to do is get the output in 2, 3, 4 ascending order (the left numeric column). Can I change value_counts somehow or do I need to use a different function. 
-}
-"io": {
-	"Frame-1": 
-		4    2831
-		3    2555 
-		5    1561
-		[...]
-		
-	"Frame-2":
-		8    225
-		9    120
-		2   1234 
-		[...]
-		
-}
-"answer": {
-	"desc": %s I think you need , because the left column is called . The full command would be . For example: 
-	"code-snippets": [
-		mobile = pd.DataFrame({'PattLen':[1,1,2,6,6,7,7,7,7,8]})
-		print (mobile)
-		   PattLen
-		0        1
-		1        1
-		2        2
-		3        6
-		4        6
-		5        7
-		6        7
-		7        7
-		8        7
-		9        8
-		
-		print (mobile.PattLen.value_counts())
-		7    4
-		6    2
-		1    2
-		8    1
-		2    1
-		Name: PattLen, dtype: int64
-		
-		
-		mt = mobile.PattLen.value_counts().sort_index()
-		print (mt)
-		1    2
-		2    1
-		6    2
-		7    4
-		8    1
-		Name: PattLen, dtype: int64
 		
 		----------------------------------------------------------------------
 	]

@@ -698,8 +698,7 @@
             "answer": {
                 "ans_desc": "A straightforward way with boolean mask: ",
                 "code": [
-                    "dt = df.select_dtypes('datetime')\ndt = dt.mask(dt.lt(dt.shift(axis=1)).cumsum(axis=1).astype(bool))\n\ndf.loc[:, dt.columns.tolist()] = dt\n",
-                    ">>> df\n    Col0                Col1                Col2 Col3 Col4\n0  1.txt 2021-06-23 15:04:30                 NaT  NaT  NaT\n1  2.txt 2021-06-23 14:25:30 2021-06-23 15:30:30  NaT  NaT\n"
+                    "dt = df.select_dtypes('datetime')\ndt = dt.mask(dt.lt(dt.shift(axis=1)).cumsum(axis=1).astype(bool))\n\ndf.loc[:, dt.columns.tolist()] = dt\n"
                 ]
             }
         }
@@ -3899,8 +3898,7 @@
             "answer": {
                 "ans_desc": "Try: Prints: Optionally, you can sort values afterwards: ",
                 "code": [
-                    "x = df.melt(\"Value\", value_name=\"Col 1\")\nx.Value += \"_\" + x.variable\nx = x.drop(columns=\"variable\")\nprint(x)\n",
-                    "x = x.sort_values(by=\"Value\").reset_index(drop=True)\nprint(x)\n\n     Value Col 1\n0   a_col1    aa\n1   a_col2    ab\n2   a_col3    ac\n3   b_col1    ba\n4   b_col2    bb\n5   b_col3    bc\n6   c_col1    ca\n7   c_col2    cb\n8   c_col3    cc\n9   d_col1    da\n10  d_col2    db\n11  d_col3    dc\n12  e_col1    ea\n13  e_col2    eb\n14  e_col3    ec\n"
+                    "x = df.melt(\"Value\", value_name=\"Col 1\")\nx.Value += \"_\" + x.variable\nx = x.drop(columns=\"variable\")\nprint(x)\n"
                 ]
             }
         }
@@ -5808,7 +5806,6 @@
             "answer": {
                 "ans_desc": "The problem here is, when you call apply on , pandas creates a Series out of it and upcasts the values because it is a single Series. For example consider following Series: As you can see, the entire series is converted to float because integer type can not hold all the values for the above series, similar is the case when you call apply on axis=1, it is same to : There's already an issue DataFrame.apply unintuitively changes int to float because of another column on github for this upcasting behavior of pandas . So, one possible option for you is as I have mentioned in the comment, to call on the entire dataframe as: A working solution for you may be using python's module alongwith , but remember, it does the same thing twice so it may be a bit slow for a large dataframes, however, you will get the data in the rquired format: OUTPUT: ",
                 "code": [
-                    ">>> s = pd.Series([1, 2, 3.2])\ns\n0    1.0\n1    2.0\n2    3.2\ndtype: float64\n",
                     "df.iloc[0]\nA    2.0\nB    6.0\nC    5.0\nD    8.0\nName: 0, dtype: float64\n"
                 ]
             }
@@ -5927,8 +5924,7 @@
             "answer": {
                 "ans_desc": "A simpler solution would be to use and a custom function on each group. In this case, we can define a function that obtains the correct bins and ids and then uses : Result: ",
                 "code": [
-                    "def reclass(group, name):\n    bins = bins_dic[name]\n    ids = ids_dic[name]\n    return pd.cut(group, bins, labels=ids)\n    \ndf['id'] = df.groupby('polyid')['value'].apply(lambda x: reclass(x, x.name))\n",
-                    "    polyid  value  id\n0        1   0.56   1\n1        1   0.59   1\n2        1   0.62   2\n3        1   0.83   3\n4        2   0.85   2\n5        2   0.01   1\n6        2   0.79   2\n7        3   0.37   1\n8        3   0.99   3\n9        3   0.48   1\n10       3   0.55   2\n11       3   0.06   1\n"
+                    "def reclass(group, name):\n    bins = bins_dic[name]\n    ids = ids_dic[name]\n    return pd.cut(group, bins, labels=ids)\n    \ndf['id'] = df.groupby('polyid')['value'].apply(lambda x: reclass(x, x.name))\n"
                 ]
             }
         }
@@ -7405,7 +7401,6 @@
                 "code": [
                     "def first_valid(arr, offset=0):\n    m = ~np.isnan(arr)\n    i =  m.argmax(axis=1) + offset\n    iy = np.clip(i, 0, arr.shape[1] - 1)\n\n    vals = arr[np.r_[:arr.shape[0]], iy]\n    vals[(~m.any(1)) | (i >= arr.shape[1])] = np.nan\n    return vals\n",
                     "def first_valid(df, offset=0):\n    return df.stack().groupby(level=0)\\\n                     .nth(offset).reindex(df.index)\n",
-                    ">>> first_valid(df, 0)\nDate\n1     25.0\n2     29.0\n3     33.0\n4     31.0\n5     30.0\n6     35.0\n7     31.0\n8     33.0\n9     26.0\n10    27.0\n11    35.0\n12    33.0\n13    28.0\n14    25.0\n15    25.0\n16    26.0\n17    34.0\n18    28.0\n19    34.0\n20    28.0\ndtype: float64\n\n\n>>> first_valid(df, 1)\nDate\n1      NaN\n2      NaN\n3      NaN\n4     35.0\n5     34.0\n6     34.0\n7     26.0\n8     25.0\n9     31.0\n10    26.0\n11    25.0\n12    35.0\n13    25.0\n14    25.0\n15    26.0\n16    31.0\n17    29.0\n18    29.0\n19    26.0\n20    30.0\ndtype: float64\n\n>>> first_valid(df, 2)\nDate\n1      NaN\n2      NaN\n3      NaN\n4      NaN\n5      NaN\n6      NaN\n7      NaN\n8     31.0\n9      NaN\n10    28.0\n11    29.0\n12    28.0\n13    35.0\n14    28.0\n15    31.0\n16    27.0\n17    25.0\n18    31.0\n19     NaN\n20     NaN\ndtype: float64\n",
                     "# Sample dataframe for testing purpose\ndf_test = pd.concat([df] * 10000, ignore_index=True)\n\n%%timeit # Numpy approach\n_ = first_valid(df_test.to_numpy(), 1)\n# 6.9 ms \u00b1 212 \u00b5s per loop (mean \u00b1 std. dev. of 7 runs, 100 loops each)\n\n\n%%timeit # Pandas approach\n_ = first_valid(df_test, 1)\n# 90 ms \u00b1 867 \u00b5s per loop (mean \u00b1 std. dev. of 7 runs, 10 loops each)\n\n\n%%timeit # OP's approach\n_ = f(df_test, 1)\n# 2.03 s \u00b1 183 ms per loop (mean \u00b1 std. dev. of 7 runs, 1 loop each)\n"
                 ]
             }
