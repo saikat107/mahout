@@ -1,0 +1,1001 @@
+[
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe"
+        ],
+        "owner": {
+            "account_id": 21977797,
+            "reputation": 124,
+            "user_id": 16253345,
+            "user_type": "registered",
+            "profile_image": "https://graph.facebook.com/4227312227290363/picture?type=large",
+            "display_name": "Ahmed Chater",
+            "link": "https://stackoverflow.com/users/16253345/ahmed-chater"
+        },
+        "is_answered": true,
+        "view_count": 26,
+        "accepted_answer_id": 68243166,
+        "answer_count": 2,
+        "score": 0,
+        "last_activity_date": 1625389829,
+        "creation_date": 1625389469,
+        "question_id": 68243146,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68243146/replace-zero-with-value-of-an-other-column-using-pandas",
+        "title": "replace zero with value of an other column using pandas",
+        "answer_body": "<p>via <code>mask()</code>:</p>\n<pre><code>df['id']=df['id'].mask(df['id'].eq(0),df['ref'])\n</code></pre>\n<p>OR</p>\n<p>via numpy's <code>where()</code>:</p>\n<pre><code>#import numpy as np\ndf['id']=np.where(df['id'].eq(0),df['ref'],df['id'])\n</code></pre>\n",
+        "question_body": "<p>I have a dataframe df1:</p>\n<pre><code>    ref   Name   id  Score\n  8400   John    0     12\n  3840  Peter  414      0\n  7400  David  612     64\n  5200  Karen    0      0\n</code></pre>\n<p>I want to replace 0 in the <strong>id column</strong> with value from <strong>ref column</strong> of the same row So it will become:</p>\n<pre><code>   ref    Name   id   Score\n  8400   John  8400     12\n  3840  Peter  414      0\n  7400  David  612     64\n  5200  Karen 5200      0\n</code></pre>\n",
+        "input_data_frames": [
+            "    ref   Name   id  Score\n  8400   John    0     12\n  3840  Peter  414      0\n  7400  David  612     64\n  5200  Karen    0      0\n",
+            "   ref    Name   id   Score\n  8400   John  8400     12\n  3840  Peter  414      0\n  7400  David  612     64\n  5200  Karen 5200      0\n"
+        ],
+        "output_codes": [
+            "#import numpy as np\ndf['id']=np.where(df['id'].eq(0),df['ref'],df['id'])\n"
+        ],
+        "ques_desc": "I have a dataframe df1: I want to replace 0 in the id column with value from ref column of the same row So it will become: ",
+        "ans_desc": "via : OR via numpy's : ",
+        "formatted_input": {
+            "qid": 68243146,
+            "link": "https://stackoverflow.com/questions/68243146/replace-zero-with-value-of-an-other-column-using-pandas",
+            "question": {
+                "title": "replace zero with value of an other column using pandas",
+                "ques_desc": "I have a dataframe df1: I want to replace 0 in the id column with value from ref column of the same row So it will become: "
+            },
+            "io": [
+                "    ref   Name   id  Score\n  8400   John    0     12\n  3840  Peter  414      0\n  7400  David  612     64\n  5200  Karen    0      0\n",
+                "   ref    Name   id   Score\n  8400   John  8400     12\n  3840  Peter  414      0\n  7400  David  612     64\n  5200  Karen 5200      0\n"
+            ],
+            "answer": {
+                "ans_desc": "via : OR via numpy's : ",
+                "code": [
+                    "#import numpy as np\ndf['id']=np.where(df['id'].eq(0),df['ref'],df['id'])\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "python-3.x",
+            "pandas",
+            "dataframe",
+            "timestamp"
+        ],
+        "owner": {
+            "account_id": 19256289,
+            "reputation": 237,
+            "user_id": 14073111,
+            "user_type": "registered",
+            "profile_image": "https://lh5.googleusercontent.com/-v9-fmI_5DnM/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuckI-maisNcyjtLpr8roYSBRbOvrhw/photo.jpg?sz=128",
+            "display_name": "user14073111",
+            "link": "https://stackoverflow.com/users/14073111/user14073111"
+        },
+        "is_answered": true,
+        "view_count": 34,
+        "accepted_answer_id": 68232113,
+        "answer_count": 2,
+        "score": 0,
+        "last_activity_date": 1625301132,
+        "creation_date": 1625261258,
+        "last_edit_date": 1625262116,
+        "question_id": 68231389,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68231389/compare-two-columns-that-contains-timestamps-in-pandas",
+        "title": "Compare two columns that contains timestamps in pandas",
+        "answer_body": "<p>A straightforward way with boolean mask:</p>\n<pre><code>dt = df.select_dtypes('datetime')\ndt = dt.mask(dt.lt(dt.shift(axis=1)).cumsum(axis=1).astype(bool))\n\ndf.loc[:, dt.columns.tolist()] = dt\n</code></pre>\n<pre><code>&gt;&gt;&gt; df\n    Col0                Col1                Col2 Col3 Col4\n0  1.txt 2021-06-23 15:04:30                 NaT  NaT  NaT\n1  2.txt 2021-06-23 14:25:30 2021-06-23 15:30:30  NaT  NaT\n</code></pre>\n",
+        "question_body": "<p>Lets say I have a dataframe like this one:</p>\n<pre><code>  Col0       Col1                    Col2                   Col3                   Col4\n   1.txt  2021-06-23 15:04:30   2021-06-23 14:10:30   2021-06-23 14:15:30   2021-06-23 14:20:30\n   2.txt  2021-06-23 14:25:30   2021-06-23 15:30:30   2021-06-23 14:35:30   2021-06-23 14:40:30\n</code></pre>\n<p>I want to compare if the timestamp in Col1 is greater than in Col2 and if that is true I want to remove the timestamps from the other columns (Col2, Col3, Col4). I also want to check if timestamp in Col2 is greater than in Col3 and if that is true I want to remove timestamp from other columns Col3, Col4).</p>\n<p>I tried this one:</p>\n<pre><code>df['Col1'] = pd.to_datetime(df['Col1'])\ndf['Col2'] = pd.to_datetime(df['Col2'])\ndf['Col3'] = pd.to_datetime(df['Col3'])\nk= (df['Col1'] &gt; df['Col2']).astype(int)\np=(df['Col2'] &gt; df['Col3']).astype(int)\n\nif k&gt;0:\n    df['Col2']=np.nan\n    df['Col3']=np.nan\n    df['Col4']=np.nan\nelif p&gt;0:\n    df['Col3']=np.nan\n    df['Col4']=np.nan \n</code></pre>\n<p>But it is showing me this error:</p>\n<pre><code>ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().\n</code></pre>\n<p>My desirable output would look like this:</p>\n<pre><code>  Col0       Col1                    Col2               Col3                   Col4\n   1.txt  2021-06-23 15:04:30        NaN                 NaN                    NaN\n   2.txt  2021-06-23 14:25:30   2021-06-23 15:30:30      NaN                    NaN\n</code></pre>\n<p>EDITED:\nAdded Col0</p>\n",
+        "input_data_frames": [
+            "  Col0       Col1                    Col2                   Col3                   Col4\n   1.txt  2021-06-23 15:04:30   2021-06-23 14:10:30   2021-06-23 14:15:30   2021-06-23 14:20:30\n   2.txt  2021-06-23 14:25:30   2021-06-23 15:30:30   2021-06-23 14:35:30   2021-06-23 14:40:30\n",
+            "  Col0       Col1                    Col2               Col3                   Col4\n   1.txt  2021-06-23 15:04:30        NaN                 NaN                    NaN\n   2.txt  2021-06-23 14:25:30   2021-06-23 15:30:30      NaN                    NaN\n"
+        ],
+        "output_codes": [
+            "dt = df.select_dtypes('datetime')\ndt = dt.mask(dt.lt(dt.shift(axis=1)).cumsum(axis=1).astype(bool))\n\ndf.loc[:, dt.columns.tolist()] = dt\n",
+            ">>> df\n    Col0                Col1                Col2 Col3 Col4\n0  1.txt 2021-06-23 15:04:30                 NaT  NaT  NaT\n1  2.txt 2021-06-23 14:25:30 2021-06-23 15:30:30  NaT  NaT\n"
+        ],
+        "ques_desc": "Lets say I have a dataframe like this one: I want to compare if the timestamp in Col1 is greater than in Col2 and if that is true I want to remove the timestamps from the other columns (Col2, Col3, Col4). I also want to check if timestamp in Col2 is greater than in Col3 and if that is true I want to remove timestamp from other columns Col3, Col4). I tried this one: But it is showing me this error: My desirable output would look like this: EDITED: Added Col0 ",
+        "ans_desc": "A straightforward way with boolean mask: ",
+        "formatted_input": {
+            "qid": 68231389,
+            "link": "https://stackoverflow.com/questions/68231389/compare-two-columns-that-contains-timestamps-in-pandas",
+            "question": {
+                "title": "Compare two columns that contains timestamps in pandas",
+                "ques_desc": "Lets say I have a dataframe like this one: I want to compare if the timestamp in Col1 is greater than in Col2 and if that is true I want to remove the timestamps from the other columns (Col2, Col3, Col4). I also want to check if timestamp in Col2 is greater than in Col3 and if that is true I want to remove timestamp from other columns Col3, Col4). I tried this one: But it is showing me this error: My desirable output would look like this: EDITED: Added Col0 "
+            },
+            "io": [
+                "  Col0       Col1                    Col2                   Col3                   Col4\n   1.txt  2021-06-23 15:04:30   2021-06-23 14:10:30   2021-06-23 14:15:30   2021-06-23 14:20:30\n   2.txt  2021-06-23 14:25:30   2021-06-23 15:30:30   2021-06-23 14:35:30   2021-06-23 14:40:30\n",
+                "  Col0       Col1                    Col2               Col3                   Col4\n   1.txt  2021-06-23 15:04:30        NaN                 NaN                    NaN\n   2.txt  2021-06-23 14:25:30   2021-06-23 15:30:30      NaN                    NaN\n"
+            ],
+            "answer": {
+                "ans_desc": "A straightforward way with boolean mask: ",
+                "code": [
+                    "dt = df.select_dtypes('datetime')\ndt = dt.mask(dt.lt(dt.shift(axis=1)).cumsum(axis=1).astype(bool))\n\ndf.loc[:, dt.columns.tolist()] = dt\n",
+                    ">>> df\n    Col0                Col1                Col2 Col3 Col4\n0  1.txt 2021-06-23 15:04:30                 NaT  NaT  NaT\n1  2.txt 2021-06-23 14:25:30 2021-06-23 15:30:30  NaT  NaT\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe"
+        ],
+        "owner": {
+            "account_id": 22053207,
+            "reputation": 49,
+            "user_id": 16317158,
+            "user_type": "registered",
+            "profile_image": "https://lh3.googleusercontent.com/a/AATXAJyBUnbLv2PI4_Agtm14oXQyk_ozZyrNZkI9w4DE=k-s128",
+            "display_name": "Jewel_R",
+            "link": "https://stackoverflow.com/users/16317158/jewel-r"
+        },
+        "is_answered": true,
+        "view_count": 20,
+        "accepted_answer_id": 68231157,
+        "answer_count": 1,
+        "score": 1,
+        "last_activity_date": 1625259165,
+        "creation_date": 1625258774,
+        "question_id": 68231104,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68231104/extract-part-of-a-3-d-dataframe",
+        "title": "Extract part of a 3 D dataframe",
+        "answer_body": "<p>Use <a href=\"https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.isin.html#pandas-index-isin\" rel=\"nofollow noreferrer\"><code>Index.isin</code></a> on the level 1 values of columns then select with <a href=\"https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html\" rel=\"nofollow noreferrer\"><code>loc</code></a>:</p>\n<pre><code>filtered_df = df.loc[:, df.columns.isin(['A', 'B'], level=1)]\n</code></pre>\n<p><code>filtered_df</code>:</p>\n<pre><code>   d1      d2    \n    A   B   A   B\n0   1   2   5   6\n1   9  10  13  14\n2  17  18  21  22\n</code></pre>\n<hr />\n<p>Sample Data Used:</p>\n<pre><code>import numpy as np\nimport pandas as pd\n\ndf = pd.DataFrame(\n    np.arange(1, 25).reshape((-1, 8)),\n    columns=pd.MultiIndex.from_product((['d1', 'd2'], list('ABCD')))\n)\n</code></pre>\n<pre><code>   d1              d2            \n    A   B   C   D   A   B   C   D\n0   1   2   3   4   5   6   7   8\n1   9  10  11  12  13  14  15  16\n2  17  18  19  20  21  22  23  24\n</code></pre>\n",
+        "question_body": "<p>I have a 3d dataframe. looks like this:</p>\n<pre><code>     d1        d2            d3\n   A B C D...   A B C D...   A B C D..\n0  \n1\n2\n</code></pre>\n<p>How could I extract only column  A &amp; B from every d1,d2.....? I desire to take the dataframe like this:</p>\n<pre><code>    d1    d2    d3\n  A  B   A  B   A  B\n0\n1\n2\n</code></pre>\n",
+        "input_data_frames": [
+            "     d1        d2            d3\n   A B C D...   A B C D...   A B C D..\n0  \n1\n2\n",
+            "    d1    d2    d3\n  A  B   A  B   A  B\n0\n1\n2\n"
+        ],
+        "output_codes": [
+            "filtered_df = df.loc[:, df.columns.isin(['A', 'B'], level=1)]\n",
+            "import numpy as np\nimport pandas as pd\n\ndf = pd.DataFrame(\n    np.arange(1, 25).reshape((-1, 8)),\n    columns=pd.MultiIndex.from_product((['d1', 'd2'], list('ABCD')))\n)\n"
+        ],
+        "ques_desc": "I have a 3d dataframe. looks like this: How could I extract only column A & B from every d1,d2.....? I desire to take the dataframe like this: ",
+        "ans_desc": "Use on the level 1 values of columns then select with : : Sample Data Used: ",
+        "formatted_input": {
+            "qid": 68231104,
+            "link": "https://stackoverflow.com/questions/68231104/extract-part-of-a-3-d-dataframe",
+            "question": {
+                "title": "Extract part of a 3 D dataframe",
+                "ques_desc": "I have a 3d dataframe. looks like this: How could I extract only column A & B from every d1,d2.....? I desire to take the dataframe like this: "
+            },
+            "io": [
+                "     d1        d2            d3\n   A B C D...   A B C D...   A B C D..\n0  \n1\n2\n",
+                "    d1    d2    d3\n  A  B   A  B   A  B\n0\n1\n2\n"
+            ],
+            "answer": {
+                "ans_desc": "Use on the level 1 values of columns then select with : : Sample Data Used: ",
+                "code": [
+                    "filtered_df = df.loc[:, df.columns.isin(['A', 'B'], level=1)]\n",
+                    "import numpy as np\nimport pandas as pd\n\ndf = pd.DataFrame(\n    np.arange(1, 25).reshape((-1, 8)),\n    columns=pd.MultiIndex.from_product((['d1', 'd2'], list('ABCD')))\n)\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe"
+        ],
+        "owner": {
+            "account_id": 16025893,
+            "reputation": 37,
+            "user_id": 11566142,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/d2e69536157f140a0c82dc8f714c295d?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Ivan7",
+            "link": "https://stackoverflow.com/users/11566142/ivan7"
+        },
+        "is_answered": true,
+        "view_count": 41,
+        "accepted_answer_id": 68229969,
+        "answer_count": 3,
+        "score": 1,
+        "last_activity_date": 1625254302,
+        "creation_date": 1625250274,
+        "last_edit_date": 1625251248,
+        "question_id": 68229806,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68229806/insert-values-from-variable-and-dataframe-into-another-dataframe",
+        "title": "Insert values from variable and DataFrame into another DataFrame",
+        "answer_body": "<p>Your mistake is on this string <code>df1[df1['id']==id]['col0']</code> when you use this, it returns a Series type. Yes it just have a value, but is still a Series with just one value.</p>\n<p>To solve this issue is very very very simple, you just have to call the first item at the Series object like this: <code>df1[df1['id']==id]['col0'][0]</code></p>\n<p>Your code with the ajustment must look like this</p>\n<pre><code>import pandas as pd\n\nid=1\ndf1 = pd.DataFrame({'id': [1, 2], 'col0': [3, 4]})\ndf2 = pd.DataFrame({'col1': [13, 14, 15],'col2': [23, 24, 25]})\n\ndf2.insert(0, &quot;id&quot;, id)\ndf2.insert(1, &quot;col0&quot;, df1[df1['id']==id]['col0'][0])\n\nprint(df2)\n</code></pre>\n<p>Then your new df2 is like this:</p>\n<pre><code>   id  col0  col1  col2\n0   1     3    13    23\n1   1     3    14    24\n2   1     3    15    25\n</code></pre>\n",
+        "question_body": "<p>On start I have two DataFrames and one variable:</p>\n<pre><code>id=1\ndf1 = pd.DataFrame({'id': [1, 2], 'col0': [3, 4]})\ndf2 = pd.DataFrame({'col1': [13, 14, 15],'col2': [23, 24, 25]})\n</code></pre>\n<p>I have to map <strong>id</strong> variable and the corresponding <strong>col0</strong> cell from <strong>df1</strong> DataFrame to all rows in <strong>df2</strong> DataFrame. I tryed and as the result I made the code below:</p>\n<pre><code>df2.insert(0, &quot;id&quot;, id)\ndf2.insert(1, &quot;col0&quot;, df1[df1['id']==id]['col0'])\n</code></pre>\n<p>It seems to me that the code should work correctly, but unfortunatelly I have a <strong>NaN</strong> value in the <strong>col0</strong> column.</p>\n<pre><code>   id  col0  col1  col2\n0   1   3.0    13    23\n1   1   NaN    14    24\n2   1   NaN    15    25\n</code></pre>\n<p>The expected result was:</p>\n<pre><code>   id  col0  col1  col2\n0   1   3.0    13    23\n1   1   3.0    14    24\n2   1   3.0    15    25\n</code></pre>\n<p>I've spent over an hour and can't figure out why I'm getting this kind of result. If possible, could you, please:</p>\n<ol>\n<li>explain briefly why I am getting the error</li>\n<li>fix my mistake in the code</li>\n</ol>\n",
+        "input_data_frames": [
+            "   id  col0  col1  col2\n0   1   3.0    13    23\n1   1   NaN    14    24\n2   1   NaN    15    25\n",
+            "   id  col0  col1  col2\n0   1   3.0    13    23\n1   1   3.0    14    24\n2   1   3.0    15    25\n"
+        ],
+        "output_codes": [
+            "import pandas as pd\n\nid=1\ndf1 = pd.DataFrame({'id': [1, 2], 'col0': [3, 4]})\ndf2 = pd.DataFrame({'col1': [13, 14, 15],'col2': [23, 24, 25]})\n\ndf2.insert(0, \"id\", id)\ndf2.insert(1, \"col0\", df1[df1['id']==id]['col0'][0])\n\nprint(df2)\n"
+        ],
+        "ques_desc": "On start I have two DataFrames and one variable: I have to map id variable and the corresponding col0 cell from df1 DataFrame to all rows in df2 DataFrame. I tryed and as the result I made the code below: It seems to me that the code should work correctly, but unfortunatelly I have a NaN value in the col0 column. The expected result was: I've spent over an hour and can't figure out why I'm getting this kind of result. If possible, could you, please: explain briefly why I am getting the error fix my mistake in the code ",
+        "ans_desc": "Your mistake is on this string when you use this, it returns a Series type. Yes it just have a value, but is still a Series with just one value. To solve this issue is very very very simple, you just have to call the first item at the Series object like this: Your code with the ajustment must look like this Then your new df2 is like this: ",
+        "formatted_input": {
+            "qid": 68229806,
+            "link": "https://stackoverflow.com/questions/68229806/insert-values-from-variable-and-dataframe-into-another-dataframe",
+            "question": {
+                "title": "Insert values from variable and DataFrame into another DataFrame",
+                "ques_desc": "On start I have two DataFrames and one variable: I have to map id variable and the corresponding col0 cell from df1 DataFrame to all rows in df2 DataFrame. I tryed and as the result I made the code below: It seems to me that the code should work correctly, but unfortunatelly I have a NaN value in the col0 column. The expected result was: I've spent over an hour and can't figure out why I'm getting this kind of result. If possible, could you, please: explain briefly why I am getting the error fix my mistake in the code "
+            },
+            "io": [
+                "   id  col0  col1  col2\n0   1   3.0    13    23\n1   1   NaN    14    24\n2   1   NaN    15    25\n",
+                "   id  col0  col1  col2\n0   1   3.0    13    23\n1   1   3.0    14    24\n2   1   3.0    15    25\n"
+            ],
+            "answer": {
+                "ans_desc": "Your mistake is on this string when you use this, it returns a Series type. Yes it just have a value, but is still a Series with just one value. To solve this issue is very very very simple, you just have to call the first item at the Series object like this: Your code with the ajustment must look like this Then your new df2 is like this: ",
+                "code": [
+                    "import pandas as pd\n\nid=1\ndf1 = pd.DataFrame({'id': [1, 2], 'col0': [3, 4]})\ndf2 = pd.DataFrame({'col1': [13, 14, 15],'col2': [23, 24, 25]})\n\ndf2.insert(0, \"id\", id)\ndf2.insert(1, \"col0\", df1[df1['id']==id]['col0'][0])\n\nprint(df2)\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "algorithm",
+            "dataframe",
+            "pairwise"
+        ],
+        "owner": {
+            "account_id": 21960123,
+            "reputation": 45,
+            "user_id": 16238148,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/a87a2e4b04f8d0cd6d19f6e68eab5a4e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Eugene Zinder",
+            "link": "https://stackoverflow.com/users/16238148/eugene-zinder"
+        },
+        "is_answered": true,
+        "view_count": 40,
+        "accepted_answer_id": 68213724,
+        "answer_count": 1,
+        "score": 0,
+        "last_activity_date": 1625157900,
+        "creation_date": 1625155883,
+        "question_id": 68213612,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68213612/how-to-combine-rows-in-a-dataframe-in-a-pairwise-fashion-while-applying-some-fun",
+        "title": "How to combine rows in a dataframe in a pairwise fashion while applying some function",
+        "answer_body": "<p>You can use <code>df.rolling</code> after grouping by <code>ID</code>:</p>\n<pre><code>out = df.groupby('ID').rolling(2).mean() \\\n        .dropna(how='all').reset_index(level=1, drop=True)\n\nout.index += '_' + out.groupby(level=0).cumcount().add(1).astype(str)\n</code></pre>\n<pre><code>&gt;&gt;&gt; out\n       Val1  Val2\nid0_1  10.5  19.5\nid1_1   3.0   3.0\nid1_2   1.5   2.5\n</code></pre>\n",
+        "question_body": "<p>I have a dataframe that stores keys as ID, and some numerical values in Val1/Val2:</p>\n<pre><code>ID    Val1    Val2\nid0     10      20\nid0     11      19\nid1      5       5\nid1      1       1\nid1      2       4\n</code></pre>\n<p>I would like to go over this dataframe and combine the rows pairwise while getting the averages of Val1/Val2 for rows with the same ID. A suffix should be appended to the new row's ID based on which number pair it is.</p>\n<p>Here is the resulting dataframe:</p>\n<pre><code>ID      Val1    Val2\nid0_1   10.5    19.5\nid1_1   3       3\nid1_2   1.5     2.5\n</code></pre>\n<p>In this example, there are only 3 rows left. (id0, 10, 20) gets averaged with (id0,11,19) and combined into one row.</p>\n<p>(id1,5,5) gets averaged with (id1,1,1,) and (id1,1,1) gets averaged with (id1,2,4) to form 2 remaining rows.</p>\n<p><strong>I can think of an iterative approach to this, but that would be very slow. How could I do this in a proper pythonic/pandas way?</strong></p>\n<p>Code:</p>\n<pre><code>df = pd.DataFrame(columns=['ID', 'Val1', 'Val2'], data=[['id0', 10, 20], ['id0', 11, 19], ['id1', 5, 5], ['id1', 1, 1], ['id1', 2, 4]])\n</code></pre>\n",
+        "input_data_frames": [
+            "ID    Val1    Val2\nid0     10      20\nid0     11      19\nid1      5       5\nid1      1       1\nid1      2       4\n",
+            "ID      Val1    Val2\nid0_1   10.5    19.5\nid1_1   3       3\nid1_2   1.5     2.5\n"
+        ],
+        "output_codes": [
+            "out = df.groupby('ID').rolling(2).mean() \\\n        .dropna(how='all').reset_index(level=1, drop=True)\n\nout.index += '_' + out.groupby(level=0).cumcount().add(1).astype(str)\n"
+        ],
+        "ques_desc": "I have a dataframe that stores keys as ID, and some numerical values in Val1/Val2: I would like to go over this dataframe and combine the rows pairwise while getting the averages of Val1/Val2 for rows with the same ID. A suffix should be appended to the new row's ID based on which number pair it is. Here is the resulting dataframe: In this example, there are only 3 rows left. (id0, 10, 20) gets averaged with (id0,11,19) and combined into one row. (id1,5,5) gets averaged with (id1,1,1,) and (id1,1,1) gets averaged with (id1,2,4) to form 2 remaining rows. I can think of an iterative approach to this, but that would be very slow. How could I do this in a proper pythonic/pandas way? Code: ",
+        "ans_desc": "You can use after grouping by : ",
+        "formatted_input": {
+            "qid": 68213612,
+            "link": "https://stackoverflow.com/questions/68213612/how-to-combine-rows-in-a-dataframe-in-a-pairwise-fashion-while-applying-some-fun",
+            "question": {
+                "title": "How to combine rows in a dataframe in a pairwise fashion while applying some function",
+                "ques_desc": "I have a dataframe that stores keys as ID, and some numerical values in Val1/Val2: I would like to go over this dataframe and combine the rows pairwise while getting the averages of Val1/Val2 for rows with the same ID. A suffix should be appended to the new row's ID based on which number pair it is. Here is the resulting dataframe: In this example, there are only 3 rows left. (id0, 10, 20) gets averaged with (id0,11,19) and combined into one row. (id1,5,5) gets averaged with (id1,1,1,) and (id1,1,1) gets averaged with (id1,2,4) to form 2 remaining rows. I can think of an iterative approach to this, but that would be very slow. How could I do this in a proper pythonic/pandas way? Code: "
+            },
+            "io": [
+                "ID    Val1    Val2\nid0     10      20\nid0     11      19\nid1      5       5\nid1      1       1\nid1      2       4\n",
+                "ID      Val1    Val2\nid0_1   10.5    19.5\nid1_1   3       3\nid1_2   1.5     2.5\n"
+            ],
+            "answer": {
+                "ans_desc": "You can use after grouping by : ",
+                "code": [
+                    "out = df.groupby('ID').rolling(2).mean() \\\n        .dropna(how='all').reset_index(level=1, drop=True)\n\nout.index += '_' + out.groupby(level=0).cumcount().add(1).astype(str)\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe"
+        ],
+        "owner": {
+            "account_id": 12789844,
+            "reputation": 173,
+            "user_id": 9254726,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/9070bdb0341821aed239bfa229c8f43a?s=128&d=identicon&r=PG&f=1",
+            "display_name": "5E4ME",
+            "link": "https://stackoverflow.com/users/9254726/5e4me"
+        },
+        "is_answered": true,
+        "view_count": 15,
+        "accepted_answer_id": 68211988,
+        "answer_count": 1,
+        "score": 0,
+        "last_activity_date": 1625149939,
+        "creation_date": 1625149090,
+        "question_id": 68211888,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68211888/loop-through-multiple-small-pandas-dataframes-and-create-summary-dataframes-base",
+        "title": "Loop through multiple small Pandas dataframes and create summary dataframes based on a single column",
+        "answer_body": "<p>Let's try <a href=\"https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html\" rel=\"nofollow noreferrer\"><code>concat</code></a> + <a href=\"https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html\" rel=\"nofollow noreferrer\"><code>groupby</code></a> then build out a <code>dict</code>:</p>\n<pre><code>dfs = {group_name: df_\n       for group_name, df_ in pd.concat([df1, df2]).groupby('NAME')}\n</code></pre>\n<p><code>dfs</code>:</p>\n<pre><code>{'player1':       NAME  VAL1  VAL2  VAL3\n0  player1     3     5     7,\n 'player2':       NAME  VAL1  VAL2  VAL3\n1  player2     2     6     8\n0  player2     5     7     7,\n 'player3':       NAME  VAL1  VAL2  VAL3\n2  player3     3     6     7\n1  player3     2     6     8,\n 'player5':       NAME  VAL1  VAL2  VAL3\n2  player5     3     6     7}\n</code></pre>\n<p>Each player's DataFrame can then be accessed like:</p>\n<p><code>dfs['player1']</code>:</p>\n<pre><code>      NAME  VAL1  VAL2  VAL3\n0  player1     3     5     7\n</code></pre>\n<hr />\n<p>Or as a <code>list</code>:</p>\n<pre><code>dfs = [df_ for _, df_ in pd.concat([df1, df2]).groupby('NAME')]\n</code></pre>\n<p><code>dfs</code>:</p>\n<pre><code>[      NAME  VAL1  VAL2  VAL3\n0  player1     3     5     7,\n       NAME  VAL1  VAL2  VAL3\n1  player2     2     6     8\n0  player2     5     7     7,\n       NAME  VAL1  VAL2  VAL3\n2  player3     3     6     7\n1  player3     2     6     8,\n       NAME  VAL1  VAL2  VAL3\n2  player5     3     6     7]\n</code></pre>\n<p>Each player's DataFrame can then be accessed like:</p>\n<p><code>dfs[1]</code>:</p>\n<pre><code>      NAME  VAL1  VAL2  VAL3\n1  player2     2     6     8\n0  player2     5     7     7\n</code></pre>\n",
+        "question_body": "<p>I have a bunch of small dataframes each representing a single match in a game. I would like to take these dataframes and consolidate them into a single dataframe for each player without knowing the player's names ahead of time.</p>\n<p>The starting dataframes look like this:</p>\n<pre><code>NAME     VAL1  VAL2  VAL3\nplayer1  3     5     7\nplayer2  2     6     8\nplayer3  3     6     7\n\nNAME     VAL1  VAL2  VAL3\nplayer2  5     7     7\nplayer3  2     6     8\nplayer5  3     6     7\n</code></pre>\n<p>And I would like to get to a series of frames looking like this</p>\n<pre><code>NAME     VAL1  VAL2  VAL3\nplayer1  3     5     7\n\nNAME     VAL1  VAL2  VAL3\nplayer2  2     6     8\nplayer2  5     7     7\n\nNAME     VAL1  VAL2  VAL3\nplayer3  3     6     7\nplayer3  2     6     8\n\nNAME     VAL1  VAL2  VAL3\nplayer5  3     6     7\n</code></pre>\n<p>My problem is that the solutions that I've found so far all require me to know the player names ahead of time and manually set up a dataframe for each player. Since I'll be working with 40-50 players and I won't know all their names until I have the raw data I'd like to avoid that if at all possible.</p>\n<p>I have a loose plan to create a dictionary of players with each player key containing a dict of their rows from the dataframes. Once all the match dataframes are processed I would convert the dict of dicts into individual player dataframes. I'm not sure if this is the best approach though and am hoping that there's a more efficient way to do this.</p>\n",
+        "input_data_frames": [
+            "NAME     VAL1  VAL2  VAL3\nplayer1  3     5     7\nplayer2  2     6     8\nplayer3  3     6     7\n\nNAME     VAL1  VAL2  VAL3\nplayer2  5     7     7\nplayer3  2     6     8\nplayer5  3     6     7\n",
+            "NAME     VAL1  VAL2  VAL3\nplayer1  3     5     7\n\nNAME     VAL1  VAL2  VAL3\nplayer2  2     6     8\nplayer2  5     7     7\n\nNAME     VAL1  VAL2  VAL3\nplayer3  3     6     7\nplayer3  2     6     8\n\nNAME     VAL1  VAL2  VAL3\nplayer5  3     6     7\n"
+        ],
+        "output_codes": [
+            "dfs = {group_name: df_\n       for group_name, df_ in pd.concat([df1, df2]).groupby('NAME')}\n",
+            "dfs = [df_ for _, df_ in pd.concat([df1, df2]).groupby('NAME')]\n"
+        ],
+        "ques_desc": "I have a bunch of small dataframes each representing a single match in a game. I would like to take these dataframes and consolidate them into a single dataframe for each player without knowing the player's names ahead of time. The starting dataframes look like this: And I would like to get to a series of frames looking like this My problem is that the solutions that I've found so far all require me to know the player names ahead of time and manually set up a dataframe for each player. Since I'll be working with 40-50 players and I won't know all their names until I have the raw data I'd like to avoid that if at all possible. I have a loose plan to create a dictionary of players with each player key containing a dict of their rows from the dataframes. Once all the match dataframes are processed I would convert the dict of dicts into individual player dataframes. I'm not sure if this is the best approach though and am hoping that there's a more efficient way to do this. ",
+        "ans_desc": "Let's try + then build out a : : Each player's DataFrame can then be accessed like: : Or as a : : Each player's DataFrame can then be accessed like: : ",
+        "formatted_input": {
+            "qid": 68211888,
+            "link": "https://stackoverflow.com/questions/68211888/loop-through-multiple-small-pandas-dataframes-and-create-summary-dataframes-base",
+            "question": {
+                "title": "Loop through multiple small Pandas dataframes and create summary dataframes based on a single column",
+                "ques_desc": "I have a bunch of small dataframes each representing a single match in a game. I would like to take these dataframes and consolidate them into a single dataframe for each player without knowing the player's names ahead of time. The starting dataframes look like this: And I would like to get to a series of frames looking like this My problem is that the solutions that I've found so far all require me to know the player names ahead of time and manually set up a dataframe for each player. Since I'll be working with 40-50 players and I won't know all their names until I have the raw data I'd like to avoid that if at all possible. I have a loose plan to create a dictionary of players with each player key containing a dict of their rows from the dataframes. Once all the match dataframes are processed I would convert the dict of dicts into individual player dataframes. I'm not sure if this is the best approach though and am hoping that there's a more efficient way to do this. "
+            },
+            "io": [
+                "NAME     VAL1  VAL2  VAL3\nplayer1  3     5     7\nplayer2  2     6     8\nplayer3  3     6     7\n\nNAME     VAL1  VAL2  VAL3\nplayer2  5     7     7\nplayer3  2     6     8\nplayer5  3     6     7\n",
+                "NAME     VAL1  VAL2  VAL3\nplayer1  3     5     7\n\nNAME     VAL1  VAL2  VAL3\nplayer2  2     6     8\nplayer2  5     7     7\n\nNAME     VAL1  VAL2  VAL3\nplayer3  3     6     7\nplayer3  2     6     8\n\nNAME     VAL1  VAL2  VAL3\nplayer5  3     6     7\n"
+            ],
+            "answer": {
+                "ans_desc": "Let's try + then build out a : : Each player's DataFrame can then be accessed like: : Or as a : : Each player's DataFrame can then be accessed like: : ",
+                "code": [
+                    "dfs = {group_name: df_\n       for group_name, df_ in pd.concat([df1, df2]).groupby('NAME')}\n",
+                    "dfs = [df_ for _, df_ in pd.concat([df1, df2]).groupby('NAME')]\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe",
+            "pandas-groupby"
+        ],
+        "owner": {
+            "account_id": 11259035,
+            "reputation": 13,
+            "user_id": 8257885,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/828b62428b7a85b2db9957c9ff1c47dd?s=128&d=identicon&r=PG&f=1",
+            "display_name": "don_alberto",
+            "link": "https://stackoverflow.com/users/8257885/don-alberto"
+        },
+        "is_answered": true,
+        "view_count": 27,
+        "accepted_answer_id": 68200709,
+        "answer_count": 1,
+        "score": 1,
+        "last_activity_date": 1625081762,
+        "creation_date": 1625081533,
+        "question_id": 68200661,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68200661/i-want-to-generate-a-new-column-in-a-pandas-dataframe-counting-edges-in-anoth",
+        "title": "I want to generate a new column in a pandas dataframe, counting &quot;edges&quot; in another column",
+        "answer_body": "<p>Use <code>cumsum</code></p>\n<pre><code>df['Y'] = (df.X == 'B').cumsum()\n\nOut[8]:\n    A  B  X  Y\n0   1  1  A  0\n1   2  2  B  1\n2   3  3  A  1\n3   4  6  K  1\n4   5  7  B  2\n5   6  8  L  2\n6   7  9  M  2\n7   8  1  N  2\n8   9  7  B  3\n9   1  6  A  3\n10  7  7  A  3\n</code></pre>\n",
+        "question_body": "<p>i have a dataframe looking like this:</p>\n<pre><code>A B....X\n1 1    A\n2 2    B\n3 3    A\n4 6    K\n5 7    B\n6 8    L\n7 9    M\n8 1    N\n9 7    B\n1 6    A\n7 7    A\n</code></pre>\n<p>that is, some &quot;rising edges&quot; occur from time to time in the column X (in this example the edge is x==B)\nWhat I need is, a new column Y which increments every time a value of B occurs in X:</p>\n<pre><code>A B....X  Y\n1 1    A  0\n2 2    B  1\n3 3    A  1\n4 6    K  1\n5 7    B  2\n6 8    L  2\n7 9    M  2\n8 1    N  2\n9 7    B  3\n1 6    A  3\n7 7    A  3\n</code></pre>\n<p>In SQL I would use some trick like <code>sum(case when x=B then 1 else 0) over ... rows between first and previous</code>. How can I do it in Pandas?</p>\n",
+        "input_data_frames": [
+            "A B....X\n1 1    A\n2 2    B\n3 3    A\n4 6    K\n5 7    B\n6 8    L\n7 9    M\n8 1    N\n9 7    B\n1 6    A\n7 7    A\n",
+            "A B....X  Y\n1 1    A  0\n2 2    B  1\n3 3    A  1\n4 6    K  1\n5 7    B  2\n6 8    L  2\n7 9    M  2\n8 1    N  2\n9 7    B  3\n1 6    A  3\n7 7    A  3\n"
+        ],
+        "output_codes": [
+            "df['Y'] = (df.X == 'B').cumsum()\n\nOut[8]:\n    A  B  X  Y\n0   1  1  A  0\n1   2  2  B  1\n2   3  3  A  1\n3   4  6  K  1\n4   5  7  B  2\n5   6  8  L  2\n6   7  9  M  2\n7   8  1  N  2\n8   9  7  B  3\n9   1  6  A  3\n10  7  7  A  3\n"
+        ],
+        "ques_desc": "i have a dataframe looking like this: that is, some \"rising edges\" occur from time to time in the column X (in this example the edge is x==B) What I need is, a new column Y which increments every time a value of B occurs in X: In SQL I would use some trick like . How can I do it in Pandas? ",
+        "ans_desc": "Use ",
+        "formatted_input": {
+            "qid": 68200661,
+            "link": "https://stackoverflow.com/questions/68200661/i-want-to-generate-a-new-column-in-a-pandas-dataframe-counting-edges-in-anoth",
+            "question": {
+                "title": "I want to generate a new column in a pandas dataframe, counting &quot;edges&quot; in another column",
+                "ques_desc": "i have a dataframe looking like this: that is, some \"rising edges\" occur from time to time in the column X (in this example the edge is x==B) What I need is, a new column Y which increments every time a value of B occurs in X: In SQL I would use some trick like . How can I do it in Pandas? "
+            },
+            "io": [
+                "A B....X\n1 1    A\n2 2    B\n3 3    A\n4 6    K\n5 7    B\n6 8    L\n7 9    M\n8 1    N\n9 7    B\n1 6    A\n7 7    A\n",
+                "A B....X  Y\n1 1    A  0\n2 2    B  1\n3 3    A  1\n4 6    K  1\n5 7    B  2\n6 8    L  2\n7 9    M  2\n8 1    N  2\n9 7    B  3\n1 6    A  3\n7 7    A  3\n"
+            ],
+            "answer": {
+                "ans_desc": "Use ",
+                "code": [
+                    "df['Y'] = (df.X == 'B').cumsum()\n\nOut[8]:\n    A  B  X  Y\n0   1  1  A  0\n1   2  2  B  1\n2   3  3  A  1\n3   4  6  K  1\n4   5  7  B  2\n5   6  8  L  2\n6   7  9  M  2\n7   8  1  N  2\n8   9  7  B  3\n9   1  6  A  3\n10  7  7  A  3\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe",
+            "data-munging"
+        ],
+        "owner": {
+            "account_id": 8033257,
+            "reputation": 724,
+            "user_id": 6057371,
+            "user_type": "registered",
+            "accept_rate": 31,
+            "profile_image": "https://www.gravatar.com/avatar/b744e3dbff9c7fdb801570de75f6eff7?s=128&d=identicon&r=PG&f=1",
+            "display_name": "okuoub",
+            "link": "https://stackoverflow.com/users/6057371/okuoub"
+        },
+        "is_answered": true,
+        "view_count": 26,
+        "accepted_answer_id": 68193597,
+        "answer_count": 1,
+        "score": -1,
+        "last_activity_date": 1625051576,
+        "creation_date": 1625051004,
+        "question_id": 68193558,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68193558/pandas-group-many-columns-to-one-column-where-every-cell-is-a-list-of-values",
+        "title": "pandas group many columns to one column where every cell is a list of values",
+        "answer_body": "<p>Try:</p>\n<pre><code>#best way:\ndf['l']=df.values.tolist()\n#OR\ndf['l']=df.to_numpy().tolist()\n\n\n#another way:\ndf['l']=df.agg(list,1)\n#OR\ndf['l']=df.apply(list,1)\n</code></pre>\n",
+        "question_body": "<p>I have the dataframe</p>\n<pre><code>df = \nc1 c2 c3 c4 c5\n1.  2. 3. 1. 5\n8.  2. 1. 3. 8\n4.  9. 1  2. 3\n</code></pre>\n<p>And I want to group all columns to a single list that will be the only columns, so I will get:</p>\n<pre><code>df = \n    l\n[1,2,3,1,5]\n[8,2,1,3,8]\n[4,9,1,2,3]\n</code></pre>\n<p>(Shape of df was change from (3,5) to (3,1))</p>\n<p>What is the best way to do this?</p>\n",
+        "input_data_frames": [
+            "df = \nc1 c2 c3 c4 c5\n1.  2. 3. 1. 5\n8.  2. 1. 3. 8\n4.  9. 1  2. 3\n",
+            "df = \n    l\n[1,2,3,1,5]\n[8,2,1,3,8]\n[4,9,1,2,3]\n"
+        ],
+        "output_codes": [
+            "#best way:\ndf['l']=df.values.tolist()\n#OR\ndf['l']=df.to_numpy().tolist()\n\n\n#another way:\ndf['l']=df.agg(list,1)\n#OR\ndf['l']=df.apply(list,1)\n"
+        ],
+        "ques_desc": "I have the dataframe And I want to group all columns to a single list that will be the only columns, so I will get: (Shape of df was change from (3,5) to (3,1)) What is the best way to do this? ",
+        "ans_desc": "Try: ",
+        "formatted_input": {
+            "qid": 68193558,
+            "link": "https://stackoverflow.com/questions/68193558/pandas-group-many-columns-to-one-column-where-every-cell-is-a-list-of-values",
+            "question": {
+                "title": "pandas group many columns to one column where every cell is a list of values",
+                "ques_desc": "I have the dataframe And I want to group all columns to a single list that will be the only columns, so I will get: (Shape of df was change from (3,5) to (3,1)) What is the best way to do this? "
+            },
+            "io": [
+                "df = \nc1 c2 c3 c4 c5\n1.  2. 3. 1. 5\n8.  2. 1. 3. 8\n4.  9. 1  2. 3\n",
+                "df = \n    l\n[1,2,3,1,5]\n[8,2,1,3,8]\n[4,9,1,2,3]\n"
+            ],
+            "answer": {
+                "ans_desc": "Try: ",
+                "code": [
+                    "#best way:\ndf['l']=df.values.tolist()\n#OR\ndf['l']=df.to_numpy().tolist()\n\n\n#another way:\ndf['l']=df.agg(list,1)\n#OR\ndf['l']=df.apply(list,1)\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe",
+            "numpy"
+        ],
+        "owner": {
+            "account_id": 21396861,
+            "reputation": 13,
+            "user_id": 15759786,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/002b02baee3603027b66ed2361da99e2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "big sad",
+            "link": "https://stackoverflow.com/users/15759786/big-sad"
+        },
+        "is_answered": true,
+        "view_count": 26,
+        "accepted_answer_id": 68193581,
+        "answer_count": 1,
+        "score": 1,
+        "last_activity_date": 1625051129,
+        "creation_date": 1625050872,
+        "question_id": 68193521,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68193521/concatenate-values-and-column-names-in-a-data-frame-to-create-a-new-data-frame",
+        "title": "Concatenate values and column names in a data frame to create a new data frame",
+        "answer_body": "<p>Try:</p>\n<pre class=\"lang-py prettyprint-override\"><code>x = df.melt(&quot;Value&quot;, value_name=&quot;Col 1&quot;)\nx.Value += &quot;_&quot; + x.variable\nx = x.drop(columns=&quot;variable&quot;)\nprint(x)\n</code></pre>\n<p>Prints:</p>\n<pre class=\"lang-none prettyprint-override\"><code>     Value Col 1\n0   a_col1    aa\n1   b_col1    ba\n2   c_col1    ca\n3   d_col1    da\n4   e_col1    ea\n5   a_col2    ab\n6   b_col2    bb\n7   c_col2    cb\n8   d_col2    db\n9   e_col2    eb\n10  a_col3    ac\n11  b_col3    bc\n12  c_col3    cc\n13  d_col3    dc\n14  e_col3    ec\n</code></pre>\n<hr />\n<p>Optionally, you can sort values afterwards:</p>\n<pre class=\"lang-py prettyprint-override\"><code>x = x.sort_values(by=&quot;Value&quot;).reset_index(drop=True)\nprint(x)\n\n     Value Col 1\n0   a_col1    aa\n1   a_col2    ab\n2   a_col3    ac\n3   b_col1    ba\n4   b_col2    bb\n5   b_col3    bc\n6   c_col1    ca\n7   c_col2    cb\n8   c_col3    cc\n9   d_col1    da\n10  d_col2    db\n11  d_col3    dc\n12  e_col1    ea\n13  e_col2    eb\n14  e_col3    ec\n</code></pre>\n",
+        "question_body": "<p>I have the following data frame(<code>df1</code>):</p>\n<pre><code>  Value col1 col2 col3\n0     a   aa   ab   ac\n1     b   ba   bb   bc\n2     c   ca   cb   cc\n3     d   da   db   dc\n4     e   ea   eb   ec\n</code></pre>\n<p>I need to derive the data frame(<code>df2</code>) from <code>df1</code> such that column 1 of <code>d2</code> will have concatenated raw values of Value column with column names of Col 1 to Col 3. Column 2 of <code>d2</code> will have the raw value corresponding to each concatenated column name, Below is the sample which require to generate.   :</p>\n<pre><code>      Value Col 1\n0   a_Col 1    aa\n1   a_Col 2    ab\n2   a_Col 3    ac\n3   b_Col 1    ba\n4   b_Col 2    bb\n5   b_Col 3    bc\n6   c_Col 1    ca\n7   c_Col 2    cb\n8   c_Col 3    cc\n9   d_Col 1    da\n10  d_Col 2    db\n11  d_Col 3    dc\n12  e_Col 1    ea\n13  e_Col 2    eb\n14  e_Col 3    ec\n</code></pre>\n<p>I have followed the below steps to derive df2 from df1. But this process seems a bit long. Any recommendations on shortening the process?</p>\n<p>Below is the code I have used</p>\n<pre><code>d = {'Value': ['a','b','c','d','e'],'col1': ['aa','ba','ca','da','ea'], 'col2' : ['ab','bb','cb','db','eb'],'col3': ['ac','bc','cc','dc','ec']}\ndf1 = pd.DataFrame(data = d)\n\n# Repeat every value is Value column 3 times.\nX = df1['Value'].repeat(4).reset_index(drop=True)\n\n# Create separate series with Col 1, Col 2, Col 3 names.\nY = pd.Series(df1.columns[1:])\n\n# Repeated series Y to the length of data df1\nYY = pd.Series(np.tile(Y.values, len(df1)))\n\n# Create the first column by concatenating X and YY\nfirst_column_1 = X + &quot;_&quot; + YY\n\nZ = df1.set_index('Value')\nZZ = np.ravel(Z.values)\n\n#Create 2nd column from ZZ\nsecond_column = pd.Series(ZZ)\n\n#Create df2\ndf2 = pd.DataFrame([first_column, second_column]).T\n</code></pre>\n",
+        "input_data_frames": [
+            "  Value col1 col2 col3\n0     a   aa   ab   ac\n1     b   ba   bb   bc\n2     c   ca   cb   cc\n3     d   da   db   dc\n4     e   ea   eb   ec\n",
+            "      Value Col 1\n0   a_Col 1    aa\n1   a_Col 2    ab\n2   a_Col 3    ac\n3   b_Col 1    ba\n4   b_Col 2    bb\n5   b_Col 3    bc\n6   c_Col 1    ca\n7   c_Col 2    cb\n8   c_Col 3    cc\n9   d_Col 1    da\n10  d_Col 2    db\n11  d_Col 3    dc\n12  e_Col 1    ea\n13  e_Col 2    eb\n14  e_Col 3    ec\n"
+        ],
+        "output_codes": [
+            "x = df.melt(\"Value\", value_name=\"Col 1\")\nx.Value += \"_\" + x.variable\nx = x.drop(columns=\"variable\")\nprint(x)\n",
+            "x = x.sort_values(by=\"Value\").reset_index(drop=True)\nprint(x)\n\n     Value Col 1\n0   a_col1    aa\n1   a_col2    ab\n2   a_col3    ac\n3   b_col1    ba\n4   b_col2    bb\n5   b_col3    bc\n6   c_col1    ca\n7   c_col2    cb\n8   c_col3    cc\n9   d_col1    da\n10  d_col2    db\n11  d_col3    dc\n12  e_col1    ea\n13  e_col2    eb\n14  e_col3    ec\n"
+        ],
+        "ques_desc": "I have the following data frame(): I need to derive the data frame() from such that column 1 of will have concatenated raw values of Value column with column names of Col 1 to Col 3. Column 2 of will have the raw value corresponding to each concatenated column name, Below is the sample which require to generate. : I have followed the below steps to derive df2 from df1. But this process seems a bit long. Any recommendations on shortening the process? Below is the code I have used ",
+        "ans_desc": "Try: Prints: Optionally, you can sort values afterwards: ",
+        "formatted_input": {
+            "qid": 68193521,
+            "link": "https://stackoverflow.com/questions/68193521/concatenate-values-and-column-names-in-a-data-frame-to-create-a-new-data-frame",
+            "question": {
+                "title": "Concatenate values and column names in a data frame to create a new data frame",
+                "ques_desc": "I have the following data frame(): I need to derive the data frame() from such that column 1 of will have concatenated raw values of Value column with column names of Col 1 to Col 3. Column 2 of will have the raw value corresponding to each concatenated column name, Below is the sample which require to generate. : I have followed the below steps to derive df2 from df1. But this process seems a bit long. Any recommendations on shortening the process? Below is the code I have used "
+            },
+            "io": [
+                "  Value col1 col2 col3\n0     a   aa   ab   ac\n1     b   ba   bb   bc\n2     c   ca   cb   cc\n3     d   da   db   dc\n4     e   ea   eb   ec\n",
+                "      Value Col 1\n0   a_Col 1    aa\n1   a_Col 2    ab\n2   a_Col 3    ac\n3   b_Col 1    ba\n4   b_Col 2    bb\n5   b_Col 3    bc\n6   c_Col 1    ca\n7   c_Col 2    cb\n8   c_Col 3    cc\n9   d_Col 1    da\n10  d_Col 2    db\n11  d_Col 3    dc\n12  e_Col 1    ea\n13  e_Col 2    eb\n14  e_Col 3    ec\n"
+            ],
+            "answer": {
+                "ans_desc": "Try: Prints: Optionally, you can sort values afterwards: ",
+                "code": [
+                    "x = df.melt(\"Value\", value_name=\"Col 1\")\nx.Value += \"_\" + x.variable\nx = x.drop(columns=\"variable\")\nprint(x)\n",
+                    "x = x.sort_values(by=\"Value\").reset_index(drop=True)\nprint(x)\n\n     Value Col 1\n0   a_col1    aa\n1   a_col2    ab\n2   a_col3    ac\n3   b_col1    ba\n4   b_col2    bb\n5   b_col3    bc\n6   c_col1    ca\n7   c_col2    cb\n8   c_col3    cc\n9   d_col1    da\n10  d_col2    db\n11  d_col3    dc\n12  e_col1    ea\n13  e_col2    eb\n14  e_col3    ec\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe"
+        ],
+        "owner": {
+            "account_id": 18963483,
+            "reputation": 5,
+            "user_id": 13838430,
+            "user_type": "registered",
+            "profile_image": "https://lh6.googleusercontent.com/-am1MHSb9sb0/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmyF4HE1PkSd9gnDh0R4GtiWez_7w/photo.jpg?sz=128",
+            "display_name": "Vivrd Prasanna",
+            "link": "https://stackoverflow.com/users/13838430/vivrd-prasanna"
+        },
+        "is_answered": true,
+        "view_count": 21,
+        "closed_date": 1625514713,
+        "accepted_answer_id": 68261421,
+        "answer_count": 1,
+        "score": 0,
+        "last_activity_date": 1625514439,
+        "creation_date": 1625514096,
+        "question_id": 68261366,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68261366/right-way-to-reindex-a-dataframe",
+        "closed_reason": "Duplicate",
+        "title": "Right way to reindex a dataframe?",
+        "answer_body": "<p>Use <code>reset_index</code>:</p>\n<pre><code>&gt;&gt;&gt; df.reset_index(drop=True)\n  column 1  column 2\n0        a         1\n1        b         2\n2        c         3\n</code></pre>\n",
+        "question_body": "<p>I have a large dataset which I filtered by location. The end result is something like this:</p>\n<pre><code>   column 1  column 2\n 0        a         1\n 106      b         2\n 178      c         3\n</code></pre>\n<p>I guessed that the index values are skipping all over the place since the all the columns with the same locations aren't consecutive. To reset the indices, I did <code>df.reindex(index = np.arange(len(df)))</code>, and it worked... but broke everything else. The output is this:</p>\n<pre><code>   column 1  column 2\n 0        a         1\n 1      NAN       NAN\n 12     NAN       NAN\n</code></pre>\n<p>I don't have any idea why this is happening, and how I can fix this. Thanks for any help provided!</p>\n",
+        "input_data_frames": [
+            "   column 1  column 2\n 0        a         1\n 106      b         2\n 178      c         3\n",
+            "   column 1  column 2\n 0        a         1\n 1      NAN       NAN\n 12     NAN       NAN\n"
+        ],
+        "output_codes": [
+            ">>> df.reset_index(drop=True)\n  column 1  column 2\n0        a         1\n1        b         2\n2        c         3\n"
+        ],
+        "ques_desc": "I have a large dataset which I filtered by location. The end result is something like this: I guessed that the index values are skipping all over the place since the all the columns with the same locations aren't consecutive. To reset the indices, I did , and it worked... but broke everything else. The output is this: I don't have any idea why this is happening, and how I can fix this. Thanks for any help provided! ",
+        "ans_desc": "Use : ",
+        "formatted_input": {
+            "qid": 68261366,
+            "link": "https://stackoverflow.com/questions/68261366/right-way-to-reindex-a-dataframe",
+            "question": {
+                "title": "Right way to reindex a dataframe?",
+                "ques_desc": "I have a large dataset which I filtered by location. The end result is something like this: I guessed that the index values are skipping all over the place since the all the columns with the same locations aren't consecutive. To reset the indices, I did , and it worked... but broke everything else. The output is this: I don't have any idea why this is happening, and how I can fix this. Thanks for any help provided! "
+            },
+            "io": [
+                "   column 1  column 2\n 0        a         1\n 106      b         2\n 178      c         3\n",
+                "   column 1  column 2\n 0        a         1\n 1      NAN       NAN\n 12     NAN       NAN\n"
+            ],
+            "answer": {
+                "ans_desc": "Use : ",
+                "code": [
+                    ">>> df.reset_index(drop=True)\n  column 1  column 2\n0        a         1\n1        b         2\n2        c         3\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "json",
+            "pandas",
+            "dataframe",
+            "data-structures"
+        ],
+        "owner": {
+            "account_id": 11953345,
+            "reputation": 23,
+            "user_id": 9079043,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/974eaeafce0b16f35dce0911a26ade93?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Isha",
+            "link": "https://stackoverflow.com/users/9079043/isha"
+        },
+        "is_answered": true,
+        "view_count": 38,
+        "accepted_answer_id": 68174753,
+        "answer_count": 1,
+        "score": 2,
+        "last_activity_date": 1624955956,
+        "creation_date": 1624953161,
+        "last_edit_date": 1624953363,
+        "question_id": 68174614,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68174614/why-does-it-add-0-to-the-value-while-converting-dataframe-columns-to-json",
+        "title": "Why does it add .0 to the value while converting Dataframe columns to JSON",
+        "answer_body": "<p>The problem here is, when you call apply on <code>axis=1</code>, pandas creates a Series out of it and upcasts the values because it is a single Series. For example consider following Series:</p>\n<pre class=\"lang-py prettyprint-override\"><code>&gt;&gt;&gt; s = pd.Series([1, 2, 3.2])\ns\n0    1.0\n1    2.0\n2    3.2\ndtype: float64\n</code></pre>\n<p>As you can see, the entire series is converted to float because integer type can not hold all the values for the above series, similar is the case when you call apply on axis=1, it is same to :</p>\n<pre><code>df.iloc[0]\nA    2.0\nB    6.0\nC    5.0\nD    8.0\nName: 0, dtype: float64\n</code></pre>\n<p>There's already an issue <a href=\"https://github.com/pandas-dev/pandas/issues/23230\" rel=\"nofollow noreferrer\">DataFrame.apply unintuitively changes int to float because of another column</a> on github for this upcasting behavior of pandas <code>apply</code>.\nSo, one possible option for you is as I have mentioned in the comment, to call <code>to_json</code> on the entire dataframe as:</p>\n<pre class=\"lang-py prettyprint-override\"><code>&gt;&gt;&gt;df.to_json(orient='index')\n'{&quot;0&quot;:{&quot;A&quot;:2,&quot;B&quot;:6,&quot;C&quot;:5,&quot;D&quot;:8.0},&quot;1&quot;:{&quot;A&quot;:6,&quot;B&quot;:11,&quot;C&quot;:2,&quot;D&quot;:3.6},&quot;2&quot;:{&quot;A&quot;:1,&quot;B&quot;:5,&quot;C&quot;:7,&quot;D&quot;:5.2}}'\n</code></pre>\n<p>A working solution for you may be using python's <code>json</code> module alongwith <code>DataFrame.to_json()</code>, but remember, it does the same thing twice so it may be a bit slow for a large dataframes, however, you will get the data in the rquired format:</p>\n<pre class=\"lang-py prettyprint-override\"><code>df['total'] = list(map(json.dumps, [*json.loads(df.to_json(orient='index')).values()]))\n</code></pre>\n<p><strong>OUTPUT:</strong></p>\n<pre class=\"lang-py prettyprint-override\"><code>   A   B  C    D                                total\n0  2   6  5  8.0   {&quot;A&quot;: 2, &quot;B&quot;: 6, &quot;C&quot;: 5, &quot;D&quot;: 8.0}\n1  6  11  2  3.6  {&quot;A&quot;: 6, &quot;B&quot;: 11, &quot;C&quot;: 2, &quot;D&quot;: 3.6}\n2  1   5  7  5.2   {&quot;A&quot;: 1, &quot;B&quot;: 5, &quot;C&quot;: 7, &quot;D&quot;: 5.2}\n</code></pre>\n",
+        "question_body": "<p>I have the following DataFrame:\ndf :</p>\n<pre><code>A   B   C   D\n2   6   5   8.0\n6   11  2   3.6 \n1   5   7   5.2\n</code></pre>\n<p>to convert to JSON , I write following snippet:</p>\n<pre><code>df['total'] = df.apply(lambda i: i.to_json(), axis=1)\n</code></pre>\n<p>I get following output:</p>\n<p>total</p>\n<pre><code>{&quot;A&quot;:2.0, &quot;B&quot;:6.0, &quot;C&quot;:5.0, &quot;D&quot;:8.0}\n{&quot;A&quot;:6.0, &quot;B&quot;:11.0, &quot;C&quot;:2.0, &quot;D&quot;:3.6}\n{&quot;A&quot;:1.0, &quot;B&quot;:5.0, &quot;C&quot;:7.0, &quot;D&quot;:5.2}\n</code></pre>\n<p>Why is that extra .0 is added to the result ?\nHow do I remove that extra .0 ?</p>\n",
+        "input_data_frames": [
+            "A   B   C   D\n2   6   5   8.0\n6   11  2   3.6 \n1   5   7   5.2\n",
+            "{\"A\":2.0, \"B\":6.0, \"C\":5.0, \"D\":8.0}\n{\"A\":6.0, \"B\":11.0, \"C\":2.0, \"D\":3.6}\n{\"A\":1.0, \"B\":5.0, \"C\":7.0, \"D\":5.2}\n"
+        ],
+        "output_codes": [
+            ">>> s = pd.Series([1, 2, 3.2])\ns\n0    1.0\n1    2.0\n2    3.2\ndtype: float64\n",
+            "df.iloc[0]\nA    2.0\nB    6.0\nC    5.0\nD    8.0\nName: 0, dtype: float64\n"
+        ],
+        "ques_desc": "I have the following DataFrame: df : to convert to JSON , I write following snippet: I get following output: total Why is that extra .0 is added to the result ? How do I remove that extra .0 ? ",
+        "ans_desc": "The problem here is, when you call apply on , pandas creates a Series out of it and upcasts the values because it is a single Series. For example consider following Series: As you can see, the entire series is converted to float because integer type can not hold all the values for the above series, similar is the case when you call apply on axis=1, it is same to : There's already an issue DataFrame.apply unintuitively changes int to float because of another column on github for this upcasting behavior of pandas . So, one possible option for you is as I have mentioned in the comment, to call on the entire dataframe as: A working solution for you may be using python's module alongwith , but remember, it does the same thing twice so it may be a bit slow for a large dataframes, however, you will get the data in the rquired format: OUTPUT: ",
+        "formatted_input": {
+            "qid": 68174614,
+            "link": "https://stackoverflow.com/questions/68174614/why-does-it-add-0-to-the-value-while-converting-dataframe-columns-to-json",
+            "question": {
+                "title": "Why does it add .0 to the value while converting Dataframe columns to JSON",
+                "ques_desc": "I have the following DataFrame: df : to convert to JSON , I write following snippet: I get following output: total Why is that extra .0 is added to the result ? How do I remove that extra .0 ? "
+            },
+            "io": [
+                "A   B   C   D\n2   6   5   8.0\n6   11  2   3.6 \n1   5   7   5.2\n",
+                "{\"A\":2.0, \"B\":6.0, \"C\":5.0, \"D\":8.0}\n{\"A\":6.0, \"B\":11.0, \"C\":2.0, \"D\":3.6}\n{\"A\":1.0, \"B\":5.0, \"C\":7.0, \"D\":5.2}\n"
+            ],
+            "answer": {
+                "ans_desc": "The problem here is, when you call apply on , pandas creates a Series out of it and upcasts the values because it is a single Series. For example consider following Series: As you can see, the entire series is converted to float because integer type can not hold all the values for the above series, similar is the case when you call apply on axis=1, it is same to : There's already an issue DataFrame.apply unintuitively changes int to float because of another column on github for this upcasting behavior of pandas . So, one possible option for you is as I have mentioned in the comment, to call on the entire dataframe as: A working solution for you may be using python's module alongwith , but remember, it does the same thing twice so it may be a bit slow for a large dataframes, however, you will get the data in the rquired format: OUTPUT: ",
+                "code": [
+                    ">>> s = pd.Series([1, 2, 3.2])\ns\n0    1.0\n1    2.0\n2    3.2\ndtype: float64\n",
+                    "df.iloc[0]\nA    2.0\nB    6.0\nC    5.0\nD    8.0\nName: 0, dtype: float64\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe",
+            "dictionary"
+        ],
+        "owner": {
+            "account_id": 5179700,
+            "reputation": 23,
+            "user_id": 4149213,
+            "user_type": "registered",
+            "profile_image": "https://i.stack.imgur.com/vBcjv.jpg?s=128&g=1",
+            "display_name": "openwater",
+            "link": "https://stackoverflow.com/users/4149213/openwater"
+        },
+        "is_answered": true,
+        "view_count": 36,
+        "accepted_answer_id": 68174309,
+        "answer_count": 1,
+        "score": 1,
+        "last_activity_date": 1624951870,
+        "creation_date": 1624950821,
+        "last_edit_date": 1624951870,
+        "question_id": 68174113,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68174113/map-numeric-data-into-bins-in-pandas-dataframe-for-seperate-groups-using-diction",
+        "title": "Map numeric data into bins in Pandas dataframe for seperate groups using dictionaries",
+        "answer_body": "<p>A simpler solution would be to use <a href=\"https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html\" rel=\"nofollow noreferrer\"><code>groupby</code></a> and <a href=\"https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.core.groupby.GroupBy.apply.html\" rel=\"nofollow noreferrer\"><code>apply</code></a> a custom function on each group. In this case, we can define a function <code>reclass</code> that obtains the correct bins and ids and then uses <code>pd.cut</code>:</p>\n<pre><code>def reclass(group, name):\n    bins = bins_dic[name]\n    ids = ids_dic[name]\n    return pd.cut(group, bins, labels=ids)\n    \ndf['id'] = df.groupby('polyid')['value'].apply(lambda x: reclass(x, x.name))\n</code></pre>\n<p>Result:</p>\n<pre><code>    polyid  value  id\n0        1   0.56   1\n1        1   0.59   1\n2        1   0.62   2\n3        1   0.83   3\n4        2   0.85   2\n5        2   0.01   1\n6        2   0.79   2\n7        3   0.37   1\n8        3   0.99   3\n9        3   0.48   1\n10       3   0.55   2\n11       3   0.06   1\n</code></pre>\n",
+        "question_body": "<p>I have a pandas dataframe as follows:</p>\n<pre><code>df = pd.DataFrame(data = [[1,0.56],[1,0.59],[1,0.62],[1,0.83],[2,0.85],[2,0.01],[2,0.79],[3,0.37],[3,0.99],[3,0.48],[3,0.55],[3,0.06]],columns=['polyid','value'])\n\n    polyid  value\n0        1   0.56\n1        1   0.59\n2        1   0.62\n3        1   0.83\n4        2   0.85\n5        2   0.01\n6        2   0.79\n7        3   0.37\n8        3   0.99\n9        3   0.48\n10       3   0.55\n11       3   0.06\n</code></pre>\n<p>I need to reclassify the 'value' column separately for each 'polyid'. For the reclassification, I have two dictionaries. One with the bins that contain the information on how I want to cut the 'values' for each 'polyid' separately:</p>\n<pre><code>bins_dic = {1:[0,0.6,0.8,1], 2:[0,0.2,0.9,1], 3:[0,0.5,0.6,1]}\n</code></pre>\n<p>And one with the ids with which I want to label the resulting bins:</p>\n<pre><code>ids_dic = {1:[1,2,3], 2:[1,2,3], 3:[1,2,3]}\n</code></pre>\n<p>I tried to get <a href=\"https://stackoverflow.com/a/49382340/4149213\">this</a> answer to work for my use case. I could only come up with applying <code>pd.cut</code> on each 'polyid' subset and then <code>pd.concat</code> all subsets again back to one dataframe:</p>\n<pre><code>import pandas as pd\n\ndef reclass_df_dic(df, bins_dic, names_dic, bin_key_col, val_col, name_col):\n    df_lst = []\n    for key in df[bin_key_col].unique():\n        bins = bins_dic[key]\n        names = names_dic[key]\n        sub_df = df[df[bin_key_col] == key]\n        sub_df[name_col] = pd.cut(df[val_col], bins, labels=names)\n        df_lst.append(sub_df)\n    return(pd.concat(df_lst))\n\ndf = pd.DataFrame(data = [[1,0.56],[1,0.59],[1,0.62],[1,0.83],[2,0.85],[2,0.01],[2,0.79],[3,0.37],[3,0.99],[3,0.48],[3,0.55],[3,0.06]],columns=['polyid','value'])\nbins_dic = {1:[0,0.6,0.8,1], 2:[0,0.2,0.9,1], 3:[0,0.5,0.6,1]}\nids_dic = {1:[1,2,3], 2:[1,2,3], 3:[1,2,3]}\n\ndf = reclass_df_dic(df, bins_dic, ids_dic, 'polyid', 'value', 'id')\n\n</code></pre>\n<p>This results in my desired output:</p>\n<pre><code>    polyid  value  id\n0        1   0.56   1\n1        1   0.59   1\n2        1   0.62   2\n3        1   0.83   3\n4        2   0.85   2\n5        2   0.01   1\n6        2   0.79   2\n7        3   0.37   1\n8        3   0.99   3\n9        3   0.48   1\n10       3   0.55   2\n11       3   0.06   1\n\n</code></pre>\n<p>However, the line:</p>\n<pre><code>sub_df[name_col] = pd.cut(df[val_col], bins, labels=names)\n</code></pre>\n<p>raises the warning:</p>\n<blockquote>\n<p>A value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead</p>\n</blockquote>\n<p>that I am unable to solve with using <code>.loc</code>. Also, I guess there generally is a more efficient way of doing this without having to loop over each category?</p>\n",
+        "input_data_frames": [
+            "bins_dic = {1:[0,0.6,0.8,1], 2:[0,0.2,0.9,1], 3:[0,0.5,0.6,1]}\n",
+            "ids_dic = {1:[1,2,3], 2:[1,2,3], 3:[1,2,3]}\n"
+        ],
+        "output_codes": [
+            "def reclass(group, name):\n    bins = bins_dic[name]\n    ids = ids_dic[name]\n    return pd.cut(group, bins, labels=ids)\n    \ndf['id'] = df.groupby('polyid')['value'].apply(lambda x: reclass(x, x.name))\n",
+            "    polyid  value  id\n0        1   0.56   1\n1        1   0.59   1\n2        1   0.62   2\n3        1   0.83   3\n4        2   0.85   2\n5        2   0.01   1\n6        2   0.79   2\n7        3   0.37   1\n8        3   0.99   3\n9        3   0.48   1\n10       3   0.55   2\n11       3   0.06   1\n"
+        ],
+        "ques_desc": "I have a pandas dataframe as follows: I need to reclassify the 'value' column separately for each 'polyid'. For the reclassification, I have two dictionaries. One with the bins that contain the information on how I want to cut the 'values' for each 'polyid' separately: And one with the ids with which I want to label the resulting bins: I tried to get this answer to work for my use case. I could only come up with applying on each 'polyid' subset and then all subsets again back to one dataframe: This results in my desired output: However, the line: raises the warning: A value is trying to be set on a copy of a slice from a DataFrame. Try using .loc[row_indexer,col_indexer] = value instead that I am unable to solve with using . Also, I guess there generally is a more efficient way of doing this without having to loop over each category? ",
+        "ans_desc": "A simpler solution would be to use and a custom function on each group. In this case, we can define a function that obtains the correct bins and ids and then uses : Result: ",
+        "formatted_input": {
+            "qid": 68174113,
+            "link": "https://stackoverflow.com/questions/68174113/map-numeric-data-into-bins-in-pandas-dataframe-for-seperate-groups-using-diction",
+            "question": {
+                "title": "Map numeric data into bins in Pandas dataframe for seperate groups using dictionaries",
+                "ques_desc": "I have a pandas dataframe as follows: I need to reclassify the 'value' column separately for each 'polyid'. For the reclassification, I have two dictionaries. One with the bins that contain the information on how I want to cut the 'values' for each 'polyid' separately: And one with the ids with which I want to label the resulting bins: I tried to get this answer to work for my use case. I could only come up with applying on each 'polyid' subset and then all subsets again back to one dataframe: This results in my desired output: However, the line: raises the warning: A value is trying to be set on a copy of a slice from a DataFrame. Try using .loc[row_indexer,col_indexer] = value instead that I am unable to solve with using . Also, I guess there generally is a more efficient way of doing this without having to loop over each category? "
+            },
+            "io": [
+                "bins_dic = {1:[0,0.6,0.8,1], 2:[0,0.2,0.9,1], 3:[0,0.5,0.6,1]}\n",
+                "ids_dic = {1:[1,2,3], 2:[1,2,3], 3:[1,2,3]}\n"
+            ],
+            "answer": {
+                "ans_desc": "A simpler solution would be to use and a custom function on each group. In this case, we can define a function that obtains the correct bins and ids and then uses : Result: ",
+                "code": [
+                    "def reclass(group, name):\n    bins = bins_dic[name]\n    ids = ids_dic[name]\n    return pd.cut(group, bins, labels=ids)\n    \ndf['id'] = df.groupby('polyid')['value'].apply(lambda x: reclass(x, x.name))\n",
+                    "    polyid  value  id\n0        1   0.56   1\n1        1   0.59   1\n2        1   0.62   2\n3        1   0.83   3\n4        2   0.85   2\n5        2   0.01   1\n6        2   0.79   2\n7        3   0.37   1\n8        3   0.99   3\n9        3   0.48   1\n10       3   0.55   2\n11       3   0.06   1\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe",
+            "numpy"
+        ],
+        "owner": {
+            "account_id": 543843,
+            "reputation": 11307,
+            "user_id": 913098,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/e3e07b09128f889209b738276d42d7ef?s=128&d=identicon&r=PG",
+            "display_name": "Gulzar",
+            "link": "https://stackoverflow.com/users/913098/gulzar"
+        },
+        "is_answered": true,
+        "view_count": 49,
+        "accepted_answer_id": 68167031,
+        "answer_count": 5,
+        "score": 0,
+        "last_activity_date": 1624900111,
+        "creation_date": 1624896795,
+        "last_edit_date": 1624897089,
+        "question_id": 68166733,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68166733/how-to-sort-dataframe-by-some-columns-with-nans-as-if-they-were-one-column",
+        "title": "How to sort dataframe by some columns with nans, as if they were one column?",
+        "answer_body": "<p>So maybe try <code>sum</code> with <code>reindex</code></p>\n<pre><code>out = df.reindex(df[['a','b']].sum(1).sort_values().index).reset_index(drop=True)\nOut[70]: \n     a    b   c\n0  1.0  NaN  v5\n1  NaN  2.0  v2\n2  3.0  NaN  v1\n3  NaN  4.0  v6\n4  5.0  NaN  v3\n5  NaN  6.0  v4\n</code></pre>\n",
+        "question_body": "<p>Please consider</p>\n<pre><code>import pandas as pd\nimport numpy as np\nnan = np.nan\n\ndf = pd.DataFrame({\n    'a': [3, nan, 5, nan, 1, nan],\n    'b': [nan, 2, nan, 6, nan, 4],\n    'c': ['v1', 'v2', 'v3', 'v4', 'v5', 'v6']\n})\n\nprint(df)\n</code></pre>\n<p>out:</p>\n<pre><code>     a    b   c\n0  3.0  NaN  v1\n1  NaN  2.0  v2\n2  5.0  NaN  v3\n3  NaN  6.0  v4\n4  1.0  NaN  v5\n5  NaN  4.0  v6\n</code></pre>\n<hr />\n<p>Guaranteed each row has a single non-nan value, I want to sort all rows by valid values on <code>['a', 'b']</code>.<br />\nRequired:</p>\n<pre><code>     a    b   c\n0  1.0  NaN   v5\n1  NaN  2.0   v2\n2  3.0  NaN   v1\n3  NaN  4.0   v6\n4  5.0  NaN   v3\n5  NaN  6.0   v4\n\n</code></pre>\n<hr />\n<p>Please notice I am looking for a solution extendible for more than just 2 columns, and that values in each columns don't have to be followed or preceded by <code>nan</code>s, meaning there may be consecutive <code>nan</code>s or <code>non-nan</code>s in any column, as long as each row has only a single <code>non-nan</code>.</p>\n",
+        "input_data_frames": [
+            "     a    b   c\n0  3.0  NaN  v1\n1  NaN  2.0  v2\n2  5.0  NaN  v3\n3  NaN  6.0  v4\n4  1.0  NaN  v5\n5  NaN  4.0  v6\n",
+            "     a    b   c\n0  1.0  NaN   v5\n1  NaN  2.0   v2\n2  3.0  NaN   v1\n3  NaN  4.0   v6\n4  5.0  NaN   v3\n5  NaN  6.0   v4\n\n"
+        ],
+        "output_codes": [
+            "out = df.reindex(df[['a','b']].sum(1).sort_values().index).reset_index(drop=True)\nOut[70]: \n     a    b   c\n0  1.0  NaN  v5\n1  NaN  2.0  v2\n2  3.0  NaN  v1\n3  NaN  4.0  v6\n4  5.0  NaN  v3\n5  NaN  6.0  v4\n"
+        ],
+        "ques_desc": "Please consider out: Guaranteed each row has a single non-nan value, I want to sort all rows by valid values on . Required: Please notice I am looking for a solution extendible for more than just 2 columns, and that values in each columns don't have to be followed or preceded by s, meaning there may be consecutive s or s in any column, as long as each row has only a single . ",
+        "ans_desc": "So maybe try with ",
+        "formatted_input": {
+            "qid": 68166733,
+            "link": "https://stackoverflow.com/questions/68166733/how-to-sort-dataframe-by-some-columns-with-nans-as-if-they-were-one-column",
+            "question": {
+                "title": "How to sort dataframe by some columns with nans, as if they were one column?",
+                "ques_desc": "Please consider out: Guaranteed each row has a single non-nan value, I want to sort all rows by valid values on . Required: Please notice I am looking for a solution extendible for more than just 2 columns, and that values in each columns don't have to be followed or preceded by s, meaning there may be consecutive s or s in any column, as long as each row has only a single . "
+            },
+            "io": [
+                "     a    b   c\n0  3.0  NaN  v1\n1  NaN  2.0  v2\n2  5.0  NaN  v3\n3  NaN  6.0  v4\n4  1.0  NaN  v5\n5  NaN  4.0  v6\n",
+                "     a    b   c\n0  1.0  NaN   v5\n1  NaN  2.0   v2\n2  3.0  NaN   v1\n3  NaN  4.0   v6\n4  5.0  NaN   v3\n5  NaN  6.0   v4\n\n"
+            ],
+            "answer": {
+                "ans_desc": "So maybe try with ",
+                "code": [
+                    "out = df.reindex(df[['a','b']].sum(1).sort_values().index).reset_index(drop=True)\nOut[70]: \n     a    b   c\n0  1.0  NaN  v5\n1  NaN  2.0  v2\n2  3.0  NaN  v1\n3  NaN  4.0  v6\n4  5.0  NaN  v3\n5  NaN  6.0  v4\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe",
+            "numpy"
+        ],
+        "owner": {
+            "account_id": 3124884,
+            "reputation": 121,
+            "user_id": 2643948,
+            "user_type": "registered",
+            "accept_rate": 50,
+            "profile_image": "https://www.gravatar.com/avatar/3423e43b576ab333117f731daef5aad9?s=128&d=identicon&r=PG&f=1",
+            "display_name": "RebeccaKennedy",
+            "link": "https://stackoverflow.com/users/2643948/rebeccakennedy"
+        },
+        "is_answered": true,
+        "view_count": 79,
+        "accepted_answer_id": 68150849,
+        "answer_count": 2,
+        "score": 1,
+        "last_activity_date": 1624808663,
+        "creation_date": 1624788441,
+        "question_id": 68150020,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68150020/getting-first-second-third-value-in-row-of-numpy-array-after-nan-using-vector",
+        "title": "Getting first/second/third... value in row of numpy array after nan using vectorization",
+        "answer_body": "<h3>Numpy approach</h3>\n<p>We can define a function <code>first_value</code> which takes a <code>2D</code> array and <code>offset</code> (n) as input arguments and returns <code>1D</code> array. Basically, for each row it returns the <code>nth</code> value after the first <code>non-nan</code> value</p>\n<pre><code>def first_valid(arr, offset=0):\n    m = ~np.isnan(arr)\n    i =  m.argmax(axis=1) + offset\n    iy = np.clip(i, 0, arr.shape[1] - 1)\n\n    vals = arr[np.r_[:arr.shape[0]], iy]\n    vals[(~m.any(1)) | (i &gt;= arr.shape[1])] = np.nan\n    return vals\n</code></pre>\n<h3>Pandas approach</h3>\n<p>We can <code>stack</code> the dataframe to reshape then group the dataframe on <code>level=0</code> and aggregate using <code>nth</code>, then <code>reindex</code> to conform the index of aggregated frame according to original frame</p>\n<pre><code>def first_valid(df, offset=0):\n    return df.stack().groupby(level=0)\\\n                     .nth(offset).reindex(df.index)\n</code></pre>\n<h3>Sample run</h3>\n<pre><code>&gt;&gt;&gt; first_valid(df, 0)\nDate\n1     25.0\n2     29.0\n3     33.0\n4     31.0\n5     30.0\n6     35.0\n7     31.0\n8     33.0\n9     26.0\n10    27.0\n11    35.0\n12    33.0\n13    28.0\n14    25.0\n15    25.0\n16    26.0\n17    34.0\n18    28.0\n19    34.0\n20    28.0\ndtype: float64\n\n\n&gt;&gt;&gt; first_valid(df, 1)\nDate\n1      NaN\n2      NaN\n3      NaN\n4     35.0\n5     34.0\n6     34.0\n7     26.0\n8     25.0\n9     31.0\n10    26.0\n11    25.0\n12    35.0\n13    25.0\n14    25.0\n15    26.0\n16    31.0\n17    29.0\n18    29.0\n19    26.0\n20    30.0\ndtype: float64\n\n&gt;&gt;&gt; first_valid(df, 2)\nDate\n1      NaN\n2      NaN\n3      NaN\n4      NaN\n5      NaN\n6      NaN\n7      NaN\n8     31.0\n9      NaN\n10    28.0\n11    29.0\n12    28.0\n13    35.0\n14    28.0\n15    31.0\n16    27.0\n17    25.0\n18    31.0\n19     NaN\n20     NaN\ndtype: float64\n</code></pre>\n<h3>Performance</h3>\n<pre><code># Sample dataframe for testing purpose\ndf_test = pd.concat([df] * 10000, ignore_index=True)\n\n%%timeit # Numpy approach\n_ = first_valid(df_test.to_numpy(), 1)\n# 6.9 ms \u00b1 212 \u00b5s per loop (mean \u00b1 std. dev. of 7 runs, 100 loops each)\n\n\n%%timeit # Pandas approach\n_ = first_valid(df_test, 1)\n# 90 ms \u00b1 867 \u00b5s per loop (mean \u00b1 std. dev. of 7 runs, 10 loops each)\n\n\n%%timeit # OP's approach\n_ = f(df_test, 1)\n# 2.03 s \u00b1 183 ms per loop (mean \u00b1 std. dev. of 7 runs, 1 loop each)\n</code></pre>\n<p><strong>Numpy based approach is approximately <code>300x</code> faster than the <code>OP's</code> given approach</strong> while pandas based approach is approximately <code>22x</code> faster</p>\n",
+        "question_body": "<p>I have the following <code>pandas</code> <code>df</code>:</p>\n<pre><code>| Date | GB | US | CA | AU | SG | DE | FR |\n| ---- | -- | -- | -- | -- | -- | -- | -- |\n| 1    | 25 |    |    |    |    |    |    |\n| 2    | 29 |    |    |    |    |    |    |\n| 3    | 33 |    |    |    |    |    |    |\n| 4    | 31 | 35 |    |    |    |    |    |\n| 5    | 30 | 34 |    |    |    |    |    |\n| 6    |    | 35 | 34 |    |    |    |    |\n| 7    |    | 31 | 26 |    |    |    |    |\n| 8    |    | 33 | 25 | 31 |    |    |    |\n| 9    |    |    | 26 | 31 |    |    |    |\n| 10   |    |    | 27 | 26 | 28 |    |    |\n| 11   |    |    | 35 | 25 | 29 |    |    |\n| 12   |    |    |    | 33 | 35 | 28 |    |\n| 13   |    |    |    | 28 | 25 | 35 |    |\n| 14   |    |    |    | 25 | 25 | 28 |    |\n| 15   |    |    |    | 25 | 26 | 31 | 25 |\n| 16   |    |    |    |    | 26 | 31 | 27 |\n| 17   |    |    |    |    | 34 | 29 | 25 |\n| 18   |    |    |    |    | 28 | 29 | 31 |\n| 19   |    |    |    |    |    | 34 | 26 |\n| 20   |    |    |    |    |    | 28 | 30 |\n</code></pre>\n<p>I have partly acomplished what I am trying to do here using Pandas alone but the process takes ages so I am having to use <code>numpy</code> (see <a href=\"https://stackoverflow.com/questions/68068102/getting-the-nearest-values-to-the-left-in-a-pandas-column/\">Getting the nearest values to the left in a pandas column</a>) and that is where I am struggling.</p>\n<p>Essentialy, I want my function <code>f</code> which takes an argument <code>int(offset)</code>, to capture the first non <code>nan</code> value for each row from the left, and return the whole thing as a <code>numpy</code> array/vector so that:</p>\n<pre><code>f(offset=0)\n\n\n| 0  | 1  |\n| -- | -- |\n| 1  | 25 |\n| 2  | 29 |\n| 3  | 33 |\n| 4  | 31 |\n| 5  | 30 |\n| 6  | 35 |\n| 7  | 31 |\n| 8  | 33 |\n| 9  | 26 |\n| 10 | 27 |\n| 11 | 35 |\n| 12 | 33 |\n| 13 | 28 |\n| 14 | 25 |\n| 15 | 25 |\n| 16 | 26 |\n| 17 | 34 |\n| 18 | 28 |\n| 19 | 34 |\n| 20 | 28 |\n</code></pre>\n<p>As I have described in the other post, its best to imagine a horizontal line being drawn from the left for each row, and returning the values intersected by that line as an array. <code>offset=0</code> then returns the first value (in that array) and <code>offset=1</code> will return the second value intersected and so on.</p>\n<p>Therefore:</p>\n<pre><code>f(offset=1)\n\n| 0  | 1   |\n| -- | --- |\n| 1  | nan |\n| 2  | nan |\n| 3  | nan |\n| 4  | 35  |\n| 5  | 34  |\n| 6  | 34  |\n| 7  | 26  |\n| 8  | 25  |\n| 9  | 31  |\n| 10 | 26  |\n| 11 | 25  |\n| 12 | 35  |\n| 13 | 25  |\n| 14 | 25  |\n| 15 | 26  |\n| 16 | 31  |\n| 17 | 29  |\n| 18 | 29  |\n| 19 | 26  |\n| 20 | 30  |\n</code></pre>\n<p>The <code>pandas</code> solution proposed in the post above is very effective:</p>\n<pre><code>def f(df, offset=0):\n    x = df.iloc[:, 0:].apply(lambda x: sorted(x, key=pd.isna)[offset], axis=1)\n    return x\n\nprint(f(df, 1))\n</code></pre>\n<p>However this is very slow with larger iterations. I have tried this with <code>np.apply_along_axis</code> and its even slower!</p>\n<p>Is there a fatser way with <code>numpy</code> vectorization?</p>\n<p>Many thanks.</p>\n",
+        "input_data_frames": [
+            "f(offset=0)\n\n\n| 0  | 1  |\n| -- | -- |\n| 1  | 25 |\n| 2  | 29 |\n| 3  | 33 |\n| 4  | 31 |\n| 5  | 30 |\n| 6  | 35 |\n| 7  | 31 |\n| 8  | 33 |\n| 9  | 26 |\n| 10 | 27 |\n| 11 | 35 |\n| 12 | 33 |\n| 13 | 28 |\n| 14 | 25 |\n| 15 | 25 |\n| 16 | 26 |\n| 17 | 34 |\n| 18 | 28 |\n| 19 | 34 |\n| 20 | 28 |\n",
+            "f(offset=1)\n\n| 0  | 1   |\n| -- | --- |\n| 1  | nan |\n| 2  | nan |\n| 3  | nan |\n| 4  | 35  |\n| 5  | 34  |\n| 6  | 34  |\n| 7  | 26  |\n| 8  | 25  |\n| 9  | 31  |\n| 10 | 26  |\n| 11 | 25  |\n| 12 | 35  |\n| 13 | 25  |\n| 14 | 25  |\n| 15 | 26  |\n| 16 | 31  |\n| 17 | 29  |\n| 18 | 29  |\n| 19 | 26  |\n| 20 | 30  |\n"
+        ],
+        "output_codes": [
+            "def first_valid(arr, offset=0):\n    m = ~np.isnan(arr)\n    i =  m.argmax(axis=1) + offset\n    iy = np.clip(i, 0, arr.shape[1] - 1)\n\n    vals = arr[np.r_[:arr.shape[0]], iy]\n    vals[(~m.any(1)) | (i >= arr.shape[1])] = np.nan\n    return vals\n",
+            "def first_valid(df, offset=0):\n    return df.stack().groupby(level=0)\\\n                     .nth(offset).reindex(df.index)\n",
+            ">>> first_valid(df, 0)\nDate\n1     25.0\n2     29.0\n3     33.0\n4     31.0\n5     30.0\n6     35.0\n7     31.0\n8     33.0\n9     26.0\n10    27.0\n11    35.0\n12    33.0\n13    28.0\n14    25.0\n15    25.0\n16    26.0\n17    34.0\n18    28.0\n19    34.0\n20    28.0\ndtype: float64\n\n\n>>> first_valid(df, 1)\nDate\n1      NaN\n2      NaN\n3      NaN\n4     35.0\n5     34.0\n6     34.0\n7     26.0\n8     25.0\n9     31.0\n10    26.0\n11    25.0\n12    35.0\n13    25.0\n14    25.0\n15    26.0\n16    31.0\n17    29.0\n18    29.0\n19    26.0\n20    30.0\ndtype: float64\n\n>>> first_valid(df, 2)\nDate\n1      NaN\n2      NaN\n3      NaN\n4      NaN\n5      NaN\n6      NaN\n7      NaN\n8     31.0\n9      NaN\n10    28.0\n11    29.0\n12    28.0\n13    35.0\n14    28.0\n15    31.0\n16    27.0\n17    25.0\n18    31.0\n19     NaN\n20     NaN\ndtype: float64\n",
+            "# Sample dataframe for testing purpose\ndf_test = pd.concat([df] * 10000, ignore_index=True)\n\n%%timeit # Numpy approach\n_ = first_valid(df_test.to_numpy(), 1)\n# 6.9 ms \u00b1 212 \u00b5s per loop (mean \u00b1 std. dev. of 7 runs, 100 loops each)\n\n\n%%timeit # Pandas approach\n_ = first_valid(df_test, 1)\n# 90 ms \u00b1 867 \u00b5s per loop (mean \u00b1 std. dev. of 7 runs, 10 loops each)\n\n\n%%timeit # OP's approach\n_ = f(df_test, 1)\n# 2.03 s \u00b1 183 ms per loop (mean \u00b1 std. dev. of 7 runs, 1 loop each)\n"
+        ],
+        "ques_desc": "I have the following : I have partly acomplished what I am trying to do here using Pandas alone but the process takes ages so I am having to use (see Getting the nearest values to the left in a pandas column) and that is where I am struggling. Essentialy, I want my function which takes an argument , to capture the first non value for each row from the left, and return the whole thing as a array/vector so that: As I have described in the other post, its best to imagine a horizontal line being drawn from the left for each row, and returning the values intersected by that line as an array. then returns the first value (in that array) and will return the second value intersected and so on. Therefore: The solution proposed in the post above is very effective: However this is very slow with larger iterations. I have tried this with and its even slower! Is there a fatser way with vectorization? Many thanks. ",
+        "ans_desc": "Numpy approach We can define a function which takes a array and (n) as input arguments and returns array. Basically, for each row it returns the value after the first value Pandas approach We can the dataframe to reshape then group the dataframe on and aggregate using , then to conform the index of aggregated frame according to original frame Sample run Performance Numpy based approach is approximately faster than the given approach while pandas based approach is approximately faster ",
+        "formatted_input": {
+            "qid": 68150020,
+            "link": "https://stackoverflow.com/questions/68150020/getting-first-second-third-value-in-row-of-numpy-array-after-nan-using-vector",
+            "question": {
+                "title": "Getting first/second/third... value in row of numpy array after nan using vectorization",
+                "ques_desc": "I have the following : I have partly acomplished what I am trying to do here using Pandas alone but the process takes ages so I am having to use (see Getting the nearest values to the left in a pandas column) and that is where I am struggling. Essentialy, I want my function which takes an argument , to capture the first non value for each row from the left, and return the whole thing as a array/vector so that: As I have described in the other post, its best to imagine a horizontal line being drawn from the left for each row, and returning the values intersected by that line as an array. then returns the first value (in that array) and will return the second value intersected and so on. Therefore: The solution proposed in the post above is very effective: However this is very slow with larger iterations. I have tried this with and its even slower! Is there a fatser way with vectorization? Many thanks. "
+            },
+            "io": [
+                "f(offset=0)\n\n\n| 0  | 1  |\n| -- | -- |\n| 1  | 25 |\n| 2  | 29 |\n| 3  | 33 |\n| 4  | 31 |\n| 5  | 30 |\n| 6  | 35 |\n| 7  | 31 |\n| 8  | 33 |\n| 9  | 26 |\n| 10 | 27 |\n| 11 | 35 |\n| 12 | 33 |\n| 13 | 28 |\n| 14 | 25 |\n| 15 | 25 |\n| 16 | 26 |\n| 17 | 34 |\n| 18 | 28 |\n| 19 | 34 |\n| 20 | 28 |\n",
+                "f(offset=1)\n\n| 0  | 1   |\n| -- | --- |\n| 1  | nan |\n| 2  | nan |\n| 3  | nan |\n| 4  | 35  |\n| 5  | 34  |\n| 6  | 34  |\n| 7  | 26  |\n| 8  | 25  |\n| 9  | 31  |\n| 10 | 26  |\n| 11 | 25  |\n| 12 | 35  |\n| 13 | 25  |\n| 14 | 25  |\n| 15 | 26  |\n| 16 | 31  |\n| 17 | 29  |\n| 18 | 29  |\n| 19 | 26  |\n| 20 | 30  |\n"
+            ],
+            "answer": {
+                "ans_desc": "Numpy approach We can define a function which takes a array and (n) as input arguments and returns array. Basically, for each row it returns the value after the first value Pandas approach We can the dataframe to reshape then group the dataframe on and aggregate using , then to conform the index of aggregated frame according to original frame Sample run Performance Numpy based approach is approximately faster than the given approach while pandas based approach is approximately faster ",
+                "code": [
+                    "def first_valid(arr, offset=0):\n    m = ~np.isnan(arr)\n    i =  m.argmax(axis=1) + offset\n    iy = np.clip(i, 0, arr.shape[1] - 1)\n\n    vals = arr[np.r_[:arr.shape[0]], iy]\n    vals[(~m.any(1)) | (i >= arr.shape[1])] = np.nan\n    return vals\n",
+                    "def first_valid(df, offset=0):\n    return df.stack().groupby(level=0)\\\n                     .nth(offset).reindex(df.index)\n",
+                    ">>> first_valid(df, 0)\nDate\n1     25.0\n2     29.0\n3     33.0\n4     31.0\n5     30.0\n6     35.0\n7     31.0\n8     33.0\n9     26.0\n10    27.0\n11    35.0\n12    33.0\n13    28.0\n14    25.0\n15    25.0\n16    26.0\n17    34.0\n18    28.0\n19    34.0\n20    28.0\ndtype: float64\n\n\n>>> first_valid(df, 1)\nDate\n1      NaN\n2      NaN\n3      NaN\n4     35.0\n5     34.0\n6     34.0\n7     26.0\n8     25.0\n9     31.0\n10    26.0\n11    25.0\n12    35.0\n13    25.0\n14    25.0\n15    26.0\n16    31.0\n17    29.0\n18    29.0\n19    26.0\n20    30.0\ndtype: float64\n\n>>> first_valid(df, 2)\nDate\n1      NaN\n2      NaN\n3      NaN\n4      NaN\n5      NaN\n6      NaN\n7      NaN\n8     31.0\n9      NaN\n10    28.0\n11    29.0\n12    28.0\n13    35.0\n14    28.0\n15    31.0\n16    27.0\n17    25.0\n18    31.0\n19     NaN\n20     NaN\ndtype: float64\n",
+                    "# Sample dataframe for testing purpose\ndf_test = pd.concat([df] * 10000, ignore_index=True)\n\n%%timeit # Numpy approach\n_ = first_valid(df_test.to_numpy(), 1)\n# 6.9 ms \u00b1 212 \u00b5s per loop (mean \u00b1 std. dev. of 7 runs, 100 loops each)\n\n\n%%timeit # Pandas approach\n_ = first_valid(df_test, 1)\n# 90 ms \u00b1 867 \u00b5s per loop (mean \u00b1 std. dev. of 7 runs, 10 loops each)\n\n\n%%timeit # OP's approach\n_ = f(df_test, 1)\n# 2.03 s \u00b1 183 ms per loop (mean \u00b1 std. dev. of 7 runs, 1 loop each)\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe",
+            "datetime"
+        ],
+        "owner": {
+            "account_id": 13962104,
+            "reputation": 51,
+            "user_id": 10082987,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/141965c0e67ba4408bdb2267fd7c04f2?s=128&d=identicon&r=PG&f=1",
+            "display_name": "syedmfk",
+            "link": "https://stackoverflow.com/users/10082987/syedmfk"
+        },
+        "is_answered": true,
+        "view_count": 9216,
+        "accepted_answer_id": 57033774,
+        "answer_count": 2,
+        "score": 3,
+        "last_activity_date": 1624643356,
+        "creation_date": 1563168421,
+        "last_edit_date": 1563169986,
+        "question_id": 57033657,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/57033657/how-to-extract-month-name-and-year-from-date-column-of-dataframe",
+        "title": "How to Extract Month Name and Year from Date column of DataFrame",
+        "answer_body": "<p>Cast you date from object to actual datetime and use dt to access what you need.</p>\n\n<pre class=\"lang-py prettyprint-override\"><code>import pandas as pd\n\ndf = pd.DataFrame({'Date':['2019-01-01','2019-02-08']})\n\ndf['Date'] = pd.to_datetime(df['Date'])\n\n# You can format your date as you wish\ndf['Mon_Year'] = df['Date'].dt.strftime('%b-%Y')\n\n# the result is object/string unlike `.dt.to_period('M')` that retains datetime data type.\n\nprint(df['Mon_Year'])\n\n</code></pre>\n",
+        "question_body": "<p>I have the following DF</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>45    2018-01-01\n73    2018-02-08\n74    2018-02-08\n75    2018-02-08\n76    2018-02-08\n</code></pre>\n\n<p>I want to extract the month name and year in a simple way in the following format:</p>\n\n<pre class=\"lang-none prettyprint-override\"><code>45    Jan-2018\n73    Feb-2018\n74    Feb-2018\n75    Feb-2018\n76    Feb-2018\n</code></pre>\n\n<p>I have used the <code>df.Date.dt.to_period(\"M\")</code> which return <code>\"2018-01\"</code> format.</p>\n",
+        "input_data_frames": [
+            "45    2018-01-01\n73    2018-02-08\n74    2018-02-08\n75    2018-02-08\n76    2018-02-08\n",
+            "45    Jan-2018\n73    Feb-2018\n74    Feb-2018\n75    Feb-2018\n76    Feb-2018\n"
+        ],
+        "output_codes": [
+            "import pandas as pd\n\ndf = pd.DataFrame({'Date':['2019-01-01','2019-02-08']})\n\ndf['Date'] = pd.to_datetime(df['Date'])\n\n# You can format your date as you wish\ndf['Mon_Year'] = df['Date'].dt.strftime('%b-%Y')\n\n# the result is object/string unlike `.dt.to_period('M')` that retains datetime data type.\n\nprint(df['Mon_Year'])\n\n"
+        ],
+        "ques_desc": "I have the following DF I want to extract the month name and year in a simple way in the following format: I have used the which return format. ",
+        "ans_desc": "Cast you date from object to actual datetime and use dt to access what you need. ",
+        "formatted_input": {
+            "qid": 57033657,
+            "link": "https://stackoverflow.com/questions/57033657/how-to-extract-month-name-and-year-from-date-column-of-dataframe",
+            "question": {
+                "title": "How to Extract Month Name and Year from Date column of DataFrame",
+                "ques_desc": "I have the following DF I want to extract the month name and year in a simple way in the following format: I have used the which return format. "
+            },
+            "io": [
+                "45    2018-01-01\n73    2018-02-08\n74    2018-02-08\n75    2018-02-08\n76    2018-02-08\n",
+                "45    Jan-2018\n73    Feb-2018\n74    Feb-2018\n75    Feb-2018\n76    Feb-2018\n"
+            ],
+            "answer": {
+                "ans_desc": "Cast you date from object to actual datetime and use dt to access what you need. ",
+                "code": [
+                    "import pandas as pd\n\ndf = pd.DataFrame({'Date':['2019-01-01','2019-02-08']})\n\ndf['Date'] = pd.to_datetime(df['Date'])\n\n# You can format your date as you wish\ndf['Mon_Year'] = df['Date'].dt.strftime('%b-%Y')\n\n# the result is object/string unlike `.dt.to_period('M')` that retains datetime data type.\n\nprint(df['Mon_Year'])\n\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe",
+            "numpy"
+        ],
+        "owner": {
+            "account_id": 16501529,
+            "reputation": 1760,
+            "user_id": 11922765,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/ed69b624cdb86e52caf0010e274df7b0?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mainland",
+            "link": "https://stackoverflow.com/users/11922765/mainland"
+        },
+        "is_answered": true,
+        "view_count": 37,
+        "accepted_answer_id": 68134448,
+        "answer_count": 3,
+        "score": 0,
+        "last_activity_date": 1624640858,
+        "creation_date": 1624638901,
+        "question_id": 68134383,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/68134383/python-dataframe-logical-operations-with-two-if-statements",
+        "title": "Python Dataframe logical operations with two If statements",
+        "answer_body": "<p>Try via <a href=\"https://numpy.org/doc/stable/reference/generated/numpy.select.html\" rel=\"nofollow noreferrer\"><code>np.select()</code></a>:</p>\n<pre><code>conditions=[\n    df['A'].gt(70),\n    df['A'].lt(70) &amp; df['A'].gt(40),\n    df['A'].lt(40)\n]\n\nlabels=[1,2,3]\n</code></pre>\n<p>Finally:</p>\n<pre><code>df['A_op']=np.select(conditions,labels)\n</code></pre>\n<p><strong>Note:</strong> Since you don't specify the condition for <code>df['A']==40</code> and <code>df['A']==70</code></p>\n<p>but if you wish for</p>\n<pre><code>#df['A']==40---&gt;3\n#df['A']==70---&gt;2\n</code></pre>\n<p>Then the above solution becomes:</p>\n<pre><code>conditions=[\n    df['A'].gt(70),\n    df['A'].le(70) &amp; df['A'].gt(40),\n    df['A'].le(40)\n]\n\nlabels=[1,2,3]\n\ndf['A_op']=np.select(conditions,labels)\n</code></pre>\n<p>Output of <code>df</code>:</p>\n<pre><code>    A       A_op\n0   78.5    1\n1   54.0    2\n2   48.0    2\n3   21.1    3\n</code></pre>\n",
+        "question_body": "<p>I have a big data frame with float values. I want to perform two if logical operations.</p>\n<p>My code:</p>\n<pre><code>df = \n    A     \n0  78.5  \n1  54\n2  48\n3  21.1\n\n# I want to compare 'A' data with predefined limits and assign a rank.\n# Give rank 1 if &gt; 70, 2 if 70&lt; &gt; 40, 3 if &lt; 40\n# create a new df with limits\nadf = pd.DataFrame({'A_up':[70],'A_low':[40]})\n# repeat adf to match df size\nadf = adf.loc[adf.index.repeat(len(df))]\n\n# perform the logical operation\ndf['A_op'] = np.where((df['A']&gt;adf['A_up'].values),1, 2)\ndf['A_op'] = np.where((df['A']&lt;adf['A_low'].values),3, 2)\n</code></pre>\n<p>Present output</p>\n<pre><code>df = \n    A     A_op\n0  78.5   2\n1  54     2\n2  48     2\n3  21.1   3\n</code></pre>\n<p>Expected output</p>\n<pre><code>df = \n    A     A_op\n0  78.5   1\n1  54     2\n2  48     2\n3  21.1   3\n</code></pre>\n",
+        "input_data_frames": [
+            "df = \n    A     A_op\n0  78.5   2\n1  54     2\n2  48     2\n3  21.1   3\n",
+            "df = \n    A     A_op\n0  78.5   1\n1  54     2\n2  48     2\n3  21.1   3\n"
+        ],
+        "output_codes": [
+            "conditions=[\n    df['A'].gt(70),\n    df['A'].lt(70) & df['A'].gt(40),\n    df['A'].lt(40)\n]\n\nlabels=[1,2,3]\n",
+            "conditions=[\n    df['A'].gt(70),\n    df['A'].le(70) & df['A'].gt(40),\n    df['A'].le(40)\n]\n\nlabels=[1,2,3]\n\ndf['A_op']=np.select(conditions,labels)\n"
+        ],
+        "ques_desc": "I have a big data frame with float values. I want to perform two if logical operations. My code: Present output Expected output ",
+        "ans_desc": "Try via : Finally: Note: Since you don't specify the condition for and but if you wish for Then the above solution becomes: Output of : ",
+        "formatted_input": {
+            "qid": 68134383,
+            "link": "https://stackoverflow.com/questions/68134383/python-dataframe-logical-operations-with-two-if-statements",
+            "question": {
+                "title": "Python Dataframe logical operations with two If statements",
+                "ques_desc": "I have a big data frame with float values. I want to perform two if logical operations. My code: Present output Expected output "
+            },
+            "io": [
+                "df = \n    A     A_op\n0  78.5   2\n1  54     2\n2  48     2\n3  21.1   3\n",
+                "df = \n    A     A_op\n0  78.5   1\n1  54     2\n2  48     2\n3  21.1   3\n"
+            ],
+            "answer": {
+                "ans_desc": "Try via : Finally: Note: Since you don't specify the condition for and but if you wish for Then the above solution becomes: Output of : ",
+                "code": [
+                    "conditions=[\n    df['A'].gt(70),\n    df['A'].lt(70) & df['A'].gt(40),\n    df['A'].lt(40)\n]\n\nlabels=[1,2,3]\n",
+                    "conditions=[\n    df['A'].gt(70),\n    df['A'].le(70) & df['A'].gt(40),\n    df['A'].le(40)\n]\n\nlabels=[1,2,3]\n\ndf['A_op']=np.select(conditions,labels)\n"
+                ]
+            }
+        }
+    },
+    {
+        "tags": [
+            "python",
+            "pandas",
+            "dataframe"
+        ],
+        "owner": {
+            "account_id": 10301847,
+            "reputation": 1639,
+            "user_id": 7600334,
+            "user_type": "registered",
+            "accept_rate": 93,
+            "profile_image": "https://www.gravatar.com/avatar/cbdcd16db25660265573fac86e88f885?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Mark Ginsburg",
+            "link": "https://stackoverflow.com/users/7600334/mark-ginsburg"
+        },
+        "is_answered": true,
+        "view_count": 77551,
+        "accepted_answer_id": 43855492,
+        "answer_count": 4,
+        "score": 72,
+        "last_activity_date": 1624620633,
+        "creation_date": 1494270496,
+        "last_edit_date": 1552095656,
+        "question_id": 43855474,
+        "content_license": "CC BY-SA 4.0",
+        "link": "https://stackoverflow.com/questions/43855474/changing-sort-in-value-counts",
+        "title": "changing sort in value_counts",
+        "answer_body": "<p>I think you need <a href=\"http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sort_index.html\" rel=\"noreferrer\"><code>sort_index</code></a>, because the left column is called <code>index</code>. The full command would be <code>mt = mobile.PattLen.value_counts().sort_index()</code>. For example:</p>\n\n<pre><code>mobile = pd.DataFrame({'PattLen':[1,1,2,6,6,7,7,7,7,8]})\nprint (mobile)\n   PattLen\n0        1\n1        1\n2        2\n3        6\n4        6\n5        7\n6        7\n7        7\n8        7\n9        8\n\nprint (mobile.PattLen.value_counts())\n7    4\n6    2\n1    2\n8    1\n2    1\nName: PattLen, dtype: int64\n\n\nmt = mobile.PattLen.value_counts().sort_index()\nprint (mt)\n1    2\n2    1\n6    2\n7    4\n8    1\nName: PattLen, dtype: int64\n</code></pre>\n",
+        "question_body": "<p>If I do </p>\n\n<pre><code>mt = mobile.PattLen.value_counts()   # sort True by default\n</code></pre>\n\n<p>I get</p>\n\n<pre><code>4    2831\n3    2555 \n5    1561\n[...]\n</code></pre>\n\n<p>If I do</p>\n\n<pre><code>mt = mobile.PattLen.value_counts(sort=False) \n</code></pre>\n\n<p>I get</p>\n\n<pre><code>8    225\n9    120\n2   1234 \n[...]\n</code></pre>\n\n<p>What I am trying to do is get the output in 2, 3, 4 ascending order (the left numeric column).  Can I change value_counts somehow or do I need to use a different function. </p>\n",
+        "input_data_frames": [
+            "4    2831\n3    2555 \n5    1561\n[...]\n",
+            "8    225\n9    120\n2   1234 \n[...]\n"
+        ],
+        "output_codes": [
+            "mobile = pd.DataFrame({'PattLen':[1,1,2,6,6,7,7,7,7,8]})\nprint (mobile)\n   PattLen\n0        1\n1        1\n2        2\n3        6\n4        6\n5        7\n6        7\n7        7\n8        7\n9        8\n\nprint (mobile.PattLen.value_counts())\n7    4\n6    2\n1    2\n8    1\n2    1\nName: PattLen, dtype: int64\n\n\nmt = mobile.PattLen.value_counts().sort_index()\nprint (mt)\n1    2\n2    1\n6    2\n7    4\n8    1\nName: PattLen, dtype: int64\n"
+        ],
+        "ques_desc": "If I do I get If I do I get What I am trying to do is get the output in 2, 3, 4 ascending order (the left numeric column). Can I change value_counts somehow or do I need to use a different function. ",
+        "ans_desc": "I think you need , because the left column is called . The full command would be . For example: ",
+        "formatted_input": {
+            "qid": 43855474,
+            "link": "https://stackoverflow.com/questions/43855474/changing-sort-in-value-counts",
+            "question": {
+                "title": "changing sort in value_counts",
+                "ques_desc": "If I do I get If I do I get What I am trying to do is get the output in 2, 3, 4 ascending order (the left numeric column). Can I change value_counts somehow or do I need to use a different function. "
+            },
+            "io": [
+                "4    2831\n3    2555 \n5    1561\n[...]\n",
+                "8    225\n9    120\n2   1234 \n[...]\n"
+            ],
+            "answer": {
+                "ans_desc": "I think you need , because the left column is called . The full command would be . For example: ",
+                "code": [
+                    "mobile = pd.DataFrame({'PattLen':[1,1,2,6,6,7,7,7,7,8]})\nprint (mobile)\n   PattLen\n0        1\n1        1\n2        2\n3        6\n4        6\n5        7\n6        7\n7        7\n8        7\n9        8\n\nprint (mobile.PattLen.value_counts())\n7    4\n6    2\n1    2\n8    1\n2    1\nName: PattLen, dtype: int64\n\n\nmt = mobile.PattLen.value_counts().sort_index()\nprint (mt)\n1    2\n2    1\n6    2\n7    4\n8    1\nName: PattLen, dtype: int64\n"
+                ]
+            }
+        }
+    }
+]
