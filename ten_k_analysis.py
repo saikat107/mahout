@@ -43,8 +43,11 @@ id_to_answer = {
 }
 
 for idx in range(len(accepted_answers)):
-    accepted_answers[idx]['answer_body'] = id_to_answer[accepted_answers[idx]['accepted_answer_id']]['body']
-    accepted_answers[idx]['question_body'] = accepted_answers[idx]['body']
+    try:
+        accepted_answers[idx]['answer_body'] = id_to_answer[accepted_answers[idx]['accepted_answer_id']]['body']
+        accepted_answers[idx]['question_body'] = accepted_answers[idx]['body']
+    except:
+        pass
     
 import requests
 
@@ -175,37 +178,40 @@ def extract_description(html):
 taken_answers = []
 
 for a in accepted_answers:
-    title = a['title']
-    code_from_body = extract_code(a['question_body'], filters=[min_word_filter])
-    code_from_answer = extract_code(a['answer_body'], filters=[min_word_filter])
-    data_frames = []
-    for cid, c in enumerate(code_from_body):
-        is_df = data_frame_exists(c)
-        is_code = code_exists(c)
-        if is_df and not is_code:
-            data_frames.append(c)
+    try:
+        title = a['title']
+        code_from_body = extract_code(a['question_body'], filters=[min_word_filter])
+        code_from_answer = extract_code(a['answer_body'], filters=[min_word_filter])
+        data_frames = []
+        for cid, c in enumerate(code_from_body):
+            is_df = data_frame_exists(c)
+            is_code = code_exists(c)
+            if is_df and not is_code:
+                data_frames.append(c)
         
-    taken_code = []
-    for cid, c in enumerate(code_from_answer):
-        is_df = data_frame_exists(c)
-        is_pandas_code = api_exists(c)
-        if is_pandas_code and not is_df:
-            taken_code.append(c)
-    if len(data_frames) == 2 and len(taken_code) > 0:
-        a["formatted_input"] = {
-            "qid": a['question_id'],
-            'link': a['link'],
-            "question": {
-                "title": a["title"],
-                "ques_desc" : extract_description(a['question_body'])
-            },
-            "io": data_frames,
-            "answer" : {
-                "ans_desc" : extract_description(a['answer_body']),
-                "code": taken_code
+        taken_code = []
+        for cid, c in enumerate(code_from_answer):
+            is_df = data_frame_exists(c)
+            is_pandas_code = api_exists(c)
+            if is_pandas_code and not is_df:
+                taken_code.append(c)
+        if len(data_frames) == 2 and len(taken_code) > 0:
+            a["formatted_input"] = {
+                "qid": a['question_id'],
+                'link': a['link'],
+                "question": {
+                    "title": a["title"],
+                    "ques_desc" : extract_description(a['question_body'])
+                },
+                "io": data_frames,
+                "answer" : {
+                    "ans_desc" : extract_description(a['answer_body']),
+                    "code": taken_code
+                }
             }
-        }
-        taken_answers.append(a)
+            taken_answers.append(a)
+    except:
+        pass
 
 print(len(taken_answers))
 
