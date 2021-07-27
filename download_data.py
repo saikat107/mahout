@@ -7,8 +7,8 @@ from stackapi import StackAPI
 SITE = StackAPI('stackoverflow')
 for pi in range(1, 50):
     print("Sleeping for 30 seconds!")
-    for _ in tqdm(range(120), desc=f"Iteration : {pi}"):
-        time.sleep(0.25)
+    for _ in tqdm(range(120), desc=f"Iteration : {pi}", bar_format="{l_bar}{bar}"):
+        time.sleep(0.05)
     print("Querying")
     data = SITE.fetch(
             "search/advanced", 
