@@ -2,7 +2,16 @@ import json
 from bs4 import BeautifulSoup as bs
 from tqdm.notebook import tqdm
 
-accepted_answers = json.load(open('ten_thousand_questions/questions_with_bodies.json'))
+import sys
+import os
+
+input_path = sys.argv[1]
+out_dir = sys.argv[2]
+
+#out_dir = output_path[:output_path.rindex("/")]
+os.makedirs(out_dir, exist_ok=True)
+
+accepted_answers = json.load(open(input_path))
 print(len(accepted_answers))
 
 from stackapi import StackAPI
@@ -14,14 +23,18 @@ print(len(aids))
 answers = []
 
 for idx in range(100):
-    answers.extend(
-        SITE.fetch(
-            'answers/{ids}', 
-            ids=aids[idx*100:(idx+1)*100], 
+    try:
+        data = SITE.fetch(
+            'answers/{ids}',
+            ids=aids[idx*100:(idx+1)*100],
             filter='withbody'
-        )['items']
-    )
-    print(len(answers))
+        )
+        answers.extend(
+            data['items']
+        )
+        print(len(answers), data['quota_remaining'], sep='\t')
+    except:
+        pass
     
 final_answers = answers
 
@@ -199,7 +212,7 @@ print(len(taken_answers))
 
 import json 
 
-fp = open("ten_thousand_questions/formatted_output_takens.txt", "w")
+fp = open(out_dir + "/formatted_output_takens.txt", "w")
 
 for a in taken_answers:
     fmt_input = a["formatted_input"]
@@ -228,11 +241,11 @@ for a in taken_answers:
 
 fp.close()
 
-all_answers_file = open("ten_thousand_questions/all_accepted_answers_with_all_details.json", 'w')
+all_answers_file = open(out_dir + "/all_accepted_answers_with_all_details.json", 'w')
 json.dump(obj=accepted_answers, fp=all_answers_file, indent=4)
 all_answers_file.close()
 
-taken_answer_file = open("ten_thousand_questions/taken_answers_with_all_details.json", "w")
+taken_answer_file = open(out_dir + "/taken_answers_with_all_details.json", "w")
 json.dump(obj=taken_answers, fp=taken_answer_file, indent=4)
 taken_answer_file.close()
                          
