@@ -1,0 +1,65 @@
+▁Filter ▁duplicate ▁rows ▁of ▁a ▁pandas ▁DataFrame ▁< s > ▁DataFrame ▁filter ▁DataFrame ▁DataFrame ▁apply ▁all ▁all ▁where ▁all ▁DataFrame ▁duplicated ▁DataFrame ▁where ▁DataFrame
+▁Merge ▁2 ▁CSV ▁files ▁with ▁mapped ▁values ▁in ▁another ▁file ▁separated ▁by ▁comma ▁< s > ▁values ▁merge ▁get ▁right ▁now ▁get ▁merge
+▁Split ting ▁by ▁indices : ▁I ▁want ▁to ▁split ▁the ▁train ▁+ ▁test ▁from ▁the ▁data ▁whose ▁indices ▁have ▁been ▁given . ▁How ▁shall ▁I ▁get ▁train / test ▁df ? ▁< s > ▁indices ▁test ▁indices ▁get ▁test ▁test ▁indices ▁get ▁test ▁where ▁where ▁indices ▁get ▁indices ▁indices ▁indices ▁index
+▁How ▁to ▁modify ▁num ercial ▁values ▁in ▁a ▁column ▁of ▁mixed ▁data ▁types ▁in ▁a ▁pandas ▁dataframe ? ▁< s > ▁values ▁values ▁columns ▁values ▁get
+▁Python ▁dataframe ▁create ▁index ▁column ▁based ▁on ▁other ▁id ▁column ▁< s > ▁index
+▁Dataframe ▁summary ▁math ▁based ▁on ▁condition ▁from ▁another ▁dataframe ? ▁< s > ▁get ▁all ▁values ▁where
+▁Replace ▁NaN ▁Values ▁with ▁the ▁Me ans ▁of ▁other ▁Col s ▁based ▁on ▁Condition ▁< s > ▁DataFrame ▁replace ▁values ▁columns ▁value ▁mean ▁values ▁values ▁columns ▁mean
+▁Drop ▁rows ▁with ▁a ▁& # 39 ; question ▁mark &# 39 ; ▁value ▁in ▁any ▁column ▁in ▁a ▁pandas ▁dataframe ▁< s > ▁value ▁any ▁all ▁take ▁all ▁any
+▁Replace ▁neg atives ▁with ▁zeros ▁in ▁a ▁dataframe ▁column ▁of ▁lists ▁< s > ▁columns ▁first ▁date ▁index ▁second ▁values ▁replace ▁all ▁values ▁first ▁columns ▁apply
+▁creating ▁a ▁pandas ▁dataframe ▁based ▁on ▁cell ▁content ▁of ▁two ▁other ▁dataframes ▁< s > ▁columns ▁values ▁apply ▁value ▁array ▁values ▁values
+▁functools ▁reduce ▁In - Place ▁modifies ▁original ▁dataframe ▁< s > ▁DataFrame ▁copy
+▁How ▁do ▁I ▁apply ▁a ▁function ▁to ▁the ▁groupby ▁sub - groups ▁that ▁depends ▁on ▁multiple ▁columns ? ▁< s > ▁apply ▁groupby ▁sub ▁groups ▁columns ▁groupby ▁apply ▁groupby ▁sum ▁groupby
+▁Rename ▁Columns ▁in ▁a ▁Pandas ▁Dataframe ▁with ▁values ▁form ▁dictionary ▁< s > ▁values ▁names ▁names ▁keys ▁DataFrame ▁time
+▁pandas : ▁assign ▁random ▁numbers ▁in ▁given ▁range ▁to ▁equal ▁column ▁values ▁< s > ▁assign ▁values ▁columns ▁values ▁describe ▁value
+▁Count ▁how ▁many ▁cells ▁are ▁between ▁the ▁last ▁value ▁in ▁the ▁dataframe ▁and ▁the ▁end ▁of ▁the ▁row ▁< s > ▁between ▁last ▁value ▁count ▁empty ▁between ▁last ▁value
+▁Sort ▁pandas ▁df ▁subset ▁of ▁rows ▁( within ▁a ▁group ) ▁by ▁specific ▁column ▁< s > ▁sub
+▁How ▁to ▁manipulate ▁data ▁cell ▁by ▁cell ▁in ▁pandas ▁df ? ▁< s > ▁sample ▁all ▁sample ▁left ▁value ▁month ▁values ▁delete ▁value ▁value ▁sample ▁value ▁value ▁delete ▁value ▁sample ▁columns
+▁pandas ▁how ▁to ▁drop ▁rows ▁when ▁all ▁float ▁columns ▁are ▁NaN ▁< s > ▁drop ▁all ▁columns ▁dtypes ▁drop ▁columns ▁drop na ▁columns
+▁Create ▁DF ▁Columns ▁Based ▁on ▁Second ▁D DF ▁< s > ▁columns ▁add ▁columns ▁columns ▁columns ▁columns ▁columns
+▁Convert ▁list ▁of ▁dictionaries ▁to ▁dataframe ▁with ▁one ▁column ▁for ▁keys ▁and ▁one ▁for ▁values ▁< s > ▁keys ▁values ▁columns ▁keys ▁values ▁get ▁any
+▁Mer ging / Combin ing ▁Data frames ▁in ▁Pandas ▁< s > ▁combine ▁get ▁concat ▁append ▁combine _ first
+▁Reverse ▁columns ▁of ▁dataframe ▁based ▁on ▁the ▁column ▁name ▁< s > ▁columns ▁name ▁columns ▁names
+▁Cross ▁reference ▁list ▁of ▁ids ▁to ▁index ▁< s > ▁index ▁value ▁all ▁index ▁index ▁where ▁equals ▁dtypes
+▁Convert ▁standard ▁date ▁format ▁to ▁string ▁splitting ▁by ▁point ▁in ▁Python ▁< s > ▁date ▁get
+▁pandas ▁drop ▁diff rent ▁rows ▁with ▁differ ing ▁column ▁values ▁< s > ▁drop ▁values ▁DataFrame ▁value ▁values ▁where ▁value ▁unique
+▁Pandas : ▁How ▁to ▁return ▁the ▁rows ▁where ▁col ▁value ▁is ▁greater ▁than ▁& # 39 ; x &# 39 ; ▁in ▁rolling ▁window ▁< s > ▁where ▁value ▁rolling ▁all ▁where ▁value ▁value ▁where ▁value
+▁Pandas ▁remove ▁characters ▁from ▁index ▁< s > ▁index ▁value ▁index
+▁How ▁to ▁print ▁rows ▁if ▁a ▁list ▁of ▁values ▁appear ▁in ▁any ▁column ▁of ▁pandas ▁dataframe ▁< s > ▁values ▁any ▁values ▁any ▁all ▁where ▁values ▁values ▁any ▁columns ▁Series ▁values ▁size ▁get ▁values ▁any ▁values ▁any ▁columns ▁query ▁query ▁at ▁all ▁columns ▁any ▁values ▁values ▁query ▁columns
+▁In ▁a ▁dataframe ▁how ▁can ▁I ▁count ▁a ▁specific ▁value ▁and ▁then ▁select ▁the ▁value ▁with ▁the ▁highest ▁count ▁to ▁create ▁another ▁dataframe ? ▁< s > ▁count ▁value ▁select ▁value ▁count ▁select ▁value
+▁How ▁to ▁replace ▁& # 39 ; Zero &# 39 ; ▁by ▁& # 39 ; One &# 39 ; ▁for ▁particular ▁row ▁in ▁data ▁frame ▁< s > ▁replace ▁value ▁last ▁last ▁last
+▁Need ▁help ▁getting ▁the ▁frequency ▁of ▁each ▁number ▁in ▁a ▁pandas ▁dataframe ▁< s > ▁index ▁values ▁put ▁transform ▁any ▁update
+▁Modify ▁and ▁flatten ▁values ▁from ▁Pandas ▁dataframe ▁< s > ▁values ▁dtypes ▁get ▁sample ▁now ▁get ▁first ▁values
+▁Split ▁pandas ▁dataframe ▁into ▁multiple ▁dataframes ▁based ▁on ▁null ▁columns ▁< s > ▁columns ▁values
+▁pandas ▁Integers ▁to ▁negative ▁integer ▁powers ▁are ▁not ▁allowed ▁< s > ▁get
+▁How ▁to ▁convert ▁a ▁pandas ▁dataframe ▁column ▁from ▁string ▁to ▁an ▁array ▁of ▁floats ? ▁< s > ▁array ▁where ▁array ▁array
+▁Pandas ▁concatenate ▁levels ▁in ▁multi index ▁< s > ▁levels
+▁Re pe ating ▁single ▁DataFrame ▁with ▁changing ▁DateTime Index ▁< s > ▁DataFrame ▁DataFrame ▁take ▁DataFrame ▁append ▁DataFrame ▁year ▁index ▁DataFrame ▁year ▁year
+▁How ▁to ▁find ▁the ▁correlation ▁between ▁a ▁group ▁of ▁values ▁in ▁a ▁pandas ▁dataframe ▁column ▁< s > ▁between ▁values ▁value ▁between ▁update ▁all ▁columns
+▁Python ▁Dataframe ▁get ▁the ▁NaN ▁columns ▁for ▁each ▁row ▁< s > ▁get ▁columns ▁add ▁values ▁columns
+▁How ▁to ▁get ▁the ▁top ▁frequency ▁elements ▁after ▁grouping ▁by ▁columns ? ▁< s > ▁get ▁columns ▁DataFrame ▁count ▁second ▁second
+▁add ▁a ▁string ▁prefix ▁to ▁each ▁value ▁in ▁a ▁string ▁column ▁using ▁Pandas ▁< s > ▁add ▁value ▁append ▁start ▁value ▁any ▁where
+▁R ear r anging ▁python ▁data ▁frame ▁index ▁and ▁columns ▁< s > ▁index ▁columns ▁index ▁name
+▁Pandas : ▁Res h aping ▁dataframe ▁< s > ▁transform ▁unstack
+▁data ▁frame ▁to ▁file . txt ▁python
+▁Merge ▁dataframes ▁including ▁extrem e ▁values ▁< s > ▁values ▁merge ▁at ▁time ▁first ▁last ▁value
+▁How ▁can ▁I ▁use ▁split () ▁in ▁a ▁string ▁when ▁broadcast ing ▁a ▁dataframe &# 39 ; s ▁column ? ▁< s > ▁time
+▁using ▁a ▁dictionary ▁to ▁modify ▁the ▁dfs ▁values ▁< s > ▁values ▁keys ▁index ▁names ▁values ▁names ▁names ▁values
+▁How ▁can ▁I ▁remove ▁columns ▁of ▁pandas ▁dataframe ▁conditional ▁on ▁last ▁row ▁values ? ▁< s > ▁columns ▁last ▁values ▁columns ▁value ▁last
+▁D ask ▁equivalent ▁to ▁pandas . DataFrame . update ▁< s > ▁DataFrame ▁update ▁get ▁last ▁value ▁values ▁values ▁index
+▁Pandas ▁Dataframe ▁data ▁are ▁same ▁or ▁new ? ▁< s > ▁contains
+▁Pandas ▁Replace ▁NaN ▁with ▁blank / empty ▁string ▁< s > ▁empty ▁values ▁empty
+▁Split ting ▁a ▁dataframe ▁into ▁separate ▁CSV ▁files ▁< s > ▁value ▁value
+▁Pandas ▁: ▁new ▁column ▁with ▁index ▁of ▁unique ▁values ▁of ▁another ▁column ▁< s > ▁index ▁unique ▁values
+▁Pandas ▁list ▁of ▁tuples ▁to ▁MultiIndex ▁< s > ▁MultiIndex
+▁Pandas ▁filter ▁rows ▁based ▁on ▁condition , ▁but ▁always ▁retain ▁the ▁first ▁row ▁< s > ▁filter ▁first ▁drop ▁drop ▁first ▁first ▁drop ▁first ▁first ▁value ▁drop ▁first ▁first ▁value
+▁Ph y ton : ▁How ▁to ▁get ▁the ▁average ▁of ▁the ▁n ▁largest ▁values ▁for ▁each ▁column ▁grouped ▁by ▁id ▁< s > ▁get ▁values ▁get ▁mean ▁get ▁contains ▁mean ▁values ▁values
+▁Changing ▁Value ▁of ▁adjacent ▁column ▁based ▁on ▁value ▁of ▁of ▁another ▁column ▁< s > ▁value ▁value ▁value
+▁Dynamically ▁accessing ▁subset ▁of ▁pandas ▁data f ▁r ame , ▁perform ▁calculation ▁and ▁write ▁to ▁new ▁data ▁frame ▁< s > ▁sample ▁rolling
+▁Using ▁np . split _ array ▁and ▁then ▁saving ▁each ▁split ▁into ▁dataframes ▁< s > ▁columns ▁where ▁right ▁any ▁values ▁groups ▁size ▁insert ▁all ▁values ▁shape
+▁Pred ict ing ▁Values ▁in ▁Movie ▁Rec ommend ations ▁< s > ▁between ▁now ▁values ▁add ▁any
+▁Save ▁in ▁DataFrame ▁unique ▁values ▁for ▁every ▁column ▁< s > ▁DataFrame ▁unique ▁values ▁DataFrame
+▁Compare ▁each ▁of ▁the ▁column ▁values ▁and ▁return ▁final ▁value ▁based ▁on ▁conditions ▁< s > ▁values ▁value ▁apply ▁values ▁assign ▁values ▁where ▁first ▁append ▁any ▁where
+▁How ▁to ▁find ▁which ▁row ▁items ▁are ▁appearing ▁most ▁in ▁a ▁pandas ▁dataframe ▁< s > ▁items ▁unique ▁items ▁count
+▁Count ▁the ▁number ▁of ▁specific ▁values ▁in ▁multiple ▁columns ▁pandas ▁< s > ▁values ▁columns ▁count ▁all ▁columns
+▁How ▁to ▁concat ▁two ▁or ▁more ▁data ▁frames ▁with ▁different ▁columns ▁names ▁in ▁pandas ▁< s > ▁concat ▁columns ▁names ▁join ▁all

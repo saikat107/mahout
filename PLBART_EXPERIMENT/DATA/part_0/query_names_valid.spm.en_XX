@@ -1,0 +1,59 @@
+▁pandas : ▁write ▁df ▁to ▁text ▁file ▁- ▁indent ▁df ▁to ▁right ▁by ▁5 ▁white ▁spaces ▁< s > ▁right ▁right
+▁Pandas ▁dataframe : ▁Remove ▁secondary ▁up coming ▁same ▁value ▁< s > ▁value ▁first ▁replace ▁first
+▁Pandas ▁dataframe ▁column ▁headers ▁to ▁labels ▁for ▁data ▁< s > ▁step ▁columns ▁empty ▁where ▁columns ▁empty ▁length ▁columns
+▁How ▁can ▁I ▁change ▁the ▁structure ▁of ▁a ▁dataframe ? ▁< s > ▁unstack ▁Series
+▁replace ▁zero ▁with ▁value ▁of ▁an ▁other ▁column ▁using ▁pandas ▁< s > ▁replace ▁value ▁replace ▁value
+▁Change ▁day ▁to ▁specific ▁entries ▁in ▁pandas ▁dataframe ▁< s > ▁day ▁index ▁between ▁date ▁day ▁between ▁between ▁where ▁day ▁index ▁take ▁time ▁index ▁step ▁between ▁date ▁last ▁get
+▁python ▁pandas ▁- ▁calculate ▁percentage ▁change ▁using ▁last ▁non - na ▁value ▁< s > ▁last ▁value ▁value ▁values ▁value ▁at ▁all ▁any
+▁He at map ▁of ▁counts ▁of ▁every ▁value ▁in ▁every ▁column ▁< s > ▁value ▁categories ▁values ▁values ▁count ▁values
+▁Python ▁Pandas ▁: ▁pandas . to _ datetime () ▁is ▁switching ▁day ▁& amp ; ▁month ▁when ▁day ▁is ▁less ▁than ▁13 ▁< s > ▁to _ datetime ▁day ▁month ▁day ▁day ▁month ▁day ▁any ▁day ▁day ▁day ▁month ▁day ▁all ▁day ▁month ▁day ▁get ▁stop ▁day ▁month ▁day ▁all ▁days
+▁Find ▁count ▁of ▁unique ▁value ▁of ▁each ▁column ▁and ▁save ▁in ▁CSV ▁< s > ▁count ▁unique ▁value ▁count ▁unique ▁value ▁name
+▁How ▁to ▁merge ▁rows ▁in ▁a ▁dataframe ▁based ▁on ▁a ▁column ▁value ? ▁< s > ▁merge ▁value ▁shape ▁where ▁get ▁get
+▁Drop ▁rows ▁based ▁on ▁condition ▁pandas ▁< s > ▁sum ▁sum ▁columns ▁names ▁at ▁values ▁columns
+▁. max () ▁for ▁dataframe ▁converts ▁object ▁type ▁to ▁float 64 ▁< s > ▁max ▁columns ▁value
+▁Im pro ve ▁pandas ▁filter ▁speed ▁by ▁storing ▁indices ? ▁< s > ▁filter ▁indices ▁where ▁unique ▁take ▁indices ▁values ▁time ▁now ▁values ▁index ▁columns ▁indices
+▁Most ▁efficient ▁way ▁to ▁multiply ▁every ▁column ▁of ▁a ▁large ▁pandas ▁dataframe ▁with ▁every ▁other ▁column ▁of ▁the ▁same ▁dataframe ▁< s > ▁get ▁columns ▁all ▁between ▁columns ▁columns
+▁Multip ly ▁dataframe ▁rows ▁depends ▁on ▁value ▁in ▁this ▁row ▁< s > ▁value ▁value
+▁Pandas ▁Dataframe , ▁average ▁non ▁0 ▁value ▁< s > ▁value ▁get ▁value ▁value ▁where ▁value
+▁Combine ▁multi ▁columns ▁to ▁one ▁column ▁Pandas ▁< s > ▁columns
+▁Pandas ▁Dataframe : ▁Calculate ▁Shared ▁Fraction ▁< s > ▁value ▁where ▁columns ▁where ▁sum ▁all ▁sum
+▁How ▁can ▁I ▁save ▁DataFrame ▁as ▁list ▁and ▁not ▁as ▁string ▁< s > ▁DataFrame ▁now ▁all
+▁How ▁to ▁Extract ▁Month ▁Name ▁and ▁Year ▁from ▁Date ▁column ▁of ▁DataFrame ▁< s > ▁DataFrame ▁month ▁name ▁year
+▁Check ▁for ▁each ▁value ▁in ▁column ▁has ▁only ▁one ▁corresponding ▁value ▁in ▁another ▁column ▁pandas ▁< s > ▁value ▁value ▁add ▁value ▁values ▁values ▁count
+▁Finding ▁the ▁frequency ▁that ▁each ▁column ▁is ▁a ▁row ▁minimum ▁< s > ▁contains ▁columns ▁sample
+▁Replace ▁& quot ; NaN & quot ; ▁value ▁by ▁last ▁valid ▁value ▁for ▁only ▁one ▁column ▁in ▁a ▁dataframe ▁with ▁column ▁multi - index ▁( df . fillna ) ▁< s > ▁value ▁last ▁value ▁index ▁fill na ▁index ▁value ▁get ▁replace ▁value ▁last ▁value ▁get ▁get ▁value ▁copy ▁DataFrame ▁any ▁index ▁MultiIndex ▁fill na
+▁Changing ▁the ▁Increment ▁Value ▁in ▁Data ▁Frame ▁at ▁Cert ain ▁Row ▁< s > ▁at ▁now ▁index ▁index ▁values ▁value ▁get ▁where
+▁Add ▁columns ▁to ▁a ▁dataset ▁without ▁any ▁columns ▁< s > ▁columns ▁any ▁columns ▁add ▁columns ▁now ▁add ▁columns ▁first ▁first ▁now ▁columns ▁add ▁columns ▁columns ▁now
+▁How ▁to ▁un list ▁a ▁list ▁with ▁one ▁value ▁inside ▁a ▁pandas ▁columns ? ▁< s > ▁value ▁columns ▁get ▁time
+▁How ▁do ▁I ▁turn ▁categorical ▁column ▁values ▁into ▁different ▁column ▁names ? ▁< s > ▁values ▁names
+▁Split ▁multiple ▁columns ▁by ▁numeric ▁or ▁alphab etic ▁symbols ▁< s > ▁columns ▁columns ▁columns ▁take ▁first ▁values ▁take ▁take
+▁How ▁do ▁i ▁check ▁that ▁the ▁unique ▁values ▁of ▁a ▁column ▁exists ▁in ▁another ▁column ▁in ▁dataframe ? ▁< s > ▁unique ▁values ▁unique ▁value ▁right
+▁Pandas ▁Concat en ation ▁not ▁working ▁properly ▁< s > ▁add ▁sample ▁columns ▁columns ▁head ▁to _ dict
+▁justify ▁data ▁from ▁right ▁to ▁left ▁< s > ▁right ▁left ▁values ▁align ▁values ▁right ▁apply ▁get
+▁In crease ▁specific ▁rows ▁by ▁multiplication ▁until ▁sum ▁of ▁columns ▁ful fil s ▁criteria ▁< s > ▁sum ▁columns ▁columns ▁where ▁sum ▁columns ▁sum ▁any ▁all ▁now ▁columns ▁first ▁filter ▁where ▁sum ▁all ▁all ▁columns ▁product ▁all ▁sum ▁add
+▁Add ▁new ▁columns ▁to ▁pandas ▁dataframe ▁based ▁on ▁other ▁dataframe ▁< s > ▁columns ▁columns ▁duplicated ▁apply ▁unique ▁duplicated ▁add ▁columns ▁add ▁apply ▁groupby ▁map
+▁Div ide ▁a ▁pandas ▁dataframe ▁by ▁the ▁sum ▁of ▁its ▁index ▁column ▁and ▁row ▁< s > ▁sum ▁index ▁transform ▁sum ▁index ▁columns
+▁check ▁if ▁string ▁contains ▁sub ▁string ▁from ▁the ▁same ▁column ▁in ▁pandas ▁dataframe ▁< s > ▁contains ▁sub ▁sub
+▁DataFrames ▁- ▁Average ▁Columns ▁< s > ▁contains ▁columns ▁add
+▁Fill ▁a ▁Dataframe ▁column ▁with ▁list ▁of ▁values ▁if ▁condition ▁is ▁not ▁satisfied ▁based ▁on ▁some ▁other ▁column ▁< s > ▁values ▁values ▁values ▁difference ▁size
+▁Pandas ▁search ▁if ▁full ▁rows ▁of ▁a ▁large ▁df ▁contain ▁template ▁rows ▁from ▁a ▁another ▁smaller ▁df ? ▁< s > ▁any ▁any ▁test ▁all ▁any
+▁read ▁csv ▁and ▁Iterate ▁through ▁10 ▁row ▁blocks ▁< s > ▁columns ▁columns ▁value ▁value ▁columns ▁first ▁all ▁first ▁first
+▁Insert ▁values ▁from ▁variable ▁and ▁DataFrame ▁into ▁another ▁DataFrame ▁< s > ▁values ▁DataFrame ▁DataFrame ▁start ▁map ▁DataFrame ▁all ▁DataFrame ▁value ▁hour
+▁How ▁to ▁use ▁row ▁index ▁and ▁cell ▁value ▁in ▁function ▁applied ▁to ▁dataframe ? ▁< s > ▁index ▁value ▁empty ▁replace ▁value ▁index ▁value ▁values ▁first ▁empty ▁empty
+▁Remove ▁rows ▁when ▁the ▁occurrence ▁of ▁a ▁column ▁value ▁in ▁the ▁data ▁frame ▁is ▁less ▁than ▁a ▁certain ▁number ▁using ▁pandas / python ? ▁< s > ▁value ▁values ▁values
+▁Append ▁list ▁from ▁pandas ▁column ▁to ▁python ▁list ▁< s > ▁values ▁append ▁first
+▁update ▁table ▁information ▁based ▁on ▁columns ▁of ▁another ▁table ▁< s > ▁update ▁columns ▁contains ▁all ▁contains ▁update ▁values ▁update
+▁Pandas : ▁how ▁to ▁do ▁value ▁counts ▁within ▁groups ▁< s > ▁value ▁groups ▁first ▁value ▁count ▁values ▁any ▁right ▁value ▁step
+▁Python ▁Pandas ▁| ▁Find ▁maximum ▁value ▁only ▁from ▁a ▁specific ▁part ▁of ▁a ▁column ▁< s > ▁value ▁max ▁value ▁select ▁values ▁value
+▁Pandas ▁Dataframe ▁interpre ting ▁columns ▁as ▁float ▁instead ▁of ▁String ▁< s > ▁columns ▁get ▁get
+▁Plot ting ▁a ▁data ▁frame ▁of ▁error ▁bars ▁onto ▁a ▁data ▁frame ▁in ▁matplotlib ▁Python ▁< s > ▁values ▁values ▁plot ▁get ▁add
+▁splitting ▁list ▁in ▁dataframe ▁columns ▁to ▁separate ▁columns ▁< s > ▁columns ▁columns ▁apply ▁Series ▁values
+▁sum ▁of ▁row ▁in ▁the ▁same ▁columns ▁in ▁pandas ▁< s > ▁sum ▁columns ▁get ▁sum ▁values ▁between ▁sum ▁sum ▁sum ▁between
+▁Use ▁a ▁categorical ▁column ▁to ▁order ▁the ▁dataframe ▁according ▁to ▁an ▁array ▁< s > ▁array ▁array ▁array
+▁Can ▁I ▁shift ▁specific ▁values ▁in ▁one ▁data ▁column ▁to ▁another ▁column ▁while ▁keeping ▁the ▁other ▁values ▁unchanged ? ▁< s > ▁shift ▁values ▁values ▁take ▁all ▁values ▁shift ▁replace ▁values ▁values ▁all ▁replace ▁values ▁all ▁replace ▁values
+▁Convert ▁dictionary ▁of ▁dictionaries ▁to ▁dataframe ▁with ▁data ▁types ▁< s > ▁contains ▁columns ▁all
+▁Remove ▁decimals ▁in ▁Pandas ▁column ▁names ▁< s > ▁names ▁names ▁columns
+▁Replace ▁specific ▁values ▁in ▁multi index ▁dataframe ▁< s > ▁values ▁index ▁levels ▁columns ▁replace ▁values ▁first ▁index ▁second ▁index ▁first ▁time ▁where ▁get ▁mask ▁replace ▁values
+▁How ▁to ▁merge ▁multiple ▁columns ▁containing ▁numeric ▁data ▁in ▁Pandas , ▁but ▁ignore ▁empty ▁cells ▁< s > ▁merge ▁columns ▁empty ▁where ▁merge ▁columns ▁get
+▁How ▁can ▁I ▁sort ▁dataframe ▁based ▁on ▁a ▁complicated ▁string ▁column ? ▁< s > ▁right ▁right ▁any
+▁Keep ▁a ▁single ▁element ▁in ▁dataframe ▁of ▁lists ▁< s > ▁all ▁first

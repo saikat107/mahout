@@ -1,0 +1,64 @@
+▁A ▁better ▁way ▁to ▁map ▁data ▁in ▁multiple ▁datasets , ▁with ▁multiple ▁data ▁mapping ▁rules ▁< s > ▁map ▁add ▁value ▁codes ▁map ▁first
+▁Create ▁a ▁dataframe ▁from ▁arrays ▁python ▁< s > ▁array ▁DataFrame
+▁Can ▁not ▁make ▁desired ▁pandas ▁dataframe ▁< s > ▁columns ▁transpose
+▁How ▁to ▁handle ▁missing ▁data ▁with ▁respect ▁to ▁type ▁of ▁dataset ? ▁< s > ▁where ▁replace ▁value
+▁Python : ▁Convert ▁matrices ▁to ▁permutations ▁table ▁< s > ▁get ▁values ▁time ▁values ▁all ▁values
+▁python / pandas : ▁update ▁a ▁column ▁based ▁on ▁a ▁series ▁holding ▁sums ▁of ▁that ▁same ▁column ▁< s > ▁update ▁unique ▁values ▁repeat ▁take ▁value ▁contains ▁codes ▁index ▁cut ▁update ▁value ▁index ▁groupby ▁groupby ▁apply ▁update ▁index ▁start ▁add ▁values
+▁Assign ▁unique ▁ID ▁to ▁Pandas ▁group ▁but ▁add ▁one ▁if ▁repeated ▁< s > ▁unique ▁add ▁assign ▁unique ▁add ▁last
+▁How ▁to ▁append ▁ndarray ▁values ▁into ▁dataframe ▁rows ▁of ▁particular ▁columns ? ▁< s > ▁append ▁values ▁columns ▁columns ▁array ▁values ▁array ▁get ▁left
+▁Pandas : Calculate ▁mean ▁of ▁a ▁group ▁of ▁n ▁values ▁of ▁each ▁columns ▁of ▁a ▁dataframe ▁< s > ▁mean ▁values ▁columns ▁mean ▁first
+▁how ▁to ▁extract ▁each ▁numbers ▁from ▁pandas ▁string ▁column ▁to ▁list ?
+▁How ▁to ▁fill ▁elements ▁between ▁intervals ▁of ▁a ▁list ▁< s > ▁between ▁replace ▁values ▁apply ▁any ▁value
+▁Creating ▁new ▁columns ▁within ▁a ▁dataframe , ▁based ▁on ▁the ▁latest ▁value ▁from ▁previous ▁columns ▁< s > ▁columns ▁value ▁columns ▁put ▁view ▁at ▁columns ▁last ▁at ▁take ▁last ▁year ▁put ▁columns ▁value ▁take ▁value ▁columns ▁all ▁columns ▁where ▁first ▁all ▁test ▁all ▁put ▁where ▁all
+▁Extract ▁part ▁of ▁a ▁3 ▁D ▁dataframe ▁< s > ▁take
+▁Iter ative ▁comparison ▁with ▁pandas ▁< s > ▁between ▁difference ▁between ▁any ▁any
+▁Check ▁if ▁group ▁contains ▁same ▁value ▁in ▁Pandas ▁< s > ▁contains ▁value ▁all ▁value ▁empty ▁values
+▁Re - arr anging ▁a ▁single ▁column ▁of ▁strings ▁based ▁on ▁text ▁containing ▁different ▁dates , ▁by ▁date ▁< s > ▁date ▁day ▁stack ▁index ▁right ▁any ▁between ▁index
+▁Convert ▁dictionary ▁with ▁sub - list ▁of ▁dictionaries ▁into ▁pandas ▁dataframe ▁< s > ▁sub
+▁Pandas : ▁Create ▁dataframe ▁from ▁data ▁and ▁column ▁order ▁< s > ▁array ▁put ▁between ▁names ▁names
+▁How ▁to ▁split ▁dataframe ▁made ▁from ▁objects ? ▁< s > ▁columns
+▁How ▁to ▁read ▁list ▁of ▁json ▁objects ▁from ▁Pandas ▁DataFrame ? ▁< s > ▁DataFrame ▁array ▁get ▁values ▁DataFrame ▁array ▁get
+▁Drop ▁a ▁pandas ▁DataFrame ▁row ▁that ▁comes ▁after ▁a ▁row ▁that ▁contains ▁a ▁particular ▁value ▁< s > ▁DataFrame ▁contains ▁value ▁drop ▁all ▁at ▁truncate ▁index ▁size
+▁Rep lic ate ▁multiple ▁rows ▁of ▁events ▁for ▁specific ▁IDs ▁multiple ▁times ▁< s > ▁where ▁value ▁all ▁Index ▁values ▁time
+▁from ▁two ▁arrays ▁to ▁one ▁dataframe ▁python ▁< s > ▁put ▁values ▁put ▁get ▁right
+▁Sh if ting ▁and ▁revert ing ▁multiple ▁rows ▁in ▁pandas ▁dataframe ▁< s > ▁shift ▁values ▁right ▁get ▁shift ▁apply ▁any
+▁Merge ▁pandas ▁dataframes ▁by ▁timestamps ▁< s > ▁merge ▁timestamp ▁timestamp ▁DataFrame ▁time ▁start ▁seconds
+▁Pandas ▁DataFrame ▁from ▁Dictionary ▁< s > ▁DataFrame ▁columns ▁all
+▁How ▁to ▁manipulate ▁column ▁entries ▁using ▁only ▁one ▁specific ▁output ▁of ▁a ▁function ▁that ▁returns ▁several ▁values ? ▁< s > ▁values ▁values ▁add ▁value
+▁pandas ▁groupby ▁expanding ▁df ▁based ▁on ▁unique ▁values ▁< s > ▁groupby ▁expanding ▁unique ▁values ▁unique ▁count ▁unique ▁value ▁where ▁add ▁unique ▁value ▁value ▁where ▁value ▁unique ▁values ▁count ▁sum ▁value ▁now ▁sum
+▁Add ▁ID ▁found ▁in ▁list ▁to ▁new ▁column ▁in ▁pandas ▁dataframe ▁< s > ▁any ▁index ▁any ▁get ▁all ▁values ▁get ▁get ▁columns
+▁How ▁to ▁change ▁values ▁of ▁rows ▁based ▁on ▁conditions ▁in ▁dataframe ? ▁< s > ▁values
+▁Adding ▁value ▁from ▁one ▁pandas ▁dataframe ▁to ▁another ▁dataframe ▁by ▁matching ▁a ▁variable ▁< s > ▁value ▁columns ▁second ▁contains ▁columns ▁replace ▁empty ▁values ▁values ▁first ▁values
+▁Copying ▁columns ▁within ▁pandas ▁dataframe ▁< s > ▁columns ▁copy ▁columns ▁shift ▁values ▁columns
+▁Append ▁rows ▁to ▁groups ▁in ▁pandas ▁< s > ▁groups ▁append ▁pad
+▁replace ▁NaN ▁with ▁& # 39 ; - &# 39 ; ▁sign ▁only ▁in ▁spe ce f ic ▁condition ▁, Python - P andas ▁< s > ▁replace ▁replace ▁all ▁value ▁any ▁last ▁value
+▁transform ▁a ▁pandas ▁dataframe ▁in ▁a ▁pandas ▁with ▁mult icol umn s ▁< s > ▁transform ▁where ▁index
+▁How ▁to ▁drop ▁pandas ▁consecutive ▁column ▁by ▁column ▁name ▁simultaneously ? ▁< s > ▁drop ▁name
+▁Pandas : ▁Drop ▁duplicates ▁based ▁on ▁row ▁value ▁< s > ▁value ▁drop ▁drop ▁all ▁drop ▁value ▁value
+▁How ▁can ▁I ▁find ▁and ▁store ▁how ▁many ▁columns ▁it ▁takes ▁to ▁reach ▁a ▁value ▁greater ▁than ▁the ▁first ▁value ▁in ▁each ▁row ? ▁< s > ▁columns ▁value ▁first ▁value ▁first ▁time ▁value ▁value ▁first ▁first ▁value ▁first ▁value ▁columns ▁first ▁value ▁first ▁value ▁columns ▁first ▁value ▁first ▁value ▁columns
+▁Pandas : ▁Keep ▁values ▁in ▁a ▁set ▁of ▁columns ▁if ▁they ▁exist ▁in ▁another ▁set ▁of ▁columns ▁in ▁the ▁same ▁row , ▁otherwise ▁set ▁it ▁to ▁NaN ▁< s > ▁values ▁columns ▁columns ▁columns ▁values ▁values ▁columns ▁columns ▁value ▁query ▁right
+▁put ▁only ▁elements ▁into ▁a ▁list ▁with ▁a ▁cert ian ▁number ▁< s > ▁put ▁all ▁unique ▁all ▁add ▁item ▁add ▁contains ▁item
+▁Multi - column ▁to ▁single ▁column ▁in ▁Pandas
+▁Group by ▁and ▁perform ▁row - wise ▁calculation ▁using ▁a ▁custom ▁function ▁< s > ▁add ▁value ▁apply ▁values ▁columns ▁values ▁now
+▁How ▁can ▁I ▁remove ▁a ▁certain ▁type ▁of ▁values ▁in ▁a ▁group ▁in ▁pandas ? ▁< s > ▁values ▁delete ▁all ▁where ▁last ▁items ▁last ▁item ▁last ▁groups ▁where ▁last ▁item ▁delete ▁all ▁last
+▁Transform ▁a ▁large ▁dataframe ▁- ▁takes ▁too ▁long ▁< s > ▁transform
+▁Drop ▁last ▁n ▁rows ▁within ▁pandas ▁dataframe ▁groupby ▁< s > ▁last ▁groupby ▁where ▁drop ▁last ▁columns ▁columns
+▁Python ▁trans posing ▁multiple ▁dataframes ▁in ▁a ▁list ▁< s > ▁columns ▁item ▁get ▁transpose ▁get ▁any
+▁pandas ▁- ▁down sample ▁a ▁more ▁frequent ▁DataFrame ▁to ▁the ▁frequency ▁of ▁a ▁less ▁frequent ▁DataFrame ▁< s > ▁DataFrame ▁DataFrame ▁at ▁all ▁at ▁first ▁get ▁between
+▁Merge ▁two ▁columns ▁of ▁a ▁dataframe ▁into ▁an ▁already ▁existing ▁column ▁of ▁dictionaries ▁as ▁a ▁key ▁value ▁pair ▁< s > ▁columns ▁value ▁columns ▁apply ▁all
+▁Sw ap ▁contents ▁of ▁columns ▁inside ▁dataframe ▁< s > ▁columns ▁between
+▁How ▁does ▁pandas ▁convert ▁one ▁column ▁of ▁data ▁into ▁another ? ▁< s > ▁get
+▁Add ▁a ▁different ▁item ▁from ▁a ▁list ▁to ▁each ▁cell ▁in ▁a ▁dataframe ▁with ▁Pandas ▁< s > ▁item ▁add ▁value ▁value ▁value ▁transform
+▁Pandas : ▁Sw ap ▁rows ▁between ▁columns ▁< s > ▁between ▁columns ▁columns ▁now ▁columns ▁dtypes
+▁Turn ▁columns &# 39 ; ▁values ▁to ▁headers ▁of ▁columns ▁with ▁values ▁1 ▁and ▁0 ▁( ▁accordingly ) ▁[ python ] ▁< s > ▁columns ▁values ▁columns ▁values ▁columns ▁where ▁values
+▁Use ▁duplicated ▁values ▁to ▁increment ▁column ▁< s > ▁duplicated ▁values ▁duplicated ▁values ▁all
+▁Append ▁list ▁to ▁list ▁in ▁specific ▁cell ▁in ▁pandas ▁< s > ▁append ▁where ▁now
+▁Group ▁a ▁dataframe ▁on ▁one ▁column ▁and ▁take ▁max ▁from ▁one ▁column ▁and ▁its ▁corresponding ▁value ▁from ▁the ▁other ▁col ▁< s > ▁take ▁max ▁value ▁first ▁take ▁value ▁max ▁values ▁take ▁first ▁value ▁max ▁first ▁at ▁time ▁take ▁time
+▁is ▁there ▁a ▁way ▁to ▁read ▁multiple ▁excel ▁tab / sheets ▁from ▁single ▁xlsx ▁to ▁multiple ▁dataframes ▁with ▁each ▁dataframe ▁named ▁with ▁sheet ▁name ? ▁< s > ▁name ▁name ▁columns ▁values ▁value ▁concat ▁value ▁all ▁values ▁columns
+▁How ▁to ▁pick ▁some ▁values ▁of ▁a ▁column ▁and ▁make ▁another ▁one ▁with ▁them ? ▁< s > ▁values ▁take ▁values ▁values ▁values ▁values ▁merge ▁repeat ▁columns
+▁Using ▁pandas . interpolate () ▁< s > ▁interpolate ▁apply ▁apply ▁apply ▁first ▁interpolate ▁second
+▁Compare ▁two ▁columns ▁that ▁contains ▁timestamps ▁in ▁pandas ▁< s > ▁columns ▁contains ▁compare ▁timestamp ▁columns ▁timestamp ▁timestamp ▁columns
+▁remove ▁un named ▁col ums ▁pandas ▁dataframe ▁< s > ▁put ▁last ▁time ▁get ▁get
+▁Using ▁values ▁from ▁dataframe ▁for ▁calculation ▁< s > ▁values ▁interpolate ▁between ▁rank ▁where ▁rank ▁where ▁values
+▁How ▁to ▁average ▁DataFrame ▁row ▁with ▁another ▁row ▁only ▁if ▁the ▁first ▁row ▁is ▁a ▁substring ▁of ▁other ▁next ▁row ▁< s > ▁DataFrame ▁first ▁combine ▁first ▁name ▁values ▁values ▁where
+▁Cal culating ▁the ▁duration ▁an ▁event ▁in ▁a ▁time ▁series ▁python ▁< s > ▁time ▁index ▁value ▁hour ▁values ▁day ▁sum ▁values ▁day ▁time ▁year ▁value ▁values
