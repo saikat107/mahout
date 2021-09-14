@@ -1,0 +1,225 @@
+api,category,doc
+DataFrame,Constructor,Two-dimensional  size-mutable  potentially heterogeneous tabular data.
+index,Attributes and underlying data,The index (row labels) of the DataFrame.
+columns,Attributes and underlying data,The column labels of the DataFrame.
+dtypes,Attributes and underlying data,Return the dtypes in the DataFrame.
+info,Attributes and underlying data,Print a concise summary of a DataFrame.
+select_dtypes,Attributes and underlying data,Return a subset of the DataFrames columns based on the column dtypes.
+values,Attributes and underlying data,Return a Numpy representation of the DataFrame.
+axes,Attributes and underlying data,Return a list representing the axes of the DataFrame.
+ndim,Attributes and underlying data,Return an int representing the number of axes / array dimensions.
+size,Attributes and underlying data,Return an int representing the number of elements in this object.
+shape,Attributes and underlying data,Return a tuple representing the dimensionality of the DataFrame.
+memory_usage,Attributes and underlying data,Return the memory usage of each column in bytes.
+empty,Attributes and underlying data,Indicator whether DataFrame is empty.
+set_flags,Attributes and underlying data,Return a new object with updated flags.
+astype,Conversion,Cast a pandas object to a specified dtype dtype.
+convert_dtypes,Conversion,Convert columns to best possible dtypes using dtypes supporting pd.NA.
+infer_objects,Conversion,Attempt to infer better dtypes for object columns.
+copy,Conversion,Make a copy of this objects indices and data.
+bool,Conversion,Return the bool of a single element Series or DataFrame.
+head,Indexing  iteration,Return the first n rows.
+at,Indexing  iteration,Access a single value for a row/column label pair.
+iat,Indexing  iteration,Access a single value for a row/column pair by integer position.
+loc,Indexing  iteration,Access a group of rows and columns by label(s) or a boolean array.
+iloc,Indexing  iteration,Purely integer-location based indexing for selection by position.
+insert,Indexing  iteration,Insert column into DataFrame at specified location.
+__iter__,Indexing  iteration,Iterate over info axis.
+items,Indexing  iteration,Iterate over (column name  Series) pairs.
+iteritems,Indexing  iteration,Iterate over (column name  Series) pairs.
+keys,Indexing  iteration,Get the info axis (see Indexing for more).
+iterrows,Indexing  iteration,Iterate over DataFrame rows as (index  Series) pairs.
+itertuples,Indexing  iteration,Iterate over DataFrame rows as namedtuples.
+lookup,Indexing  iteration,(DEPRECATED) Label-based fancy indexing function for DataFrame.
+pop,Indexing  iteration,Return item and drop from frame.
+tail,Indexing  iteration,Return the last n rows.
+xs,Indexing  iteration,Return cross-section from the Series/DataFrame.
+get,Indexing  iteration,Get item from object for given key (ex: DataFrame column).
+isin,Indexing  iteration,Whether each element in the DataFrame is contained in values.
+where,Indexing  iteration,Replace values where the condition is False.
+mask,Indexing  iteration,Replace values where the condition is True.
+query,Indexing  iteration,Query the columns of a DataFrame with a boolean expression.
+add,Binary operator functions,Get Addition of dataframe and other  element-wise (binary operator add).
+sub,Binary operator functions,Get Subtraction of dataframe and other  element-wise (binary operator sub).
+mul,Binary operator functions,Get Multiplication of dataframe and other  element-wise (binary operator mul).
+div,Binary operator functions,Get Floating division of dataframe and other  element-wise (binary operator truediv).
+truediv,Binary operator functions,Get Floating division of dataframe and other  element-wise (binary operator truediv).
+floordiv,Binary operator functions,Get Integer division of dataframe and other  element-wise (binary operator floordiv).
+mod,Binary operator functions,Get Modulo of dataframe and other  element-wise (binary operator mod).
+pow,Binary operator functions,Get Exponential power of dataframe and other  element-wise (binary operator pow).
+dot,Binary operator functions,Compute the matrix multiplication between the DataFrame and other.
+radd,Binary operator functions,Get Addition of dataframe and other  element-wise (binary operator radd).
+rsub,Binary operator functions,Get Subtraction of dataframe and other  element-wise (binary operator rsub).
+rmul,Binary operator functions,Get Multiplication of dataframe and other  element-wise (binary operator rmul).
+rdiv,Binary operator functions,Get Floating division of dataframe and other  element-wise (binary operator rtruediv).
+rtruediv,Binary operator functions,Get Floating division of dataframe and other  element-wise (binary operator rtruediv).
+rfloordiv,Binary operator functions,Get Integer division of dataframe and other  element-wise (binary operator rfloordiv).
+rmod,Binary operator functions,Get Modulo of dataframe and other  element-wise (binary operator rmod).
+rpow,Binary operator functions,Get Exponential power of dataframe and other  element-wise (binary operator rpow).
+lt,Binary operator functions,Get Less than of dataframe and other  element-wise (binary operator lt).
+gt,Binary operator functions,Get Greater than of dataframe and other  element-wise (binary operator gt).
+le,Binary operator functions,Get Less than or equal to of dataframe and other  element-wise (binary operator le).
+ge,Binary operator functions,Get Greater than or equal to of dataframe and other  element-wise (binary operator ge).
+ne,Binary operator functions,Get Not equal to of dataframe and other  element-wise (binary operator ne).
+eq,Binary operator functions,Get Equal to of dataframe and other  element-wise (binary operator eq).
+combine,Binary operator functions,Perform column-wise combine with another DataFrame.
+combine_first,Binary operator functions,Update null elements with value in the same location in other.
+apply,Function application  GroupBy & window,Apply a function along an axis of the DataFrame.
+applymap,Function application  GroupBy & window,Apply a function to a Dataframe elementwise.
+pipe,Function application  GroupBy & window,Apply func(self  *args  **kwargs).
+agg,Function application  GroupBy & window,Aggregate using one or more operations over the specified axis.
+aggregate,Function application  GroupBy & window,Aggregate using one or more operations over the specified axis.
+transform,Function application  GroupBy & window,Call func on self producing a DataFrame with transformed values.
+groupby,Function application  GroupBy & window,Group DataFrame using a mapper or by a Series of columns.
+rolling,Function application  GroupBy & window,Provide rolling window calculations.
+expanding,Function application  GroupBy & window,Provide expanding transformations.
+ewm,Function application  GroupBy & window,Provide exponential weighted (EW) functions.
+abs,Computations / descriptive stats,Return a Series/DataFrame with absolute numeric value of each element.
+all,Computations / descriptive stats,Return whether all elements are True  potentially over an axis.
+any,Computations / descriptive stats,Return whether any element is True  potentially over an axis.
+clip,Computations / descriptive stats,Trim values at input threshold(s).
+corr,Computations / descriptive stats,Compute pairwise correlation of columns  excluding NA/null values.
+corrwith,Computations / descriptive stats,Compute pairwise correlation.
+count,Computations / descriptive stats,Count non-NA cells for each column or row.
+cov,Computations / descriptive stats,Compute pairwise covariance of columns  excluding NA/null values.
+cummax,Computations / descriptive stats,Return cumulative maximum over a DataFrame or Series axis.
+cummin,Computations / descriptive stats,Return cumulative minimum over a DataFrame or Series axis.
+cumprod,Computations / descriptive stats,Return cumulative product over a DataFrame or Series axis.
+cumsum,Computations / descriptive stats,Return cumulative sum over a DataFrame or Series axis.
+describe,Computations / descriptive stats,Generate descriptive statistics.
+diff,Computations / descriptive stats,First discrete difference of element.
+eval,Computations / descriptive stats,Evaluate a string describing operations on DataFrame columns.
+kurt,Computations / descriptive stats,Return unbiased kurtosis over requested axis.
+kurtosis,Computations / descriptive stats,Return unbiased kurtosis over requested axis.
+mad,Computations / descriptive stats,Return the mean absolute deviation of the values over the requested axis.
+max,Computations / descriptive stats,Return the maximum of the values over the requested axis.
+mean,Computations / descriptive stats,Return the mean of the values over the requested axis.
+median,Computations / descriptive stats,Return the median of the values over the requested axis.
+min,Computations / descriptive stats,Return the minimum of the values over the requested axis.
+mode,Computations / descriptive stats,Get the mode(s) of each element along the selected axis.
+pct_change,Computations / descriptive stats,Percentage change between the current and a prior element.
+prod,Computations / descriptive stats,Return the product of the values over the requested axis.
+product,Computations / descriptive stats,Return the product of the values over the requested axis.
+quantile,Computations / descriptive stats,Return values at the given quantile over requested axis.
+rank,Computations / descriptive stats,Compute numerical data ranks (1 through n) along axis.
+round,Computations / descriptive stats,Round a DataFrame to a variable number of decimal places.
+sem,Computations / descriptive stats,Return unbiased standard error of the mean over requested axis.
+skew,Computations / descriptive stats,Return unbiased skew over requested axis.
+sum,Computations / descriptive stats,Return the sum of the values over the requested axis.
+std,Computations / descriptive stats,Return sample standard deviation over requested axis.
+var,Computations / descriptive stats,Return unbiased variance over requested axis.
+nunique,Computations / descriptive stats,Count number of distinct elements in specified axis.
+value_counts,Computations / descriptive stats,Return a Series containing counts of unique rows in the DataFrame.
+add_prefix,Reindexing / selection / label manipulation,Prefix labels with string prefix.
+add_suffix,Reindexing / selection / label manipulation,Suffix labels with string suffix.
+align,Reindexing / selection / label manipulation,Align two objects on their axes with the specified join method.
+at_time,Reindexing / selection / label manipulation,Select values at particular time of day (e.g.  9:30AM).
+between_time,Reindexing / selection / label manipulation,Select values between particular times of the day (e.g.  9:00-9:30 AM).
+drop,Reindexing / selection / label manipulation,Drop specified labels from rows or columns.
+drop_duplicates,Reindexing / selection / label manipulation,Return DataFrame with duplicate rows removed.
+duplicated,Reindexing / selection / label manipulation,Return boolean Series denoting duplicate rows.
+equals,Reindexing / selection / label manipulation,Test whether two objects contain the same elements.
+filter,Reindexing / selection / label manipulation,Subset the dataframe rows or columns according to the specified index labels.
+first,Reindexing / selection / label manipulation,Select initial periods of time series data based on a date offset.
+head,Reindexing / selection / label manipulation,Return the first n rows.
+idxmax,Reindexing / selection / label manipulation,Return index of first occurrence of maximum over requested axis.
+idxmin,Reindexing / selection / label manipulation,Return index of first occurrence of minimum over requested axis.
+last,Reindexing / selection / label manipulation,Select final periods of time series data based on a date offset.
+reindex,Reindexing / selection / label manipulation,Conform Series/DataFrame to new index with optional filling logic.
+reindex_like,Reindexing / selection / label manipulation,Return an object with matching indices as other object.
+rename,Reindexing / selection / label manipulation,Alter axes labels.
+rename_axis,Reindexing / selection / label manipulation,Set the name of the axis for the index or columns.
+reset_index,Reindexing / selection / label manipulation,Reset the index  or a level of it.
+sample,Reindexing / selection / label manipulation,Return a random sample of items from an axis of object.
+set_axis,Reindexing / selection / label manipulation,Assign desired index to given axis.
+set_index,Reindexing / selection / label manipulation,Set the DataFrame index using existing columns.
+tail,Reindexing / selection / label manipulation,Return the last n rows.
+take,Reindexing / selection / label manipulation,Return the elements in the given positional indices along an axis.
+truncate,Reindexing / selection / label manipulation,Truncate a Series or DataFrame before and after some index value.
+backfill,Missing data handling,Synonym for DataFrame.fillna() with method='bfill'.
+bfill,Missing data handling,Synonym for DataFrame.fillna() with method='bfill'.
+dropna,Missing data handling,Remove missing values.
+ffill,Missing data handling,Synonym for DataFrame.fillna() with method='ffill'.
+fillna,Missing data handling,Fill NA/NaN values using the specified method.
+interpolate,Missing data handling,Fill NaN values using an interpolation method.
+isna,Missing data handling,Detect missing values.
+isnull,Missing data handling,Detect missing values.
+notna,Missing data handling,Detect existing (non-missing) values.
+notnull,Missing data handling,Detect existing (non-missing) values.
+pad,Missing data handling,Synonym for DataFrame.fillna() with method='ffill'.
+replace,Missing data handling,Replace values given in to_replace with value.
+droplevel,Reshaping  sorting  transposing,Return Series/DataFrame with requested index / column level(s) removed.
+pivot,Reshaping  sorting  transposing,Return reshaped DataFrame organized by given index / column values.
+pivot_table,Reshaping  sorting  transposing,Create a spreadsheet-style pivot table as a DataFrame.
+reorder_levels,Reshaping  sorting  transposing,Rearrange index levels using input order.
+sort_values,Reshaping  sorting  transposing,Sort by the values along either axis.
+sort_index,Reshaping  sorting  transposing,Sort object by labels (along an axis).
+nlargest,Reshaping  sorting  transposing,Return the first n rows ordered by columns in descending order.
+nsmallest,Reshaping  sorting  transposing,Return the first n rows ordered by columns in ascending order.
+swaplevel,Reshaping  sorting  transposing,Swap levels i and j in a MultiIndex.
+stack,Reshaping  sorting  transposing,Stack the prescribed level(s) from columns to index.
+unstack,Reshaping  sorting  transposing,Pivot a level of the (necessarily hierarchical) index labels.
+swapaxes,Reshaping  sorting  transposing,Interchange axes and swap values axes appropriately.
+melt,Reshaping  sorting  transposing,Unpivot a DataFrame from wide to long format  optionally leaving identifiers set.
+explode,Reshaping  sorting  transposing,Transform each element of a list-like to a row  replicating index values.
+squeeze,Reshaping  sorting  transposing,Squeeze 1 dimensional axis objects into scalars.
+to_xarray,Reshaping  sorting  transposing,Return an xarray object from the pandas object.
+transpose,Reshaping  sorting  transposing,Transpose index and columns.
+append,Combining / comparing / joining / merging,Append rows of other to the end of caller  returning a new object.
+assign,Combining / comparing / joining / merging,Assign new columns to a DataFrame.
+compare,Combining / comparing / joining / merging,Compare to another DataFrame and show the differences.
+join,Combining / comparing / joining / merging,Join columns of another DataFrame.
+merge,Combining / comparing / joining / merging,Merge DataFrame or named Series objects with a database-style join.
+update,Combining / comparing / joining / merging,Modify in place using non-NA values from another DataFrame.
+asfreq,Time Series-related,Convert time series to specified frequency.
+asof,Time Series-related,Return the last row(s) without any NaNs before where.
+shift,Time Series-related,Shift index by desired number of periods with an optional time freq.
+slice_shift,Time Series-related,(DEPRECATED) Equivalent to shift without copying data.
+tshift,Time Series-related,(DEPRECATED) Shift the time index  using the indexs frequency if available.
+first_valid_index,Time Series-related,Return index for first non-NA value or None  if no NA value is found.
+last_valid_index,Time Series-related,Return index for last non-NA value or None  if no NA value is found.
+resample,Time Series-related,Resample time-series data.
+to_period,Time Series-related,Convert DataFrame from DatetimeIndex to PeriodIndex.
+to_timestamp,Time Series-related,Cast to DatetimeIndex of timestamps  at beginning of period.
+tz_convert,Time Series-related,Convert tz-aware axis to target time zone.
+tz_localize,Time Series-related,Localize tz-naive index of a Series or DataFrame to target time zone.
+Flags,Flags,Flags that apply to pandas objects.
+attrs,Metadata,Dictionary of global attributes of this dataset.
+plot,Plotting,DataFrame plotting accessor and method
+plot.area,Plotting,Draw a stacked area plot.
+plot.bar,Plotting,Vertical bar plot.
+plot.barh,Plotting,Make a horizontal bar plot.
+plot.box,Plotting,Make a box plot of the DataFrame columns.
+plot.density,Plotting,Generate Kernel Density Estimate plot using Gaussian kernels.
+plot.hexbin,Plotting,Generate a hexagonal binning plot.
+plot.hist,Plotting,Draw one histogram of the DataFrames columns.
+plot.kde,Plotting,Generate Kernel Density Estimate plot using Gaussian kernels.
+plot.line,Plotting,Plot Series or DataFrame as lines.
+plot.pie,Plotting,Generate a pie plot.
+plot.scatter,Plotting,Create a scatter plot with varying marker point size and color.
+boxplot,Plotting,Make a box plot from DataFrame columns.
+hist,Plotting,Make a histogram of the DataFrames columns.
+sparse.density,Sparse accessor,Ratio of non-sparse points to total (dense) data points.
+sparse.from_spmatrix,Sparse accessor,Create a new DataFrame from a scipy sparse matrix.
+sparse.to_coo,Sparse accessor,Return the contents of the frame as a sparse SciPy COO matrix.
+sparse.to_dense,Sparse accessor,Convert a DataFrame with sparse values to dense.
+from_dict,Serialization / IO / conversion,Construct DataFrame from dict of array-like or dicts.
+from_records,Serialization / IO / conversion,Convert structured or record ndarray to DataFrame.
+to_parquet,Serialization / IO / conversion,Write a DataFrame to the binary parquet format.
+to_pickle,Serialization / IO / conversion,Pickle (serialize) object to file.
+to_csv,Serialization / IO / conversion,Write object to a comma-separated values (csv) file.
+to_hdf,Serialization / IO / conversion,Write the contained data to an HDF5 file using HDFStore.
+to_sql,Serialization / IO / conversion,Write records stored in a DataFrame to a SQL database.
+to_dict,Serialization / IO / conversion,Convert the DataFrame to a dictionary.
+to_excel,Serialization / IO / conversion,Write object to an Excel sheet.
+to_json,Serialization / IO / conversion,Convert the object to a JSON string.
+to_html,Serialization / IO / conversion,Render a DataFrame as an HTML table.
+to_feather,Serialization / IO / conversion,Write a DataFrame to the binary Feather format.
+to_latex,Serialization / IO / conversion,Render object to a LaTeX tabular  longtable  or nested table/tabular.
+to_stata,Serialization / IO / conversion,Export DataFrame object to Stata dta format.
+to_gbq,Serialization / IO / conversion,Write a DataFrame to a Google BigQuery table.
+to_records,Serialization / IO / conversion,Convert DataFrame to a NumPy record array.
+to_string,Serialization / IO / conversion,Render a DataFrame to a console-friendly tabular output.
+to_clipboard,Serialization / IO / conversion,Copy object to the system clipboard.
+to_markdown,Serialization / IO / conversion,Print DataFrame in Markdown-friendly format.
+style,Serialization / IO / conversion,Returns a Styler object.

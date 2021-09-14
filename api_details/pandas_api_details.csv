@@ -1,0 +1,1093 @@
+api,category,doc
+read_pickle,Pickling,Load pickled pandas object (or any object) from file.
+to_pickle,Pickling,Pickle (serialize) object to file.
+read_table,Flat file,Read general delimited file into DataFrame.
+read_csv,Flat file,Read a comma-separated values (csv) file into DataFrame.
+to_csv,Flat file,Write object to a comma-separated values (csv) file.
+read_fwf,Flat file,Read a table of fixed-width formatted lines into DataFrame.
+read_clipboard,Clipboard,Read text from clipboard and pass to read_csv.
+to_clipboard,Clipboard,Copy object to the system clipboard.
+read_excel,Excel,Read an Excel file into a pandas DataFrame.
+to_excel,Excel,Write object to an Excel sheet.
+parse,Excel,Parse specified sheet(s) into a DataFrame.
+to_excel,Excel,Write Styler to an Excel sheet.
+ExcelWriter,Excel,Class for writing DataFrame objects into excel sheets.
+read_json,JSON,Convert a JSON string to pandas object.
+build_table_schema,JSON,Create a Table schema from data.
+read_html,HTML,Read HTML tables into a list of DataFrame objects.
+to_html,HTML,Render a DataFrame as an HTML table.
+to_html,HTML,Write Styler to a file  buffer or string in HTML-CSS format.
+read_xml,XML,Read XML document into a DataFrame object.
+to_xml,XML,Render a DataFrame to an XML document.
+to_latex,Latex,Render object to a LaTeX tabular  longtable  or nested table/tabular.
+to_latex,Latex,Write Styler to a file  buffer or string in LaTeX format.
+read_hdf,HDFStore: PyTables (HDF5),Read from the store  close it if we opened it.
+put,HDFStore: PyTables (HDF5),Store object in HDFStore.
+append,HDFStore: PyTables (HDF5),Append to Table in file.
+get,HDFStore: PyTables (HDF5),Retrieve pandas object stored in file.
+select,HDFStore: PyTables (HDF5),Retrieve pandas object stored in file  optionally based on where criteria.
+info,HDFStore: PyTables (HDF5),Print detailed information on the store.
+keys,HDFStore: PyTables (HDF5),Return a list of keys corresponding to objects stored in HDFStore.
+groups,HDFStore: PyTables (HDF5),Return a list of all the top-level nodes.
+walk,HDFStore: PyTables (HDF5),Walk the pytables group hierarchy for pandas objects.
+read_feather,Feather,Load a feather-format object from the file path.
+to_feather,Feather,Write a DataFrame to the binary Feather format.
+read_parquet,Parquet,Load a parquet object from the file path  returning a DataFrame.
+to_parquet,Parquet,Write a DataFrame to the binary parquet format.
+read_orc,ORC,Load an ORC object from the file path  returning a DataFrame.
+read_sas,SAS,Read SAS files stored as either XPORT or SAS7BDAT format files.
+read_spss,SPSS,Load an SPSS file from the file path  returning a DataFrame.
+read_sql_table,SQL,Read SQL database table into a DataFrame.
+read_sql_query,SQL,Read SQL query into a DataFrame.
+read_sql,SQL,Read SQL query or database table into a DataFrame.
+to_sql,SQL,Write records stored in a DataFrame to a SQL database.
+read_gbq,Google BigQuery,Load data from Google BigQuery.
+read_stata,STATA,Read Stata file into DataFrame.
+to_stata,STATA,Export DataFrame object to Stata dta format.
+data_label,STATA,Return data label of Stata file.
+value_labels,STATA,Return a dict  associating each variable name a dict  associating each value its corresponding label.
+variable_labels,STATA,Return variable labels as a dict  associating each variable name with corresponding label.
+melt,Data manipulations,Unpivot a DataFrame from wide to long format  optionally leaving identifiers set.
+pivot,Data manipulations,Return reshaped DataFrame organized by given index / column values.
+pivot_table,Data manipulations,Create a spreadsheet-style pivot table as a DataFrame.
+crosstab,Data manipulations,Compute a simple cross tabulation of two (or more) factors.
+cut,Data manipulations,Bin values into discrete intervals.
+qcut,Data manipulations,Quantile-based discretization function.
+merge,Data manipulations,Merge DataFrame or named Series objects with a database-style join.
+merge_ordered,Data manipulations,Perform merge with optional filling/interpolation.
+merge_asof,Data manipulations,Perform an asof merge.
+concat,Data manipulations,Concatenate pandas objects along a particular axis with optional set logic along the other axes.
+get_dummies,Data manipulations,Convert categorical variable into dummy/indicator variables.
+factorize,Data manipulations,Encode the object as an enumerated type or categorical variable.
+unique,Data manipulations,Hash table-based unique.
+wide_to_long,Data manipulations,Wide panel to long format.
+isna,Top-level missing data,Detect missing values for an array-like object.
+isnull,Top-level missing data,Detect missing values for an array-like object.
+notna,Top-level missing data,Detect non-missing values for an array-like object.
+notnull,Top-level missing data,Detect non-missing values for an array-like object.
+to_numeric,Top-level conversions,Convert argument to a numeric type.
+to_datetime,Top-level dealing with datetimelike,Convert argument to datetime.
+to_timedelta,Top-level dealing with datetimelike,Convert argument to timedelta.
+date_range,Top-level dealing with datetimelike,Return a fixed frequency DatetimeIndex.
+bdate_range,Top-level dealing with datetimelike,Return a fixed frequency DatetimeIndex  with business day as the default frequency.
+period_range,Top-level dealing with datetimelike,Return a fixed frequency PeriodIndex.
+timedelta_range,Top-level dealing with datetimelike,Return a fixed frequency TimedeltaIndex  with day as the default frequency.
+infer_freq,Top-level dealing with datetimelike,Infer the most likely frequency given the input index.
+interval_range,Top-level dealing with intervals,Return a fixed frequency IntervalIndex.
+eval,Top-level evaluation,Evaluate a Python expression as a string using various backends.
+hash_array,Hashing,Given a 1d array  return an array of deterministic integers.
+hash_pandas_object,Hashing,Return a data hash of the Index/Series/DataFrame.
+Series,Constructor,One-dimensional ndarray with axis labels (including time series).
+index,Attributes,The index (axis labels) of the Series.
+array,Attributes,The ExtensionArray of the data backing this Series or Index.
+values,Attributes,Return Series as ndarray or ndarray-like depending on the dtype.
+dtype,Attributes,Return the dtype object of the underlying data.
+shape,Attributes,Return a tuple of the shape of the underlying data.
+nbytes,Attributes,Return the number of bytes in the underlying data.
+ndim,Attributes,Number of dimensions of the underlying data  by definition 1.
+size,Attributes,Return the number of elements in the underlying data.
+T,Attributes,Return the transpose  which is by definition self.
+memory_usage,Attributes,Return the memory usage of the Series.
+hasnans,Attributes,Return if I have any nans; enables various perf speedups.
+empty,Attributes,Indicator whether DataFrame is empty.
+dtypes,Attributes,Return the dtype object of the underlying data.
+name,Attributes,Return the name of the Series.
+flags,Attributes,Get the properties associated with this pandas object.
+set_flags,Attributes,Return a new object with updated flags.
+astype,Conversion,Cast a pandas object to a specified dtype dtype.
+convert_dtypes,Conversion,Convert columns to best possible dtypes using dtypes supporting pd.NA.
+infer_objects,Conversion,Attempt to infer better dtypes for object columns.
+copy,Conversion,Make a copy of this objects indices and data.
+bool,Conversion,Return the bool of a single element Series or DataFrame.
+to_numpy,Conversion,A NumPy ndarray representing the values in this Series or Index.
+to_period,Conversion,Convert Series from DatetimeIndex to PeriodIndex.
+to_timestamp,Conversion,Cast to DatetimeIndex of Timestamps  at beginning of period.
+to_list,Conversion,Return a list of the values.
+__array__,Conversion,Return the values as a NumPy array.
+get,Indexing  iteration,Get item from object for given key (ex: DataFrame column).
+at,Indexing  iteration,Access a single value for a row/column label pair.
+iat,Indexing  iteration,Access a single value for a row/column pair by integer position.
+loc,Indexing  iteration,Access a group of rows and columns by label(s) or a boolean array.
+iloc,Indexing  iteration,Purely integer-location based indexing for selection by position.
+__iter__,Indexing  iteration,Return an iterator of the values.
+items,Indexing  iteration,Lazily iterate over (index  value) tuples.
+iteritems,Indexing  iteration,Lazily iterate over (index  value) tuples.
+keys,Indexing  iteration,Return alias for index.
+pop,Indexing  iteration,Return item and drops from series.
+item,Indexing  iteration,Return the first element of the underlying data as a Python scalar.
+xs,Indexing  iteration,Return cross-section from the Series/DataFrame.
+add,Binary operator functions,Return Addition of series and other  element-wise (binary operator add).
+sub,Binary operator functions,Return Subtraction of series and other  element-wise (binary operator sub).
+mul,Binary operator functions,Return Multiplication of series and other  element-wise (binary operator mul).
+div,Binary operator functions,Return Floating division of series and other  element-wise (binary operator truediv).
+truediv,Binary operator functions,Return Floating division of series and other  element-wise (binary operator truediv).
+floordiv,Binary operator functions,Return Integer division of series and other  element-wise (binary operator floordiv).
+mod,Binary operator functions,Return Modulo of series and other  element-wise (binary operator mod).
+pow,Binary operator functions,Return Exponential power of series and other  element-wise (binary operator pow).
+radd,Binary operator functions,Return Addition of series and other  element-wise (binary operator radd).
+rsub,Binary operator functions,Return Subtraction of series and other  element-wise (binary operator rsub).
+rmul,Binary operator functions,Return Multiplication of series and other  element-wise (binary operator rmul).
+rdiv,Binary operator functions,Return Floating division of series and other  element-wise (binary operator rtruediv).
+rtruediv,Binary operator functions,Return Floating division of series and other  element-wise (binary operator rtruediv).
+rfloordiv,Binary operator functions,Return Integer division of series and other  element-wise (binary operator rfloordiv).
+rmod,Binary operator functions,Return Modulo of series and other  element-wise (binary operator rmod).
+rpow,Binary operator functions,Return Exponential power of series and other  element-wise (binary operator rpow).
+combine,Binary operator functions,Combine the Series with a Series or scalar according to func.
+combine_first,Binary operator functions,Update null elements with value in the same location in other.
+round,Binary operator functions,Round each value in a Series to the given number of decimals.
+lt,Binary operator functions,Return Less than of series and other  element-wise (binary operator lt).
+gt,Binary operator functions,Return Greater than of series and other  element-wise (binary operator gt).
+le,Binary operator functions,Return Less than or equal to of series and other  element-wise (binary operator le).
+ge,Binary operator functions,Return Greater than or equal to of series and other  element-wise (binary operator ge).
+ne,Binary operator functions,Return Not equal to of series and other  element-wise (binary operator ne).
+eq,Binary operator functions,Return Equal to of series and other  element-wise (binary operator eq).
+product,Binary operator functions,Return the product of the values over the requested axis.
+dot,Binary operator functions,Compute the dot product between the Series and the columns of other.
+apply,Function application  GroupBy & window,Invoke function on values of Series.
+agg,Function application  GroupBy & window,Aggregate using one or more operations over the specified axis.
+aggregate,Function application  GroupBy & window,Aggregate using one or more operations over the specified axis.
+transform,Function application  GroupBy & window,Call func on self producing a Series with transformed values.
+map,Function application  GroupBy & window,Map values of Series according to input correspondence.
+groupby,Function application  GroupBy & window,Group Series using a mapper or by a Series of columns.
+rolling,Function application  GroupBy & window,Provide rolling window calculations.
+expanding,Function application  GroupBy & window,Provide expanding transformations.
+ewm,Function application  GroupBy & window,Provide exponential weighted (EW) functions.
+pipe,Function application  GroupBy & window,Apply func(self  *args  **kwargs).
+abs,Computations / descriptive stats,Return a Series/DataFrame with absolute numeric value of each element.
+all,Computations / descriptive stats,Return whether all elements are True  potentially over an axis.
+any,Computations / descriptive stats,Return whether any element is True  potentially over an axis.
+autocorr,Computations / descriptive stats,Compute the lag-N autocorrelation.
+between,Computations / descriptive stats,Return boolean Series equivalent to left <= series <= right.
+clip,Computations / descriptive stats,Trim values at input threshold(s).
+corr,Computations / descriptive stats,Compute correlation with other Series  excluding missing values.
+count,Computations / descriptive stats,Return number of non-NA/null observations in the Series.
+cov,Computations / descriptive stats,Compute covariance with Series  excluding missing values.
+cummax,Computations / descriptive stats,Return cumulative maximum over a DataFrame or Series axis.
+cummin,Computations / descriptive stats,Return cumulative minimum over a DataFrame or Series axis.
+cumprod,Computations / descriptive stats,Return cumulative product over a DataFrame or Series axis.
+cumsum,Computations / descriptive stats,Return cumulative sum over a DataFrame or Series axis.
+describe,Computations / descriptive stats,Generate descriptive statistics.
+diff,Computations / descriptive stats,First discrete difference of element.
+factorize,Computations / descriptive stats,Encode the object as an enumerated type or categorical variable.
+kurt,Computations / descriptive stats,Return unbiased kurtosis over requested axis.
+mad,Computations / descriptive stats,Return the mean absolute deviation of the values over the requested axis.
+max,Computations / descriptive stats,Return the maximum of the values over the requested axis.
+mean,Computations / descriptive stats,Return the mean of the values over the requested axis.
+median,Computations / descriptive stats,Return the median of the values over the requested axis.
+min,Computations / descriptive stats,Return the minimum of the values over the requested axis.
+mode,Computations / descriptive stats,Return the mode(s) of the Series.
+nlargest,Computations / descriptive stats,Return the largest n elements.
+nsmallest,Computations / descriptive stats,Return the smallest n elements.
+pct_change,Computations / descriptive stats,Percentage change between the current and a prior element.
+prod,Computations / descriptive stats,Return the product of the values over the requested axis.
+quantile,Computations / descriptive stats,Return value at the given quantile.
+rank,Computations / descriptive stats,Compute numerical data ranks (1 through n) along axis.
+sem,Computations / descriptive stats,Return unbiased standard error of the mean over requested axis.
+skew,Computations / descriptive stats,Return unbiased skew over requested axis.
+std,Computations / descriptive stats,Return sample standard deviation over requested axis.
+sum,Computations / descriptive stats,Return the sum of the values over the requested axis.
+var,Computations / descriptive stats,Return unbiased variance over requested axis.
+kurtosis,Computations / descriptive stats,Return unbiased kurtosis over requested axis.
+unique,Computations / descriptive stats,Return unique values of Series object.
+nunique,Computations / descriptive stats,Return number of unique elements in the object.
+is_unique,Computations / descriptive stats,Return boolean if values in the object are unique.
+is_monotonic,Computations / descriptive stats,Return boolean if values in the object are monotonic_increasing.
+is_monotonic_increasing,Computations / descriptive stats,Alias for is_monotonic.
+is_monotonic_decreasing,Computations / descriptive stats,Return boolean if values in the object are monotonic_decreasing.
+value_counts,Computations / descriptive stats,Return a Series containing counts of unique values.
+align,Reindexing / selection / label manipulation,Align two objects on their axes with the specified join method.
+drop,Reindexing / selection / label manipulation,Return Series with specified index labels removed.
+droplevel,Reindexing / selection / label manipulation,Return Series/DataFrame with requested index / column level(s) removed.
+drop_duplicates,Reindexing / selection / label manipulation,Return Series with duplicate values removed.
+duplicated,Reindexing / selection / label manipulation,Indicate duplicate Series values.
+equals,Reindexing / selection / label manipulation,Test whether two objects contain the same elements.
+first,Reindexing / selection / label manipulation,Select initial periods of time series data based on a date offset.
+head,Reindexing / selection / label manipulation,Return the first n rows.
+idxmax,Reindexing / selection / label manipulation,Return the row label of the maximum value.
+idxmin,Reindexing / selection / label manipulation,Return the row label of the minimum value.
+isin,Reindexing / selection / label manipulation,Whether elements in Series are contained in values.
+last,Reindexing / selection / label manipulation,Select final periods of time series data based on a date offset.
+reindex,Reindexing / selection / label manipulation,Conform Series to new index with optional filling logic.
+reindex_like,Reindexing / selection / label manipulation,Return an object with matching indices as other object.
+rename,Reindexing / selection / label manipulation,Alter Series index labels or name.
+rename_axis,Reindexing / selection / label manipulation,Set the name of the axis for the index or columns.
+reset_index,Reindexing / selection / label manipulation,Generate a new DataFrame or Series with the index reset.
+sample,Reindexing / selection / label manipulation,Return a random sample of items from an axis of object.
+set_axis,Reindexing / selection / label manipulation,Assign desired index to given axis.
+take,Reindexing / selection / label manipulation,Return the elements in the given positional indices along an axis.
+tail,Reindexing / selection / label manipulation,Return the last n rows.
+truncate,Reindexing / selection / label manipulation,Truncate a Series or DataFrame before and after some index value.
+where,Reindexing / selection / label manipulation,Replace values where the condition is False.
+mask,Reindexing / selection / label manipulation,Replace values where the condition is True.
+add_prefix,Reindexing / selection / label manipulation,Prefix labels with string prefix.
+add_suffix,Reindexing / selection / label manipulation,Suffix labels with string suffix.
+filter,Reindexing / selection / label manipulation,Subset the dataframe rows or columns according to the specified index labels.
+backfill,Missing data handling,Synonym for DataFrame.fillna() with method='bfill'.
+bfill,Missing data handling,Synonym for DataFrame.fillna() with method='bfill'.
+dropna,Missing data handling,Return a new Series with missing values removed.
+ffill,Missing data handling,Synonym for DataFrame.fillna() with method='ffill'.
+fillna,Missing data handling,Fill NA/NaN values using the specified method.
+interpolate,Missing data handling,Fill NaN values using an interpolation method.
+isna,Missing data handling,Detect missing values.
+isnull,Missing data handling,Detect missing values.
+notna,Missing data handling,Detect existing (non-missing) values.
+notnull,Missing data handling,Detect existing (non-missing) values.
+pad,Missing data handling,Synonym for DataFrame.fillna() with method='ffill'.
+replace,Missing data handling,Replace values given in to_replace with value.
+argsort,Reshaping  sorting,Return the integer indices that would sort the Series values.
+argmin,Reshaping  sorting,Return int position of the smallest value in the Series.
+argmax,Reshaping  sorting,Return int position of the largest value in the Series.
+reorder_levels,Reshaping  sorting,Rearrange index levels using input order.
+sort_values,Reshaping  sorting,Sort by the values.
+sort_index,Reshaping  sorting,Sort Series by index labels.
+swaplevel,Reshaping  sorting,Swap levels i and j in a MultiIndex.
+unstack,Reshaping  sorting,Unstack  also known as pivot  Series with MultiIndex to produce DataFrame.
+explode,Reshaping  sorting,Transform each element of a list-like to a row.
+searchsorted,Reshaping  sorting,Find indices where elements should be inserted to maintain order.
+ravel,Reshaping  sorting,Return the flattened underlying data as an ndarray.
+repeat,Reshaping  sorting,Repeat elements of a Series.
+squeeze,Reshaping  sorting,Squeeze 1 dimensional axis objects into scalars.
+view,Reshaping  sorting,Create a new view of the Series.
+append,Combining / comparing / joining / merging,Concatenate two or more Series.
+compare,Combining / comparing / joining / merging,Compare to another Series and show the differences.
+update,Combining / comparing / joining / merging,Modify Series in place using values from passed Series.
+asfreq,Time Series-related,Convert time series to specified frequency.
+asof,Time Series-related,Return the last row(s) without any NaNs before where.
+shift,Time Series-related,Shift index by desired number of periods with an optional time freq.
+first_valid_index,Time Series-related,Return index for first non-NA value or None  if no NA value is found.
+last_valid_index,Time Series-related,Return index for last non-NA value or None  if no NA value is found.
+resample,Time Series-related,Resample time-series data.
+tz_convert,Time Series-related,Convert tz-aware axis to target time zone.
+tz_localize,Time Series-related,Localize tz-naive index of a Series or DataFrame to target time zone.
+at_time,Time Series-related,Select values at particular time of day (e.g.  9:30AM).
+between_time,Time Series-related,Select values between particular times of the day (e.g.  9:00-9:30 AM).
+tshift,Time Series-related,(DEPRECATED) Shift the time index  using the indexs frequency if available.
+slice_shift,Time Series-related,(DEPRECATED) Equivalent to shift without copying data.
+dt.date,Series,Returns numpy array of python datetime.date objects (namely  the date part of Timestamps without timezone information).
+dt.time,Series,Returns numpy array of datetime.time.
+dt.timetz,Series,Returns numpy array of datetime.time also containing timezone information.
+dt.year,Series,The year of the datetime.
+dt.month,Series,The month as January=1  December=12.
+dt.day,Series,The day of the datetime.
+dt.hour,Series,The hours of the datetime.
+dt.minute,Series,The minutes of the datetime.
+dt.second,Series,The seconds of the datetime.
+dt.microsecond,Series,The microseconds of the datetime.
+dt.nanosecond,Series,The nanoseconds of the datetime.
+dt.week,Series,(DEPRECATED) The week ordinal of the year.
+dt.weekofyear,Series,(DEPRECATED) The week ordinal of the year.
+dt.dayofweek,Series,The day of the week with Monday=0  Sunday=6.
+dt.day_of_week,Series,The day of the week with Monday=0  Sunday=6.
+dt.weekday,Series,The day of the week with Monday=0  Sunday=6.
+dt.dayofyear,Series,The ordinal day of the year.
+dt.day_of_year,Series,The ordinal day of the year.
+dt.quarter,Series,The quarter of the date.
+dt.is_month_start,Series,Indicates whether the date is the first day of the month.
+dt.is_month_end,Series,Indicates whether the date is the last day of the month.
+dt.is_quarter_start,Series,Indicator for whether the date is the first day of a quarter.
+dt.is_quarter_end,Series,Indicator for whether the date is the last day of a quarter.
+dt.is_year_start,Series,Indicate whether the date is the first day of a year.
+dt.is_year_end,Series,Indicate whether the date is the last day of the year.
+dt.is_leap_year,Series,Boolean indicator if the date belongs to a leap year.
+dt.daysinmonth,Series,The number of days in the month.
+dt.days_in_month,Series,The number of days in the month.
+dt.tz,Series,Return timezone  if any.
+dt.freq,Series,Return the frequency object for this PeriodArray.
+dt.to_period,Series,Cast to PeriodArray/Index at a particular frequency.
+dt.to_pydatetime,Series,Return the data as an array of native Python datetime objects.
+dt.tz_localize,Series,Localize tz-naive Datetime Array/Index to tz-aware Datetime Array/Index.
+dt.tz_convert,Series,Convert tz-aware Datetime Array/Index from one time zone to another.
+dt.normalize,Series,Convert times to midnight.
+dt.strftime,Series,Convert to Index using specified date_format.
+dt.round,Series,Perform round operation on the data to the specified freq.
+dt.floor,Series,Perform floor operation on the data to the specified freq.
+dt.ceil,Series,Perform ceil operation on the data to the specified freq.
+dt.month_name,Series,Return the month names of the DateTimeIndex with specified locale.
+dt.day_name,Series,Return the day names of the DateTimeIndex with specified locale.
+dt.days,Series,Number of days for each element.
+dt.seconds,Series,Number of seconds (>= 0 and less than 1 day) for each element.
+dt.microseconds,Series,Number of microseconds (>= 0 and less than 1 second) for each element.
+dt.nanoseconds,Series,Number of nanoseconds (>= 0 and less than 1 microsecond) for each element.
+dt.components,Series,Return a Dataframe of the components of the Timedeltas.
+dt.to_pytimedelta,Series,Return an array of native datetime.timedelta objects.
+dt.total_seconds,Series,Return total duration of each element expressed in seconds.
+str.capitalize,Series,Convert strings in the Series/Index to be capitalized.
+str.casefold,Series,Convert strings in the Series/Index to be casefolded.
+str.cat,Series,Concatenate strings in the Series/Index with given separator.
+str.center,Series,Pad left and right side of strings in the Series/Index.
+str.contains,Series,Test if pattern or regex is contained within a string of a Series or Index.
+str.count,Series,Count occurrences of pattern in each string of the Series/Index.
+str.decode,Series,Decode character string in the Series/Index using indicated encoding.
+str.encode,Series,Encode character string in the Series/Index using indicated encoding.
+str.endswith,Series,Test if the end of each string element matches a pattern.
+str.extract,Series,Extract capture groups in the regex pat as columns in a DataFrame.
+str.extractall,Series,Extract capture groups in the regex pat as columns in DataFrame.
+str.find,Series,Return lowest indexes in each strings in the Series/Index.
+str.findall,Series,Find all occurrences of pattern or regular expression in the Series/Index.
+str.fullmatch,Series,Determine if each string entirely matches a regular expression.
+str.get,Series,Extract element from each component at specified position.
+str.index,Series,Return lowest indexes in each string in Series/Index.
+str.join,Series,Join lists contained as elements in the Series/Index with passed delimiter.
+str.len,Series,Compute the length of each element in the Series/Index.
+str.ljust,Series,Pad right side of strings in the Series/Index.
+str.lower,Series,Convert strings in the Series/Index to lowercase.
+str.lstrip,Series,Remove leading characters.
+str.match,Series,Determine if each string starts with a match of a regular expression.
+str.normalize,Series,Return the Unicode normal form for the strings in the Series/Index.
+str.pad,Series,Pad strings in the Series/Index up to width.
+str.partition,Series,Split the string at the first occurrence of sep.
+str.repeat,Series,Duplicate each string in the Series or Index.
+str.replace,Series,Replace each occurrence of pattern/regex in the Series/Index.
+str.rfind,Series,Return highest indexes in each strings in the Series/Index.
+str.rindex,Series,Return highest indexes in each string in Series/Index.
+str.rjust,Series,Pad left side of strings in the Series/Index.
+str.rpartition,Series,Split the string at the last occurrence of sep.
+str.rstrip,Series,Remove trailing characters.
+str.slice,Series,Slice substrings from each element in the Series or Index.
+str.slice_replace,Series,Replace a positional slice of a string with another value.
+str.split,Series,Split strings around given separator/delimiter.
+str.rsplit,Series,Split strings around given separator/delimiter.
+str.startswith,Series,Test if the start of each string element matches a pattern.
+str.strip,Series,Remove leading and trailing characters.
+str.swapcase,Series,Convert strings in the Series/Index to be swapcased.
+str.title,Series,Convert strings in the Series/Index to titlecase.
+str.translate,Series,Map all characters in the string through the given mapping table.
+str.upper,Series,Convert strings in the Series/Index to uppercase.
+str.wrap,Series,Wrap strings in Series/Index at specified line width.
+str.zfill,Series,Pad strings in the Series/Index by prepending 0 characters.
+str.isalnum,Series,Check whether all characters in each string are alphanumeric.
+str.isalpha,Series,Check whether all characters in each string are alphabetic.
+str.isdigit,Series,Check whether all characters in each string are digits.
+str.isspace,Series,Check whether all characters in each string are whitespace.
+str.islower,Series,Check whether all characters in each string are lowercase.
+str.isupper,Series,Check whether all characters in each string are uppercase.
+str.istitle,Series,Check whether all characters in each string are titlecase.
+str.isnumeric,Series,Check whether all characters in each string are numeric.
+str.isdecimal,Series,Check whether all characters in each string are decimal.
+str.get_dummies,Series,Return DataFrame of dummy/indicator variables for Series.
+cat.categories,Series,The categories of this categorical.
+cat.ordered,Series,Whether the categories have an ordered relationship.
+cat.codes,Series,Return Series of codes as well as the index.
+cat.rename_categories,Series,Rename categories.
+cat.reorder_categories,Series,Reorder categories as specified in new_categories.
+cat.add_categories,Series,Add new categories.
+cat.remove_categories,Series,Remove the specified categories.
+cat.remove_unused_categories,Series,Remove categories which are not used.
+cat.set_categories,Series,Set the categories to the specified new_categories.
+cat.as_ordered,Series,Set the Categorical to be ordered.
+cat.as_unordered,Series,Set the Categorical to be unordered.
+sparse.npoints,Series,The number of non- fill_value points.
+sparse.density,Series,The percent of non- fill_value points  as decimal.
+sparse.fill_value,Series,Elements in data that are fill_value are not stored.
+sparse.sp_values,Series,An ndarray containing the non- fill_value values.
+sparse.from_coo,Series,Create a Series with sparse values from a scipy.sparse.coo_matrix.
+sparse.to_coo,Series,Create a scipy.sparse.coo_matrix from a Series with MultiIndex.
+Flags,Series,Flags that apply to pandas objects.
+attrs,Series,Dictionary of global attributes of this dataset.
+plot,Plotting,Series plotting accessor and method
+plot.area,Plotting,Draw a stacked area plot.
+plot.bar,Plotting,Vertical bar plot.
+plot.barh,Plotting,Make a horizontal bar plot.
+plot.box,Plotting,Make a box plot of the DataFrame columns.
+plot.density,Plotting,Generate Kernel Density Estimate plot using Gaussian kernels.
+plot.hist,Plotting,Draw one histogram of the DataFrames columns.
+plot.kde,Plotting,Generate Kernel Density Estimate plot using Gaussian kernels.
+plot.line,Plotting,Plot Series or DataFrame as lines.
+plot.pie,Plotting,Generate a pie plot.
+hist,Plotting,Draw histogram of the input series using matplotlib.
+to_pickle,Serialization / IO / conversion,Pickle (serialize) object to file.
+to_csv,Serialization / IO / conversion,Write object to a comma-separated values (csv) file.
+to_dict,Serialization / IO / conversion,Convert Series to {label -> value} dict or dict-like object.
+to_excel,Serialization / IO / conversion,Write object to an Excel sheet.
+to_frame,Serialization / IO / conversion,Convert Series to DataFrame.
+to_xarray,Serialization / IO / conversion,Return an xarray object from the pandas object.
+to_hdf,Serialization / IO / conversion,Write the contained data to an HDF5 file using HDFStore.
+to_sql,Serialization / IO / conversion,Write records stored in a DataFrame to a SQL database.
+to_json,Serialization / IO / conversion,Convert the object to a JSON string.
+to_string,Serialization / IO / conversion,Render a string representation of the Series.
+to_clipboard,Serialization / IO / conversion,Copy object to the system clipboard.
+to_latex,Serialization / IO / conversion,Render object to a LaTeX tabular  longtable  or nested table/tabular.
+to_markdown,Serialization / IO / conversion,Print Series in Markdown-friendly format.
+DataFrame,Constructor,Two-dimensional  size-mutable  potentially heterogeneous tabular data.
+index,Attributes and underlying data,The index (row labels) of the DataFrame.
+columns,Attributes and underlying data,The column labels of the DataFrame.
+dtypes,Attributes and underlying data,Return the dtypes in the DataFrame.
+info,Attributes and underlying data,Print a concise summary of a DataFrame.
+select_dtypes,Attributes and underlying data,Return a subset of the DataFrames columns based on the column dtypes.
+values,Attributes and underlying data,Return a Numpy representation of the DataFrame.
+axes,Attributes and underlying data,Return a list representing the axes of the DataFrame.
+ndim,Attributes and underlying data,Return an int representing the number of axes / array dimensions.
+size,Attributes and underlying data,Return an int representing the number of elements in this object.
+shape,Attributes and underlying data,Return a tuple representing the dimensionality of the DataFrame.
+memory_usage,Attributes and underlying data,Return the memory usage of each column in bytes.
+empty,Attributes and underlying data,Indicator whether DataFrame is empty.
+set_flags,Attributes and underlying data,Return a new object with updated flags.
+astype,Conversion,Cast a pandas object to a specified dtype dtype.
+convert_dtypes,Conversion,Convert columns to best possible dtypes using dtypes supporting pd.NA.
+infer_objects,Conversion,Attempt to infer better dtypes for object columns.
+copy,Conversion,Make a copy of this objects indices and data.
+bool,Conversion,Return the bool of a single element Series or DataFrame.
+head,Indexing  iteration,Return the first n rows.
+at,Indexing  iteration,Access a single value for a row/column label pair.
+iat,Indexing  iteration,Access a single value for a row/column pair by integer position.
+loc,Indexing  iteration,Access a group of rows and columns by label(s) or a boolean array.
+iloc,Indexing  iteration,Purely integer-location based indexing for selection by position.
+insert,Indexing  iteration,Insert column into DataFrame at specified location.
+__iter__,Indexing  iteration,Iterate over info axis.
+items,Indexing  iteration,Iterate over (column name  Series) pairs.
+iteritems,Indexing  iteration,Iterate over (column name  Series) pairs.
+keys,Indexing  iteration,Get the info axis (see Indexing for more).
+iterrows,Indexing  iteration,Iterate over DataFrame rows as (index  Series) pairs.
+itertuples,Indexing  iteration,Iterate over DataFrame rows as namedtuples.
+lookup,Indexing  iteration,(DEPRECATED) Label-based fancy indexing function for DataFrame.
+pop,Indexing  iteration,Return item and drop from frame.
+tail,Indexing  iteration,Return the last n rows.
+xs,Indexing  iteration,Return cross-section from the Series/DataFrame.
+get,Indexing  iteration,Get item from object for given key (ex: DataFrame column).
+isin,Indexing  iteration,Whether each element in the DataFrame is contained in values.
+where,Indexing  iteration,Replace values where the condition is False.
+mask,Indexing  iteration,Replace values where the condition is True.
+query,Indexing  iteration,Query the columns of a DataFrame with a boolean expression.
+add,Binary operator functions,Get Addition of dataframe and other  element-wise (binary operator add).
+sub,Binary operator functions,Get Subtraction of dataframe and other  element-wise (binary operator sub).
+mul,Binary operator functions,Get Multiplication of dataframe and other  element-wise (binary operator mul).
+div,Binary operator functions,Get Floating division of dataframe and other  element-wise (binary operator truediv).
+truediv,Binary operator functions,Get Floating division of dataframe and other  element-wise (binary operator truediv).
+floordiv,Binary operator functions,Get Integer division of dataframe and other  element-wise (binary operator floordiv).
+mod,Binary operator functions,Get Modulo of dataframe and other  element-wise (binary operator mod).
+pow,Binary operator functions,Get Exponential power of dataframe and other  element-wise (binary operator pow).
+dot,Binary operator functions,Compute the matrix multiplication between the DataFrame and other.
+radd,Binary operator functions,Get Addition of dataframe and other  element-wise (binary operator radd).
+rsub,Binary operator functions,Get Subtraction of dataframe and other  element-wise (binary operator rsub).
+rmul,Binary operator functions,Get Multiplication of dataframe and other  element-wise (binary operator rmul).
+rdiv,Binary operator functions,Get Floating division of dataframe and other  element-wise (binary operator rtruediv).
+rtruediv,Binary operator functions,Get Floating division of dataframe and other  element-wise (binary operator rtruediv).
+rfloordiv,Binary operator functions,Get Integer division of dataframe and other  element-wise (binary operator rfloordiv).
+rmod,Binary operator functions,Get Modulo of dataframe and other  element-wise (binary operator rmod).
+rpow,Binary operator functions,Get Exponential power of dataframe and other  element-wise (binary operator rpow).
+lt,Binary operator functions,Get Less than of dataframe and other  element-wise (binary operator lt).
+gt,Binary operator functions,Get Greater than of dataframe and other  element-wise (binary operator gt).
+le,Binary operator functions,Get Less than or equal to of dataframe and other  element-wise (binary operator le).
+ge,Binary operator functions,Get Greater than or equal to of dataframe and other  element-wise (binary operator ge).
+ne,Binary operator functions,Get Not equal to of dataframe and other  element-wise (binary operator ne).
+eq,Binary operator functions,Get Equal to of dataframe and other  element-wise (binary operator eq).
+combine,Binary operator functions,Perform column-wise combine with another DataFrame.
+combine_first,Binary operator functions,Update null elements with value in the same location in other.
+apply,Function application  GroupBy & window,Apply a function along an axis of the DataFrame.
+applymap,Function application  GroupBy & window,Apply a function to a Dataframe elementwise.
+pipe,Function application  GroupBy & window,Apply func(self  *args  **kwargs).
+agg,Function application  GroupBy & window,Aggregate using one or more operations over the specified axis.
+aggregate,Function application  GroupBy & window,Aggregate using one or more operations over the specified axis.
+transform,Function application  GroupBy & window,Call func on self producing a DataFrame with transformed values.
+groupby,Function application  GroupBy & window,Group DataFrame using a mapper or by a Series of columns.
+rolling,Function application  GroupBy & window,Provide rolling window calculations.
+expanding,Function application  GroupBy & window,Provide expanding transformations.
+ewm,Function application  GroupBy & window,Provide exponential weighted (EW) functions.
+abs,Computations / descriptive stats,Return a Series/DataFrame with absolute numeric value of each element.
+all,Computations / descriptive stats,Return whether all elements are True  potentially over an axis.
+any,Computations / descriptive stats,Return whether any element is True  potentially over an axis.
+clip,Computations / descriptive stats,Trim values at input threshold(s).
+corr,Computations / descriptive stats,Compute pairwise correlation of columns  excluding NA/null values.
+corrwith,Computations / descriptive stats,Compute pairwise correlation.
+count,Computations / descriptive stats,Count non-NA cells for each column or row.
+cov,Computations / descriptive stats,Compute pairwise covariance of columns  excluding NA/null values.
+cummax,Computations / descriptive stats,Return cumulative maximum over a DataFrame or Series axis.
+cummin,Computations / descriptive stats,Return cumulative minimum over a DataFrame or Series axis.
+cumprod,Computations / descriptive stats,Return cumulative product over a DataFrame or Series axis.
+cumsum,Computations / descriptive stats,Return cumulative sum over a DataFrame or Series axis.
+describe,Computations / descriptive stats,Generate descriptive statistics.
+diff,Computations / descriptive stats,First discrete difference of element.
+eval,Computations / descriptive stats,Evaluate a string describing operations on DataFrame columns.
+kurt,Computations / descriptive stats,Return unbiased kurtosis over requested axis.
+kurtosis,Computations / descriptive stats,Return unbiased kurtosis over requested axis.
+mad,Computations / descriptive stats,Return the mean absolute deviation of the values over the requested axis.
+max,Computations / descriptive stats,Return the maximum of the values over the requested axis.
+mean,Computations / descriptive stats,Return the mean of the values over the requested axis.
+median,Computations / descriptive stats,Return the median of the values over the requested axis.
+min,Computations / descriptive stats,Return the minimum of the values over the requested axis.
+mode,Computations / descriptive stats,Get the mode(s) of each element along the selected axis.
+pct_change,Computations / descriptive stats,Percentage change between the current and a prior element.
+prod,Computations / descriptive stats,Return the product of the values over the requested axis.
+product,Computations / descriptive stats,Return the product of the values over the requested axis.
+quantile,Computations / descriptive stats,Return values at the given quantile over requested axis.
+rank,Computations / descriptive stats,Compute numerical data ranks (1 through n) along axis.
+round,Computations / descriptive stats,Round a DataFrame to a variable number of decimal places.
+sem,Computations / descriptive stats,Return unbiased standard error of the mean over requested axis.
+skew,Computations / descriptive stats,Return unbiased skew over requested axis.
+sum,Computations / descriptive stats,Return the sum of the values over the requested axis.
+std,Computations / descriptive stats,Return sample standard deviation over requested axis.
+var,Computations / descriptive stats,Return unbiased variance over requested axis.
+nunique,Computations / descriptive stats,Count number of distinct elements in specified axis.
+value_counts,Computations / descriptive stats,Return a Series containing counts of unique rows in the DataFrame.
+add_prefix,Reindexing / selection / label manipulation,Prefix labels with string prefix.
+add_suffix,Reindexing / selection / label manipulation,Suffix labels with string suffix.
+align,Reindexing / selection / label manipulation,Align two objects on their axes with the specified join method.
+at_time,Reindexing / selection / label manipulation,Select values at particular time of day (e.g.  9:30AM).
+between_time,Reindexing / selection / label manipulation,Select values between particular times of the day (e.g.  9:00-9:30 AM).
+drop,Reindexing / selection / label manipulation,Drop specified labels from rows or columns.
+drop_duplicates,Reindexing / selection / label manipulation,Return DataFrame with duplicate rows removed.
+duplicated,Reindexing / selection / label manipulation,Return boolean Series denoting duplicate rows.
+equals,Reindexing / selection / label manipulation,Test whether two objects contain the same elements.
+filter,Reindexing / selection / label manipulation,Subset the dataframe rows or columns according to the specified index labels.
+first,Reindexing / selection / label manipulation,Select initial periods of time series data based on a date offset.
+head,Reindexing / selection / label manipulation,Return the first n rows.
+idxmax,Reindexing / selection / label manipulation,Return index of first occurrence of maximum over requested axis.
+idxmin,Reindexing / selection / label manipulation,Return index of first occurrence of minimum over requested axis.
+last,Reindexing / selection / label manipulation,Select final periods of time series data based on a date offset.
+reindex,Reindexing / selection / label manipulation,Conform Series/DataFrame to new index with optional filling logic.
+reindex_like,Reindexing / selection / label manipulation,Return an object with matching indices as other object.
+rename,Reindexing / selection / label manipulation,Alter axes labels.
+rename_axis,Reindexing / selection / label manipulation,Set the name of the axis for the index or columns.
+reset_index,Reindexing / selection / label manipulation,Reset the index  or a level of it.
+sample,Reindexing / selection / label manipulation,Return a random sample of items from an axis of object.
+set_axis,Reindexing / selection / label manipulation,Assign desired index to given axis.
+set_index,Reindexing / selection / label manipulation,Set the DataFrame index using existing columns.
+tail,Reindexing / selection / label manipulation,Return the last n rows.
+take,Reindexing / selection / label manipulation,Return the elements in the given positional indices along an axis.
+truncate,Reindexing / selection / label manipulation,Truncate a Series or DataFrame before and after some index value.
+backfill,Missing data handling,Synonym for DataFrame.fillna() with method='bfill'.
+bfill,Missing data handling,Synonym for DataFrame.fillna() with method='bfill'.
+dropna,Missing data handling,Remove missing values.
+ffill,Missing data handling,Synonym for DataFrame.fillna() with method='ffill'.
+fillna,Missing data handling,Fill NA/NaN values using the specified method.
+interpolate,Missing data handling,Fill NaN values using an interpolation method.
+isna,Missing data handling,Detect missing values.
+isnull,Missing data handling,Detect missing values.
+notna,Missing data handling,Detect existing (non-missing) values.
+notnull,Missing data handling,Detect existing (non-missing) values.
+pad,Missing data handling,Synonym for DataFrame.fillna() with method='ffill'.
+replace,Missing data handling,Replace values given in to_replace with value.
+droplevel,Reshaping  sorting  transposing,Return Series/DataFrame with requested index / column level(s) removed.
+pivot,Reshaping  sorting  transposing,Return reshaped DataFrame organized by given index / column values.
+pivot_table,Reshaping  sorting  transposing,Create a spreadsheet-style pivot table as a DataFrame.
+reorder_levels,Reshaping  sorting  transposing,Rearrange index levels using input order.
+sort_values,Reshaping  sorting  transposing,Sort by the values along either axis.
+sort_index,Reshaping  sorting  transposing,Sort object by labels (along an axis).
+nlargest,Reshaping  sorting  transposing,Return the first n rows ordered by columns in descending order.
+nsmallest,Reshaping  sorting  transposing,Return the first n rows ordered by columns in ascending order.
+swaplevel,Reshaping  sorting  transposing,Swap levels i and j in a MultiIndex.
+stack,Reshaping  sorting  transposing,Stack the prescribed level(s) from columns to index.
+unstack,Reshaping  sorting  transposing,Pivot a level of the (necessarily hierarchical) index labels.
+swapaxes,Reshaping  sorting  transposing,Interchange axes and swap values axes appropriately.
+melt,Reshaping  sorting  transposing,Unpivot a DataFrame from wide to long format  optionally leaving identifiers set.
+explode,Reshaping  sorting  transposing,Transform each element of a list-like to a row  replicating index values.
+squeeze,Reshaping  sorting  transposing,Squeeze 1 dimensional axis objects into scalars.
+to_xarray,Reshaping  sorting  transposing,Return an xarray object from the pandas object.
+transpose,Reshaping  sorting  transposing,Transpose index and columns.
+append,Combining / comparing / joining / merging,Append rows of other to the end of caller  returning a new object.
+assign,Combining / comparing / joining / merging,Assign new columns to a DataFrame.
+compare,Combining / comparing / joining / merging,Compare to another DataFrame and show the differences.
+join,Combining / comparing / joining / merging,Join columns of another DataFrame.
+merge,Combining / comparing / joining / merging,Merge DataFrame or named Series objects with a database-style join.
+update,Combining / comparing / joining / merging,Modify in place using non-NA values from another DataFrame.
+asfreq,Time Series-related,Convert time series to specified frequency.
+asof,Time Series-related,Return the last row(s) without any NaNs before where.
+shift,Time Series-related,Shift index by desired number of periods with an optional time freq.
+slice_shift,Time Series-related,(DEPRECATED) Equivalent to shift without copying data.
+tshift,Time Series-related,(DEPRECATED) Shift the time index  using the indexs frequency if available.
+first_valid_index,Time Series-related,Return index for first non-NA value or None  if no NA value is found.
+last_valid_index,Time Series-related,Return index for last non-NA value or None  if no NA value is found.
+resample,Time Series-related,Resample time-series data.
+to_period,Time Series-related,Convert DataFrame from DatetimeIndex to PeriodIndex.
+to_timestamp,Time Series-related,Cast to DatetimeIndex of timestamps  at beginning of period.
+tz_convert,Time Series-related,Convert tz-aware axis to target time zone.
+tz_localize,Time Series-related,Localize tz-naive index of a Series or DataFrame to target time zone.
+Flags,Flags,Flags that apply to pandas objects.
+attrs,Metadata,Dictionary of global attributes of this dataset.
+plot,Plotting,DataFrame plotting accessor and method
+plot.area,Plotting,Draw a stacked area plot.
+plot.bar,Plotting,Vertical bar plot.
+plot.barh,Plotting,Make a horizontal bar plot.
+plot.box,Plotting,Make a box plot of the DataFrame columns.
+plot.density,Plotting,Generate Kernel Density Estimate plot using Gaussian kernels.
+plot.hexbin,Plotting,Generate a hexagonal binning plot.
+plot.hist,Plotting,Draw one histogram of the DataFrames columns.
+plot.kde,Plotting,Generate Kernel Density Estimate plot using Gaussian kernels.
+plot.line,Plotting,Plot Series or DataFrame as lines.
+plot.pie,Plotting,Generate a pie plot.
+plot.scatter,Plotting,Create a scatter plot with varying marker point size and color.
+boxplot,Plotting,Make a box plot from DataFrame columns.
+hist,Plotting,Make a histogram of the DataFrames columns.
+sparse.density,Sparse accessor,Ratio of non-sparse points to total (dense) data points.
+sparse.from_spmatrix,Sparse accessor,Create a new DataFrame from a scipy sparse matrix.
+sparse.to_coo,Sparse accessor,Return the contents of the frame as a sparse SciPy COO matrix.
+sparse.to_dense,Sparse accessor,Convert a DataFrame with sparse values to dense.
+from_dict,Serialization / IO / conversion,Construct DataFrame from dict of array-like or dicts.
+from_records,Serialization / IO / conversion,Convert structured or record ndarray to DataFrame.
+to_parquet,Serialization / IO / conversion,Write a DataFrame to the binary parquet format.
+to_pickle,Serialization / IO / conversion,Pickle (serialize) object to file.
+to_csv,Serialization / IO / conversion,Write object to a comma-separated values (csv) file.
+to_hdf,Serialization / IO / conversion,Write the contained data to an HDF5 file using HDFStore.
+to_sql,Serialization / IO / conversion,Write records stored in a DataFrame to a SQL database.
+to_dict,Serialization / IO / conversion,Convert the DataFrame to a dictionary.
+to_excel,Serialization / IO / conversion,Write object to an Excel sheet.
+to_json,Serialization / IO / conversion,Convert the object to a JSON string.
+to_html,Serialization / IO / conversion,Render a DataFrame as an HTML table.
+to_feather,Serialization / IO / conversion,Write a DataFrame to the binary Feather format.
+to_latex,Serialization / IO / conversion,Render object to a LaTeX tabular  longtable  or nested table/tabular.
+to_stata,Serialization / IO / conversion,Export DataFrame object to Stata dta format.
+to_gbq,Serialization / IO / conversion,Write a DataFrame to a Google BigQuery table.
+to_records,Serialization / IO / conversion,Convert DataFrame to a NumPy record array.
+to_string,Serialization / IO / conversion,Render a DataFrame to a console-friendly tabular output.
+to_clipboard,Serialization / IO / conversion,Copy object to the system clipboard.
+to_markdown,Serialization / IO / conversion,Print DataFrame in Markdown-friendly format.
+style,Serialization / IO / conversion,Returns a Styler object.
+array,Datetime data,Create an array.
+Timestamp,Datetime data,Pandas replacement for python datetime.datetime object.
+asm8,arrays,Return numpy datetime64 format in nanoseconds.
+dayofweek,arrays,Return day of the week.
+day_of_week,arrays,Return day of the week.
+dayofyear,arrays,Return the day of the year.
+day_of_year,arrays,Return the day of the year.
+days_in_month,arrays,Return the number of days in the month.
+daysinmonth,arrays,Return the number of days in the month.
+is_leap_year,arrays,Return True if year is a leap year.
+is_month_end,arrays,Return True if date is last day of month.
+is_month_start,arrays,Return True if date is first day of month.
+is_quarter_end,arrays,Return True if date is last day of the quarter.
+is_quarter_start,arrays,Return True if date is first day of the quarter.
+is_year_end,arrays,Return True if date is last day of the year.
+is_year_start,arrays,Return True if date is first day of the year.
+quarter,arrays,Return the quarter of the year.
+tz,arrays,Alias for tzinfo.
+week,arrays,Return the week number of the year.
+weekofyear,arrays,Return the week number of the year.
+astimezone,arrays,Convert tz-aware Timestamp to another time zone.
+ceil,arrays,Return a new Timestamp ceiled to this resolution.
+combine,arrays,Combine date  time into datetime with same date and time fields.
+ctime,arrays,Return ctime() style string.
+date,arrays,Return date object with same year  month and day.
+day_name,arrays,Return the day name of the Timestamp with specified locale.
+dst,arrays,Return self.tzinfo.dst(self).
+floor,arrays,Return a new Timestamp floored to this resolution.
+freqstr,arrays,Return the total number of days in the month.
+fromordinal,arrays,Passed an ordinal  translate and convert to a ts.
+fromtimestamp,arrays,Transform timestamp[  tz] to tzs local time from POSIX timestamp.
+isocalendar,arrays,Return a 3-tuple containing ISO year  week number  and weekday.
+isoformat,arrays,[sep] -> string in ISO 8601 format  YYYY-MM-DDT[HH[:MM[:SS[.mmm[uuu]]]]][+HH:MM].
+isoweekday,arrays,Return the day of the week represented by the date.
+month_name,arrays,Return the month name of the Timestamp with specified locale.
+normalize,arrays,Normalize Timestamp to midnight  preserving tz information.
+now,arrays,Return new Timestamp object representing current time local to tz.
+replace,arrays,Implements datetime.replace  handles nanoseconds.
+round,arrays,Round the Timestamp to the specified resolution.
+strftime,arrays,Return a string representing the given POSIX timestamp controlled by an explicit format string.
+strptime,arrays,Function is not implemented.
+time,arrays,Return time object with same time but with tzinfo=None.
+timestamp,arrays,Return POSIX timestamp as float.
+timetuple,arrays,Return time tuple  compatible with time.localtime().
+timetz,arrays,Return time object with same time and tzinfo.
+to_datetime64,arrays,Return a numpy.datetime64 object with ns precision.
+to_numpy,arrays,Convert the Timestamp to a NumPy datetime64.
+to_julian_date,arrays,Convert TimeStamp to a Julian Date.
+to_period,arrays,Return an period of which this timestamp is an observation.
+to_pydatetime,arrays,Convert a Timestamp object to a native Python datetime object.
+today,arrays,Return the current time in the local timezone.
+toordinal,arrays,Return proleptic Gregorian ordinal.
+tz_convert,arrays,Convert tz-aware Timestamp to another time zone.
+tz_localize,arrays,Convert naive Timestamp to local time zone  or remove timezone from tz-aware Timestamp.
+tzname,arrays,Return self.tzinfo.tzname(self).
+utcfromtimestamp,arrays,Construct a naive UTC datetime from a POSIX timestamp.
+utcnow,arrays,Return a new Timestamp representing UTC day and time.
+utcoffset,arrays,Return self.tzinfo.utcoffset(self).
+utctimetuple,arrays,Return UTC time tuple  compatible with time.localtime().
+weekday,arrays,Return the day of the week represented by the date.
+DatetimeArray,arrays,Pandas ExtensionArray for tz-naive or tz-aware datetime data.
+DatetimeTZDtype,arrays,An ExtensionDtype for timezone-aware datetime data.
+Timedelta,Timedelta data,Represents a duration  the difference between two dates or times.
+asm8,arrays,Return a numpy timedelta64 array scalar view.
+components,arrays,Return a components namedtuple-like.
+days,arrays,Number of days.
+delta,arrays,Return the timedelta in nanoseconds (ns)  for internal compatibility.
+microseconds,arrays,Number of microseconds (>= 0 and less than 1 second).
+nanoseconds,arrays,Return the number of nanoseconds (n)  where 0 <= n < 1 microsecond.
+seconds,arrays,Number of seconds (>= 0 and less than 1 day).
+view,arrays,Array view compatibility.
+ceil,arrays,Return a new Timedelta ceiled to this resolution.
+floor,arrays,Return a new Timedelta floored to this resolution.
+isoformat,arrays,Format Timedelta as ISO 8601 Duration like P[n]Y[n]M[n]DT[n]H[n]M[n]S  where the [n] s are replaced by the values.
+round,arrays,Round the Timedelta to the specified resolution.
+to_pytimedelta,arrays,Convert a pandas Timedelta object into a python timedelta object.
+to_timedelta64,arrays,Return a numpy.timedelta64 object with ns precision.
+to_numpy,arrays,Convert the Timedelta to a NumPy timedelta64.
+total_seconds,arrays,Total seconds in the duration.
+TimedeltaArray,arrays,Pandas ExtensionArray for timedelta data.
+Period,Period,Represents a period of time.
+day,arrays,Get day of the month that a Period falls on.
+dayofweek,arrays,Day of the week the period lies in  with Monday=0 and Sunday=6.
+day_of_week,arrays,Day of the week the period lies in  with Monday=0 and Sunday=6.
+dayofyear,arrays,Return the day of the year.
+day_of_year,arrays,Return the day of the year.
+days_in_month,arrays,Get the total number of days in the month that this period falls on.
+daysinmonth,arrays,Get the total number of days of the month that the Period falls in.
+hour,arrays,Get the hour of the day component of the Period.
+minute,arrays,Get minute of the hour component of the Period.
+qyear,arrays,Fiscal year the Period lies in according to its starting-quarter.
+second,arrays,Get the second component of the Period.
+start_time,arrays,Get the Timestamp for the start of the period.
+week,arrays,Get the week of the year on the given Period.
+weekday,arrays,Day of the week the period lies in  with Monday=0 and Sunday=6.
+asfreq,arrays,Convert Period to desired frequency  at the start or end of the interval.
+strftime,arrays,Returns the string representation of the Period  depending on the selected fmt.
+to_timestamp,arrays,Return the Timestamp representation of the Period.
+PeriodArray,arrays,Pandas ExtensionArray for storing Period data.
+PeriodDtype,arrays,An ExtensionDtype for Period data.
+Interval,Interval data,Immutable object implementing an Interval  a bounded slice-like interval.
+closed,arrays,Whether the interval is closed on the left-side  right-side  both or neither.
+closed_left,arrays,Check if the interval is closed on the left side.
+closed_right,arrays,Check if the interval is closed on the right side.
+is_empty,arrays,Indicates if an interval is empty  meaning it contains no points.
+left,arrays,Left bound for the interval.
+length,arrays,Return the length of the Interval.
+mid,arrays,Return the midpoint of the Interval.
+open_left,arrays,Check if the interval is open on the left side.
+open_right,arrays,Check if the interval is open on the right side.
+overlaps,arrays,Check whether two Interval objects overlap.
+right,arrays,Right bound for the interval.
+IntervalArray,arrays,Pandas array for interval data that are closed on the same side.
+IntervalDtype,arrays,An ExtensionDtype for Interval data.
+IntegerArray,Nullable integer,Array of integer (optional missing) values.
+Int8Dtype,Nullable integer,An ExtensionDtype for int8 integer data.
+Int16Dtype,Nullable integer,An ExtensionDtype for int16 integer data.
+Int32Dtype,Nullable integer,An ExtensionDtype for int32 integer data.
+Int64Dtype,Nullable integer,An ExtensionDtype for int64 integer data.
+UInt8Dtype,Nullable integer,An ExtensionDtype for uint8 integer data.
+UInt16Dtype,Nullable integer,An ExtensionDtype for uint16 integer data.
+UInt32Dtype,Nullable integer,An ExtensionDtype for uint32 integer data.
+UInt64Dtype,Nullable integer,An ExtensionDtype for uint64 integer data.
+CategoricalDtype,Categorical data,Type for categorical data with the categories and orderedness.
+categories,Categorical data,An Index containing the unique categories allowed.
+ordered,Categorical data,Whether the categories have an ordered relationship.
+Categorical,Categorical data,Represent a categorical variable in classic R / S-plus fashion.
+from_codes,Categorical data,Make a Categorical type from codes and categories or dtype.
+dtype,Categorical data,The CategoricalDtype for this instance.
+categories,Categorical data,The categories of this categorical.
+ordered,Categorical data,Whether the categories have an ordered relationship.
+codes,Categorical data,The category codes of this categorical.
+__array__,Categorical data,The numpy array interface.
+SparseArray,Sparse data,An ExtensionArray for storing sparse data.
+SparseDtype,Sparse data,Dtype for data stored in SparseArray.
+StringArray,Text data,Extension array for string data.
+ArrowStringArray,Text data,Extension array for string data in a pyarrow.ChunkedArray.
+StringDtype,Text data,Extension dtype for string data.
+BooleanArray,Boolean data with missing values,Array of boolean (True/False) data with missing values.
+BooleanDtype,Boolean data with missing values,Extension dtype for boolean data.
+Index,Index,Immutable sequence used for indexing and alignment.
+values,index,Return an array representing the data in the Index.
+is_monotonic,index,Alias for is_monotonic_increasing.
+is_monotonic_increasing,index,Return if the index is monotonic increasing (only equal or increasing) values.
+is_monotonic_decreasing,index,Return if the index is monotonic decreasing (only equal or decreasing) values.
+is_unique,index,Return if the index has unique values.
+has_duplicates,index,Check if the Index has duplicate values.
+hasnans,index,Return if I have any nans; enables various perf speedups.
+dtype,index,Return the dtype object of the underlying data.
+inferred_type,index,Return a string of the type inferred from the values.
+is_all_dates,index,Whether or not the index values only consist of dates.
+shape,index,Return a tuple of the shape of the underlying data.
+name,index,Return Index or MultiIndex name.
+nbytes,index,Return the number of bytes in the underlying data.
+ndim,index,Number of dimensions of the underlying data  by definition 1.
+size,index,Return the number of elements in the underlying data.
+T,index,Return the transpose  which is by definition self.
+memory_usage,index,Memory usage of the values.
+all,index,Return whether all elements are Truthy.
+any,index,Return whether any element is Truthy.
+argmin,index,Return int position of the smallest value in the Series.
+argmax,index,Return int position of the largest value in the Series.
+copy,index,Make a copy of this object.
+delete,index,Make new Index with passed location(-s) deleted.
+drop,index,Make new Index with passed list of labels deleted.
+drop_duplicates,index,Return Index with duplicate values removed.
+duplicated,index,Indicate duplicate index values.
+equals,index,Determine if two Index object are equal.
+factorize,index,Encode the object as an enumerated type or categorical variable.
+identical,index,Similar to equals  but checks that object attributes and types are also equal.
+insert,index,Make new Index inserting new item at location.
+is_,index,More flexible  faster check like is but that works through views.
+is_boolean,index,Check if the Index only consists of booleans.
+is_categorical,index,Check if the Index holds categorical data.
+is_floating,index,Check if the Index is a floating type.
+is_integer,index,Check if the Index only consists of integers.
+is_interval,index,Check if the Index holds Interval objects.
+is_mixed,index,Check if the Index holds data with mixed data types.
+is_numeric,index,Check if the Index only consists of numeric data.
+is_object,index,Check if the Index is of the object dtype.
+min,index,Return the minimum value of the Index.
+max,index,Return the maximum value of the Index.
+reindex,index,Create index with targets values.
+rename,index,Alter Index or MultiIndex name.
+repeat,index,Repeat elements of a Index.
+where,index,Replace values where the condition is False.
+take,index,Return a new Index of the values selected by the indices.
+putmask,index,Return a new Index of the values set with the mask.
+unique,index,Return unique values in the index.
+nunique,index,Return number of unique elements in the object.
+value_counts,index,Return a Series containing counts of unique values.
+set_names,index,Set Index or MultiIndex name.
+droplevel,index,Return index with requested level(s) removed.
+fillna,index,Fill NA/NaN values with the specified value.
+dropna,index,Return Index without NA/NaN values.
+isna,index,Detect missing values.
+notna,index,Detect existing (non-missing) values.
+astype,index,Create an Index with values cast to dtypes.
+item,index,Return the first element of the underlying data as a Python scalar.
+map,index,Map values using input correspondence (a dict  Series  or function).
+ravel,index,Return an ndarray of the flattened values of the underlying data.
+to_list,index,Return a list of the values.
+to_native_types,index,(DEPRECATED) Format specified values of self and return them.
+to_series,index,Create a Series with both index and values equal to the index keys.
+to_frame,index,Create a DataFrame with a column containing the Index.
+argsort,index,Return the integer indices that would sort the index.
+searchsorted,index,Find indices where elements should be inserted to maintain order.
+sort_values,index,Return a sorted copy of the index.
+shift,index,Shift index by desired number of time frequency increments.
+append,index,Append a collection of Index options together.
+join,index,Compute join_index and indexers to conform data structures to the new index.
+intersection,index,Form the intersection of two Index objects.
+union,index,Form the union of two Index objects.
+difference,index,Return a new Index with elements of index not in other.
+symmetric_difference,index,Compute the symmetric difference of two Index objects.
+asof,index,Return the label from the index  or  if not present  the previous one.
+asof_locs,index,Return the locations (indices) of labels in the index.
+get_indexer,index,Compute indexer and mask for new index given the current index.
+get_indexer_for,index,Guaranteed return of an indexer even when non-unique.
+get_indexer_non_unique,index,Compute indexer and mask for new index given the current index.
+get_level_values,index,Return an Index of values for requested level.
+get_loc,index,Get integer location  slice or boolean mask for requested label.
+get_slice_bound,index,Calculate slice bound that corresponds to given label.
+get_value,index,Fast lookup of value from 1-dimensional ndarray.
+isin,index,Return a boolean array where the index values are in values.
+slice_indexer,index,Compute the slice indexer for input labels and step.
+slice_locs,index,Compute slice locations for input labels.
+RangeIndex,Numeric Index,Immutable Index implementing a monotonic integer range.
+Int64Index,Numeric Index,Immutable sequence used for indexing and alignment.
+UInt64Index,Numeric Index,Immutable sequence used for indexing and alignment.
+Float64Index,Numeric Index,Immutable sequence used for indexing and alignment.
+start,Numeric Index,The value of the start parameter (0 if this was not supplied).
+stop,Numeric Index,The value of the stop parameter.
+step,Numeric Index,The value of the step parameter (1 if this was not supplied).
+from_range,Numeric Index,Create RangeIndex from a range object.
+CategoricalIndex,CategoricalIndex,Index based on an underlying Categorical.
+codes,index,The category codes of this categorical.
+categories,index,The categories of this categorical.
+ordered,index,Whether the categories have an ordered relationship.
+rename_categories,index,Rename categories.
+reorder_categories,index,Reorder categories as specified in new_categories.
+add_categories,index,Add new categories.
+remove_categories,index,Remove the specified categories.
+remove_unused_categories,index,Remove categories which are not used.
+set_categories,index,Set the categories to the specified new_categories.
+as_ordered,index,Set the Categorical to be ordered.
+as_unordered,index,Set the Categorical to be unordered.
+map,index,Map values using input correspondence (a dict  Series  or function).
+equals,index,Determine if two CategoricalIndex objects contain the same elements.
+IntervalIndex,IntervalIndex,Immutable index of intervals that are closed on the same side.
+from_arrays,index,Construct from two arrays defining the left and right bounds.
+from_tuples,index,Construct an IntervalIndex from an array-like of tuples.
+from_breaks,index,Construct an IntervalIndex from an array of splits.
+closed,index,Whether the intervals are closed on the left-side  right-side  both or neither.
+values,index,Return an array representing the data in the Index.
+is_empty,index,Indicates if an interval is empty  meaning it contains no points.
+is_non_overlapping_monotonic,index,Return True if the IntervalArray is non-overlapping (no Intervals share points) and is either monotonic increasing or monotonic decreasing  else False.
+is_overlapping,index,Return True if the IntervalIndex has overlapping intervals  else False.
+get_loc,index,Get integer location  slice or boolean mask for requested label.
+get_indexer,index,Compute indexer and mask for new index given the current index.
+set_closed,index,Return an IntervalArray identical to the current one  but closed on the specified side.
+contains,index,Check elementwise if the Intervals contain the value.
+overlaps,index,Check elementwise if an Interval overlaps the values in the IntervalArray.
+to_tuples,index,Return an ndarray of tuples of the form (left  right).
+MultiIndex,MultiIndex,A multi-level  or hierarchical  index object for pandas objects.
+IndexSlice,MultiIndex,Create an object to more easily perform multi-index slicing.
+from_arrays,index,Convert arrays to MultiIndex.
+from_tuples,index,Convert list of tuples to MultiIndex.
+from_product,index,Make a MultiIndex from the cartesian product of multiple iterables.
+from_frame,index,Make a MultiIndex from a DataFrame.
+names,index,Names of levels in MultiIndex.
+nlevels,index,Integer number of levels in this MultiIndex.
+levshape,index,A tuple with the length of each level.
+dtypes,index,Return the dtypes as a Series for the underlying MultiIndex
+set_levels,index,Set new levels on MultiIndex.
+set_codes,index,Set new codes on MultiIndex.
+to_flat_index,index,Convert a MultiIndex to an Index of Tuples containing the level values.
+to_frame,index,Create a DataFrame with the levels of the MultiIndex as columns.
+sortlevel,index,Sort MultiIndex at the requested level.
+droplevel,index,Return index with requested level(s) removed.
+swaplevel,index,Swap level i with level j.
+reorder_levels,index,Rearrange levels using input order.
+remove_unused_levels,index,Create new MultiIndex from current that removes unused levels.
+get_loc,index,Get location for a label or a tuple of labels.
+get_locs,index,Get location for a sequence of labels.
+get_loc_level,index,Get location and sliced index for requested label(s)/level(s).
+get_indexer,index,Compute indexer and mask for new index given the current index.
+get_level_values,index,Return vector of label values for requested level.
+DatetimeIndex,DatetimeIndex,Immutable ndarray-like of datetime64 data.
+year,index,The year of the datetime.
+month,index,The month as January=1  December=12.
+day,index,The day of the datetime.
+hour,index,The hours of the datetime.
+minute,index,The minutes of the datetime.
+second,index,The seconds of the datetime.
+microsecond,index,The microseconds of the datetime.
+nanosecond,index,The nanoseconds of the datetime.
+date,index,Returns numpy array of python datetime.date objects (namely  the date part of Timestamps without timezone information).
+time,index,Returns numpy array of datetime.time.
+timetz,index,Returns numpy array of datetime.time also containing timezone information.
+dayofyear,index,The ordinal day of the year.
+day_of_year,index,The ordinal day of the year.
+weekofyear,index,(DEPRECATED) The week ordinal of the year.
+week,index,(DEPRECATED) The week ordinal of the year.
+dayofweek,index,The day of the week with Monday=0  Sunday=6.
+day_of_week,index,The day of the week with Monday=0  Sunday=6.
+weekday,index,The day of the week with Monday=0  Sunday=6.
+quarter,index,The quarter of the date.
+tz,index,Return timezone  if any.
+freq,index,Return the frequency object if it is set  otherwise None.
+freqstr,index,Return the frequency object as a string if its set  otherwise None.
+is_month_start,index,Indicates whether the date is the first day of the month.
+is_month_end,index,Indicates whether the date is the last day of the month.
+is_quarter_start,index,Indicator for whether the date is the first day of a quarter.
+is_quarter_end,index,Indicator for whether the date is the last day of a quarter.
+is_year_start,index,Indicate whether the date is the first day of a year.
+is_year_end,index,Indicate whether the date is the last day of the year.
+is_leap_year,index,Boolean indicator if the date belongs to a leap year.
+inferred_freq,index,Tries to return a string representing a frequency guess  generated by infer_freq.
+indexer_at_time,index,Return index locations of values at particular time of day (e.g.
+indexer_between_time,index,Return index locations of values between particular times of day (e.g.  9:00-9:30AM).
+normalize,index,Convert times to midnight.
+strftime,index,Convert to Index using specified date_format.
+snap,index,Snap time stamps to nearest occurring frequency.
+tz_convert,index,Convert tz-aware Datetime Array/Index from one time zone to another.
+tz_localize,index,Localize tz-naive Datetime Array/Index to tz-aware Datetime Array/Index.
+round,index,Perform round operation on the data to the specified freq.
+floor,index,Perform floor operation on the data to the specified freq.
+ceil,index,Perform ceil operation on the data to the specified freq.
+month_name,index,Return the month names of the DateTimeIndex with specified locale.
+day_name,index,Return the day names of the DateTimeIndex with specified locale.
+to_period,index,Cast to PeriodArray/Index at a particular frequency.
+to_perioddelta,index,Calculate TimedeltaArray of difference between index values and index converted to PeriodArray at specified freq.
+to_pydatetime,index,Return Datetime Array/Index as object ndarray of datetime.datetime objects.
+to_series,index,Create a Series with both index and values equal to the index keys useful with map for returning an indexer based on an index.
+to_frame,index,Create a DataFrame with a column containing the Index.
+mean,index,Return the mean value of the Array.
+TimedeltaIndex,TimedeltaIndex,Immutable ndarray of timedelta64 data  represented internally as int64  and which can be boxed to timedelta objects.
+days,index,Number of days for each element.
+seconds,index,Number of seconds (>= 0 and less than 1 day) for each element.
+microseconds,index,Number of microseconds (>= 0 and less than 1 second) for each element.
+nanoseconds,index,Number of nanoseconds (>= 0 and less than 1 microsecond) for each element.
+components,index,Return a dataframe of the components (days  hours  minutes  seconds  milliseconds  microseconds  nanoseconds) of the Timedeltas.
+inferred_freq,index,Tries to return a string representing a frequency guess  generated by infer_freq.
+to_pytimedelta,index,Return Timedelta Array/Index as object ndarray of datetime.timedelta objects.
+to_series,index,Create a Series with both index and values equal to the index keys.
+round,index,Perform round operation on the data to the specified freq.
+floor,index,Perform floor operation on the data to the specified freq.
+ceil,index,Perform ceil operation on the data to the specified freq.
+to_frame,index,Create a DataFrame with a column containing the Index.
+mean,index,Return the mean value of the Array.
+PeriodIndex,PeriodIndex,Immutable ndarray holding ordinal values indicating regular periods in time.
+day,index,The days of the period.
+dayofweek,index,The day of the week with Monday=0  Sunday=6.
+day_of_week,index,The day of the week with Monday=0  Sunday=6.
+dayofyear,index,The ordinal day of the year.
+day_of_year,index,The ordinal day of the year.
+days_in_month,index,The number of days in the month.
+daysinmonth,index,The number of days in the month.
+freq,index,Return the frequency object if it is set  otherwise None.
+freqstr,index,Return the frequency object as a string if its set  otherwise None.
+hour,index,The hour of the period.
+is_leap_year,index,Logical indicating if the date belongs to a leap year.
+minute,index,The minute of the period.
+month,index,The month as January=1  December=12.
+quarter,index,The quarter of the date.
+second,index,The second of the period.
+week,index,The week ordinal of the year.
+weekday,index,The day of the week with Monday=0  Sunday=6.
+weekofyear,index,The week ordinal of the year.
+year,index,The year of the period.
+asfreq,index,Convert the PeriodArray to the specified frequency freq.
+strftime,index,Convert to Index using specified date_format.
+to_timestamp,index,Cast to DatetimeArray/Index.
+__iter__,Indexing  iteration,Groupby iterator.
+groups,Indexing  iteration,Dict {group name -> group labels}.
+indices,Indexing  iteration,Dict {group name -> group indices}.
+get_group,Indexing  iteration,Construct DataFrame from group with provided name.
+Grouper,Indexing  iteration,A Grouper allows the user to specify a groupby instruction for an object.
+apply,Function application,Apply function func group-wise and combine the results together.
+aggregate,Function application,Aggregate using one or more operations over the specified axis.
+aggregate,Function application,Aggregate using one or more operations over the specified axis.
+transform,Function application,Call function producing a like-indexed Series on each group and return a Series having the same indexes as the original object filled with the transformed values
+transform,Function application,Call function producing a like-indexed DataFrame on each group and return a DataFrame having the same indexes as the original object filled with the transformed values
+pipe,Function application,Apply a function func with arguments to this GroupBy object and return the functions result.
+all,Computations / descriptive stats,Return True if all values in the group are truthful  else False.
+any,Computations / descriptive stats,Return True if any value in the group is truthful  else False.
+bfill,Computations / descriptive stats,Backward fill the values.
+backfill,Computations / descriptive stats,Backward fill the values.
+count,Computations / descriptive stats,Compute count of group  excluding missing values.
+cumcount,Computations / descriptive stats,Number each item in each group from 0 to the length of that group - 1.
+cummax,Computations / descriptive stats,Cumulative max for each group.
+cummin,Computations / descriptive stats,Cumulative min for each group.
+cumprod,Computations / descriptive stats,Cumulative product for each group.
+cumsum,Computations / descriptive stats,Cumulative sum for each group.
+ffill,Computations / descriptive stats,Forward fill the values.
+first,Computations / descriptive stats,Compute first of group values.
+head,Computations / descriptive stats,Return first n rows of each group.
+last,Computations / descriptive stats,Compute last of group values.
+max,Computations / descriptive stats,Compute max of group values.
+mean,Computations / descriptive stats,Compute mean of groups  excluding missing values.
+median,Computations / descriptive stats,Compute median of groups  excluding missing values.
+min,Computations / descriptive stats,Compute min of group values.
+ngroup,Computations / descriptive stats,Number each group from 0 to the number of groups - 1.
+nth,Computations / descriptive stats,Take the nth row from each group if n is an int  or a subset of rows if n is a list of ints.
+ohlc,Computations / descriptive stats,Compute open  high  low and close values of a group  excluding missing values.
+pad,Computations / descriptive stats,Forward fill the values.
+prod,Computations / descriptive stats,Compute prod of group values.
+rank,Computations / descriptive stats,Provide the rank of values within each group.
+pct_change,Computations / descriptive stats,Calculate pct_change of each value to previous entry in group.
+size,Computations / descriptive stats,Compute group sizes.
+sem,Computations / descriptive stats,Compute standard error of the mean of groups  excluding missing values.
+std,Computations / descriptive stats,Compute standard deviation of groups  excluding missing values.
+sum,Computations / descriptive stats,Compute sum of group values.
+var,Computations / descriptive stats,Compute variance of groups  excluding missing values.
+tail,Computations / descriptive stats,Return last n rows of each group.
+all,Computations / descriptive stats,Return True if all values in the group are truthful  else False.
+any,Computations / descriptive stats,Return True if any value in the group is truthful  else False.
+backfill,Computations / descriptive stats,Backward fill the values.
+bfill,Computations / descriptive stats,Backward fill the values.
+corr,Computations / descriptive stats,Compute pairwise correlation of columns  excluding NA/null values.
+count,Computations / descriptive stats,Compute count of group  excluding missing values.
+cov,Computations / descriptive stats,Compute pairwise covariance of columns  excluding NA/null values.
+cumcount,Computations / descriptive stats,Number each item in each group from 0 to the length of that group - 1.
+cummax,Computations / descriptive stats,Cumulative max for each group.
+cummin,Computations / descriptive stats,Cumulative min for each group.
+cumprod,Computations / descriptive stats,Cumulative product for each group.
+cumsum,Computations / descriptive stats,Cumulative sum for each group.
+describe,Computations / descriptive stats,Generate descriptive statistics.
+diff,Computations / descriptive stats,First discrete difference of element.
+ffill,Computations / descriptive stats,Forward fill the values.
+fillna,Computations / descriptive stats,Fill NA/NaN values using the specified method.
+filter,Computations / descriptive stats,Return a copy of a DataFrame excluding filtered elements.
+hist,Computations / descriptive stats,Make a histogram of the DataFrames columns.
+idxmax,Computations / descriptive stats,Return index of first occurrence of maximum over requested axis.
+idxmin,Computations / descriptive stats,Return index of first occurrence of minimum over requested axis.
+mad,Computations / descriptive stats,Return the mean absolute deviation of the values over the requested axis.
+nunique,Computations / descriptive stats,Return DataFrame with counts of unique elements in each position.
+pad,Computations / descriptive stats,Forward fill the values.
+pct_change,Computations / descriptive stats,Calculate pct_change of each value to previous entry in group.
+plot,Computations / descriptive stats,Class implementing the .plot attribute for groupby objects.
+quantile,Computations / descriptive stats,Return group values at the given quantile  a la numpy.percentile.
+rank,Computations / descriptive stats,Provide the rank of values within each group.
+resample,Computations / descriptive stats,Provide resampling when using a TimeGrouper.
+sample,Computations / descriptive stats,Return a random sample of items from each group.
+shift,Computations / descriptive stats,Shift each group by periods observations.
+size,Computations / descriptive stats,Compute group sizes.
+skew,Computations / descriptive stats,Return unbiased skew over requested axis.
+take,Computations / descriptive stats,Return the elements in the given positional indices along an axis.
+tshift,Computations / descriptive stats,(DEPRECATED) Shift the time index  using the indexs frequency if available.
+hist,Computations / descriptive stats,Draw histogram of the input series using matplotlib.
+nlargest,Computations / descriptive stats,Return the largest n elements.
+nsmallest,Computations / descriptive stats,Return the smallest n elements.
+nunique,Computations / descriptive stats,Return number of unique elements in the group.
+unique,Computations / descriptive stats,Return unique values of Series object.
+is_monotonic_increasing,Computations / descriptive stats,Alias for is_monotonic.
+is_monotonic_decreasing,Computations / descriptive stats,Return boolean if values in the object are monotonic_decreasing.
+corrwith,Computations / descriptive stats,Compute pairwise correlation.
+boxplot,Computations / descriptive stats,Make box plots from DataFrameGroupBy data.
