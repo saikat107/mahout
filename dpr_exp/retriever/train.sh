@@ -80,7 +80,7 @@ function train() {
         --train_file "${train_files[@]}" \
         --dev_file "${dev_files[@]}" \
         --sequence_length 512 \
-        --num_train_epochs 10 \
+        --num_train_epochs 20 \
         --eval_per_epoch 1 \
         --learning_rate $LR \
         --max_grad_norm 2.0 \
@@ -92,7 +92,7 @@ function train() {
         --seed 1234 2>&1 | tee $LOG_FILE;
 }
 
-for num_ctx in 8 10; do
+for num_ctx in 2; do
   echo "Training for ${num_ctx} number of negative contexts!"
   train ${num_ctx};
 done
