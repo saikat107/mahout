@@ -129,5 +129,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-dpr_exp/models*
-dpr_exp/data/
+dpr_exp/*models*
+dpr_exp/data*/
+
+*.json
+*.zip
